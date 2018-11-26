@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55474D7C21AC221600A52488 /* LeagueAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55474D7A21AC220E00A52488 /* LeagueAPI.framework */; };
+		55474D7D21AC221600A52488 /* LeagueAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55474D7A21AC220E00A52488 /* LeagueAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		556257D1219B2AD10089398D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556257D0219B2AD10089398D /* AppDelegate.swift */; };
 		556257D3219B2AD10089398D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556257D2219B2AD10089398D /* ViewController.swift */; };
 		556257D6219B2AD10089398D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556257D4219B2AD10089398D /* Main.storyboard */; };
@@ -14,7 +16,22 @@
 		556257E3219B4B430089398D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 556257E2219B4B430089398D /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		556257E7219B56AE0089398D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				55474D7D21AC221600A52488 /* LeagueAPI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		55474D7A21AC220E00A52488 /* LeagueAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LeagueAPI.framework; path = ../Carthage/Build/iOS/LeagueAPI.framework; sourceTree = "<group>"; };
 		556257CD219B2AD10089398D /* LeagueAPIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeagueAPIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		556257D0219B2AD10089398D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		556257D2219B2AD10089398D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +46,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55474D7C21AC221600A52488 /* LeagueAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55474D7921AC220E00A52488 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55474D7A21AC220E00A52488 /* LeagueAPI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		556257C4219B2AD10089398D = {
 			isa = PBXGroup;
 			children = (
 				556257CF219B2AD10089398D /* LeagueAPIDemo */,
 				556257CE219B2AD10089398D /* Products */,
+				55474D7921AC220E00A52488 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +101,7 @@
 				556257C9219B2AD10089398D /* Sources */,
 				556257CA219B2AD10089398D /* Frameworks */,
 				556257CB219B2AD10089398D /* Resources */,
+				556257E7219B56AE0089398D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -284,6 +312,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26WDH86H37;
+				FRAMEWORK_SEARCH_PATHS = (
+					../Carthage/Build/iOS/,
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = LeagueAPIDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,6 +334,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26WDH86H37;
+				FRAMEWORK_SEARCH_PATHS = (
+					../Carthage/Build/iOS/,
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = LeagueAPIDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
