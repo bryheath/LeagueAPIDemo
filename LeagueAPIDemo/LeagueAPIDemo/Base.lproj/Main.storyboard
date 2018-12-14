@@ -24,7 +24,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mh-VL-1x2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-31" y="27"/>
+            <point key="canvasLocation" x="-626" y="27"/>
         </scene>
         <!--LeagueAPI Demo-->
         <scene sceneID="tne-QT-ifu">
@@ -89,13 +89,92 @@
                     <navigationItem key="navigationItem" title="LeagueAPI Demo" id="I6W-yx-Vqi"/>
                     <connections>
                         <outlet property="requestTableView" destination="SaD-GV-bHD" id="Y1m-Qq-1NU"/>
+                        <segue destination="BPs-mZ-oRd" kind="show" identifier="SummonerByNameRequest" id="5Uy-C9-fLv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Summoner View Controller-->
+        <scene sceneID="jLn-cQ-q1z">
+            <objects>
+                <viewController id="BPs-mZ-oRd" customClass="SummonerViewController" customModule="LeagueAPIDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BvK-eo-zXw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="cdn-4R-bAh" userLabel="BackgroundImage">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a summoner name" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xxz-uH-t7m">
+                                <rect key="frame" x="0.0" y="64" width="375" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BPs-mZ-oRd" id="kuW-8e-3lC"/>
+                                </connections>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OW2-4C-E4n" userLabel="Icone">
+                                <rect key="frame" x="0.0" y="94" width="187.5" height="187.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OW2-4C-E4n" secondAttribute="height" multiplier="1:1" id="JMf-g5-nU2"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summoner name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lI1-DO-fnI">
+                                <rect key="frame" x="187.5" y="109" width="187.5" height="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level 107" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgo-Nn-Tfl">
+                                <rect key="frame" x="187.5" y="133" width="187.5" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="lv8-6E-gVx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hgo-Nn-Tfl" firstAttribute="leading" secondItem="OW2-4C-E4n" secondAttribute="trailing" id="67e-Qz-dZA"/>
+                            <constraint firstItem="Hgo-Nn-Tfl" firstAttribute="trailing" secondItem="acK-pX-J6h" secondAttribute="trailing" id="6N8-Ny-BDq"/>
+                            <constraint firstItem="Hgo-Nn-Tfl" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="OW2-4C-E4n" secondAttribute="bottom" id="FcP-kE-WWU"/>
+                            <constraint firstItem="cdn-4R-bAh" firstAttribute="top" secondItem="BvK-eo-zXw" secondAttribute="top" id="HA3-9l-iuo"/>
+                            <constraint firstItem="cdn-4R-bAh" firstAttribute="leading" secondItem="acK-pX-J6h" secondAttribute="leading" id="QD7-dJ-A0h"/>
+                            <constraint firstItem="cdn-4R-bAh" firstAttribute="bottom" secondItem="BvK-eo-zXw" secondAttribute="bottom" id="VSG-GC-C90"/>
+                            <constraint firstItem="xxz-uH-t7m" firstAttribute="top" secondItem="acK-pX-J6h" secondAttribute="top" id="Voa-oo-t41"/>
+                            <constraint firstItem="OW2-4C-E4n" firstAttribute="leading" secondItem="acK-pX-J6h" secondAttribute="leading" id="XtQ-wV-KGq"/>
+                            <constraint firstItem="xxz-uH-t7m" firstAttribute="leading" secondItem="acK-pX-J6h" secondAttribute="leading" id="dsP-u4-C8V"/>
+                            <constraint firstItem="lI1-DO-fnI" firstAttribute="top" secondItem="xxz-uH-t7m" secondAttribute="bottom" constant="15" id="ecl-Be-iOd"/>
+                            <constraint firstItem="lI1-DO-fnI" firstAttribute="leading" secondItem="OW2-4C-E4n" secondAttribute="trailing" id="f3P-Nb-sKo"/>
+                            <constraint firstItem="lI1-DO-fnI" firstAttribute="trailing" secondItem="acK-pX-J6h" secondAttribute="trailing" id="jJa-6F-lPJ"/>
+                            <constraint firstItem="OW2-4C-E4n" firstAttribute="width" secondItem="BvK-eo-zXw" secondAttribute="width" multiplier="0.5" id="nNo-TV-I73"/>
+                            <constraint firstItem="xxz-uH-t7m" firstAttribute="trailing" secondItem="acK-pX-J6h" secondAttribute="trailing" id="o5x-9f-fG1"/>
+                            <constraint firstItem="Hgo-Nn-Tfl" firstAttribute="top" secondItem="lI1-DO-fnI" secondAttribute="bottom" id="pEg-0y-085"/>
+                            <constraint firstItem="OW2-4C-E4n" firstAttribute="top" secondItem="xxz-uH-t7m" secondAttribute="bottom" id="riG-0H-9Hf"/>
+                            <constraint firstItem="cdn-4R-bAh" firstAttribute="trailing" secondItem="acK-pX-J6h" secondAttribute="trailing" id="wtA-5E-WNs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="acK-pX-J6h"/>
+                    </view>
+                    <connections>
+                        <outlet property="summonerLevel" destination="Hgo-Nn-Tfl" id="yEX-v9-w01"/>
+                        <outlet property="summonerName" destination="lI1-DO-fnI" id="0n5-ih-xHy"/>
+                        <outlet property="summonerProfileIcon" destination="OW2-4C-E4n" id="emr-Z4-PD3"/>
+                        <outlet property="textbar" destination="xxz-uH-t7m" id="09y-AZ-CmD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1iW-6v-1dk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1454" y="27"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="background" width="1600" height="1269"/>
         <image name="bard_bard" width="1131" height="300"/>
     </resources>
 </document>

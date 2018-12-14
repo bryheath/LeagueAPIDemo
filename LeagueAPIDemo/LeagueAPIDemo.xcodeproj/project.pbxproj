@@ -16,7 +16,8 @@
 		9784184421C3EB6B005AE126 /* RequestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784184321C3EB6B005AE126 /* RequestListViewController.swift */; };
 		9784184821C3F3A0005AE126 /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784184721C3F3A0005AE126 /* RequestTableViewCell.swift */; };
 		9784184B21C3F715005AE126 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784184A21C3F715005AE126 /* Request.swift */; };
-		9784184E21C3FF29005AE126 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784184D21C3FF29005AE126 /* TableViewExtension.swift */; };
+		9784185021C40A09005AE126 /* SummonerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784184F21C40A09005AE126 /* SummonerViewController.swift */; };
+		9784185221C412A4005AE126 /* LeagueAPIDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784185121C412A4005AE126 /* LeagueAPIDemo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,7 +45,8 @@
 		9784184321C3EB6B005AE126 /* RequestListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestListViewController.swift; sourceTree = "<group>"; };
 		9784184721C3F3A0005AE126 /* RequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
 		9784184A21C3F715005AE126 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		9784184D21C3FF29005AE126 /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
+		9784184F21C40A09005AE126 /* SummonerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerViewController.swift; sourceTree = "<group>"; };
+		9784185121C412A4005AE126 /* LeagueAPIDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueAPIDemo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				9784184921C3F6CB005AE126 /* Models */,
 				9784184521C3F366005AE126 /* UIElements */,
 				556257D0219B2AD10089398D /* AppDelegate.swift */,
+				9784185121C412A4005AE126 /* LeagueAPIDemo.swift */,
 				556257D4219B2AD10089398D /* Main.storyboard */,
 				556257D9219B2AD20089398D /* LaunchScreen.storyboard */,
 				556257DC219B2AD20089398D /* Info.plist */,
@@ -103,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				9784184321C3EB6B005AE126 /* RequestListViewController.swift */,
+				9784184F21C40A09005AE126 /* SummonerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -111,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				9784184621C3F376005AE126 /* UICells */,
-				9784184D21C3FF29005AE126 /* TableViewExtension.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -204,11 +207,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9784185221C412A4005AE126 /* LeagueAPIDemo.swift in Sources */,
+				9784185021C40A09005AE126 /* SummonerViewController.swift in Sources */,
 				9784184421C3EB6B005AE126 /* RequestListViewController.swift in Sources */,
 				9784184B21C3F715005AE126 /* Request.swift in Sources */,
 				556257D1219B2AD10089398D /* AppDelegate.swift in Sources */,
 				9784184821C3F3A0005AE126 /* RequestTableViewCell.swift in Sources */,
-				9784184E21C3FF29005AE126 /* TableViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +275,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -332,6 +337,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -357,7 +363,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26WDH86H37;
 				FRAMEWORK_SEARCH_PATHS = (
-					../Carthage/Build/iOS/,
+					../Carthage/Build/iOS,
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = LeagueAPIDemo/Info.plist;
@@ -379,7 +385,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26WDH86H37;
 				FRAMEWORK_SEARCH_PATHS = (
-					../Carthage/Build/iOS/,
+					../Carthage/Build/iOS,
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = LeagueAPIDemo/Info.plist;

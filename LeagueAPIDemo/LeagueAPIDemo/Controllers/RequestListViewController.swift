@@ -30,11 +30,6 @@ class RequestListViewController: UIViewController {
         super.viewDidLoad()
 
     }
-    
-    // MARK: - Navigation
- 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    }
 }
 
 extension RequestListViewController: UITableViewDataSource {
