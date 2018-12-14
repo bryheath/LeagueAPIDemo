@@ -29,7 +29,18 @@ class SummonerViewController: UIViewController {
     // MARK: - UI
     
     func updateUI(for summoner: Summoner) {
-        self.summonerProfileIcon.image = su
+        self.summonerName.setText(summoner.name)
+        self.summonerLevel.setText("Level \(summoner.level)")
+        league.getProfileIcon(by: summoner.iconId) { (profileIcon, errorMsg) in
+            if let profileIcon = profileIcon {
+                profileIcon.profileIcon.getImage() { (image, error) in
+                    self.summonerProfileIcon.image = image
+                }
+            }
+            else {
+                print("Request failed cause: \(errorMsg ?? "No error description")")
+            }
+        }
     }
     
     // MARK: - Functions
@@ -37,7 +48,7 @@ class SummonerViewController: UIViewController {
     func getInfo(of summonerName: String) {
         league.riotAPI.getSummoner(byName: summonerName, on: preferedRegion) { (summoner, errorMsg) in
             if let summoner = summoner {
-                
+                self.updateUI(for: summoner)
             }
             else {
                 print("Request failed cause: \(errorMsg ?? "No error description")")
