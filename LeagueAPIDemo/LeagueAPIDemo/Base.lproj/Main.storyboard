@@ -118,19 +118,19 @@
                                 </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OW2-4C-E4n" userLabel="Icone">
-                                <rect key="frame" x="0.0" y="94" width="187.5" height="187.5"/>
+                                <rect key="frame" x="10" y="94" width="187.5" height="187.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OW2-4C-E4n" secondAttribute="height" multiplier="1:1" id="JMf-g5-nU2"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summoner name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lI1-DO-fnI">
-                                <rect key="frame" x="187.5" y="109" width="187.5" height="24"/>
+                                <rect key="frame" x="197.5" y="109" width="177.5" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level 107" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgo-Nn-Tfl">
-                                <rect key="frame" x="187.5" y="133" width="187.5" height="20"/>
+                                <rect key="frame" x="197.5" y="133" width="177.5" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="lv8-6E-gVx"/>
                                 </constraints>
@@ -148,7 +148,7 @@
                             <constraint firstItem="cdn-4R-bAh" firstAttribute="leading" secondItem="acK-pX-J6h" secondAttribute="leading" id="QD7-dJ-A0h"/>
                             <constraint firstItem="cdn-4R-bAh" firstAttribute="bottom" secondItem="BvK-eo-zXw" secondAttribute="bottom" id="VSG-GC-C90"/>
                             <constraint firstItem="xxz-uH-t7m" firstAttribute="top" secondItem="acK-pX-J6h" secondAttribute="top" id="Voa-oo-t41"/>
-                            <constraint firstItem="OW2-4C-E4n" firstAttribute="leading" secondItem="acK-pX-J6h" secondAttribute="leading" id="XtQ-wV-KGq"/>
+                            <constraint firstItem="OW2-4C-E4n" firstAttribute="leading" secondItem="acK-pX-J6h" secondAttribute="leading" constant="10" id="XtQ-wV-KGq"/>
                             <constraint firstItem="xxz-uH-t7m" firstAttribute="leading" secondItem="acK-pX-J6h" secondAttribute="leading" id="dsP-u4-C8V"/>
                             <constraint firstItem="lI1-DO-fnI" firstAttribute="top" secondItem="xxz-uH-t7m" secondAttribute="bottom" constant="15" id="ecl-Be-iOd"/>
                             <constraint firstItem="lI1-DO-fnI" firstAttribute="leading" secondItem="OW2-4C-E4n" secondAttribute="trailing" id="f3P-Nb-sKo"/>

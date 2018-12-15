@@ -14,6 +14,7 @@
 		55B42C0D21C426C600531940 /* LeagueAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B42C0A21C426C600531940 /* LeagueAPI.framework */; };
 		55B42C0E21C426C600531940 /* LeagueAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55B42C0A21C426C600531940 /* LeagueAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55B42C1021C4289000531940 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B42C0F21C4289000531940 /* UILabelExtension.swift */; };
+		55BD9B4621C5357900EC155D /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD9B4521C5357900EC155D /* UIImageViewExtension.swift */; };
 		9784184421C3EB6B005AE126 /* RequestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784184321C3EB6B005AE126 /* RequestListViewController.swift */; };
 		9784184821C3F3A0005AE126 /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784184721C3F3A0005AE126 /* RequestTableViewCell.swift */; };
 		9784184B21C3F715005AE126 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784184A21C3F715005AE126 /* Request.swift */; };
@@ -44,6 +45,7 @@
 		556257E2219B4B430089398D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55B42C0A21C426C600531940 /* LeagueAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LeagueAPI.framework; path = Carthage/Build/iOS/LeagueAPI.framework; sourceTree = "<group>"; };
 		55B42C0F21C4289000531940 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		55BD9B4521C5357900EC155D /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		9784184321C3EB6B005AE126 /* RequestListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestListViewController.swift; sourceTree = "<group>"; };
 		9784184721C3F3A0005AE126 /* RequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
 		9784184A21C3F715005AE126 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				9784184621C3F376005AE126 /* UICells */,
 				55B42C0F21C4289000531940 /* UILabelExtension.swift */,
+				55BD9B4521C5357900EC155D /* UIImageViewExtension.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				9784184B21C3F715005AE126 /* Request.swift in Sources */,
 				55B42C1021C4289000531940 /* UILabelExtension.swift in Sources */,
 				556257D1219B2AD10089398D /* AppDelegate.swift in Sources */,
+				55BD9B4621C5357900EC155D /* UIImageViewExtension.swift in Sources */,
 				9784184821C3F3A0005AE126 /* RequestTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

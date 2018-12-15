@@ -23,7 +23,8 @@ class SummonerViewController: UIViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.summonerName.text = nil
+        self.summonerLevel.text = nil
     }
     
     // MARK: - UI
@@ -34,7 +35,7 @@ class SummonerViewController: UIViewController {
         league.getProfileIcon(by: summoner.iconId) { (profileIcon, errorMsg) in
             if let profileIcon = profileIcon {
                 profileIcon.profileIcon.getImage() { (image, error) in
-                    self.summonerProfileIcon.image = image
+                    self.summonerProfileIcon.setImage(image)
                 }
             }
             else {
