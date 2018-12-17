@@ -90,10 +90,69 @@
                     <connections>
                         <outlet property="requestTableView" destination="SaD-GV-bHD" id="Y1m-Qq-1NU"/>
                         <segue destination="BPs-mZ-oRd" kind="show" identifier="SummonerByNameRequest" id="5Uy-C9-fLv"/>
+                        <segue destination="Oyu-0H-2ze" kind="show" identifier="FeaturedGamesRequest" id="dhz-WB-hyL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Featured Games View Controller-->
+        <scene sceneID="rX2-tr-dk5">
+            <objects>
+                <viewController id="Oyu-0H-2ze" customClass="FeaturedGamesViewController" customModule="LeagueAPIDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O3P-s2-188">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E1F-cT-fzg">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="gameCell" id="kx3-Lp-deA" customClass="GameTableViewCell" customModule="LeagueAPIDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kx3-Lp-deA" id="PhB-5s-fM0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bard_bard" translatesAutoresizingMaskIntoConstraints="NO" id="hYe-vi-Eb1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hYe-vi-Eb1" firstAttribute="top" secondItem="PhB-5s-fM0" secondAttribute="top" id="2ZW-Ci-oqe"/>
+                                                <constraint firstItem="hYe-vi-Eb1" firstAttribute="leading" secondItem="PhB-5s-fM0" secondAttribute="leading" id="6Qa-TY-Uhm"/>
+                                                <constraint firstItem="hYe-vi-Eb1" firstAttribute="trailing" secondItem="PhB-5s-fM0" secondAttribute="trailing" id="bRX-XT-ZOo"/>
+                                                <constraint firstItem="hYe-vi-Eb1" firstAttribute="bottom" secondItem="PhB-5s-fM0" secondAttribute="bottom" id="h2b-pm-Ts2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="backgroundImage" destination="hYe-vi-Eb1" id="MGd-5b-P7a"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Oyu-0H-2ze" id="njT-tC-B2O"/>
+                                    <outlet property="delegate" destination="Oyu-0H-2ze" id="gQZ-P0-toW"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="E1F-cT-fzg" firstAttribute="top" secondItem="DQl-ED-KJh" secondAttribute="top" id="YPm-j1-e2f"/>
+                            <constraint firstItem="E1F-cT-fzg" firstAttribute="trailing" secondItem="DQl-ED-KJh" secondAttribute="trailing" id="cr8-F5-8M6"/>
+                            <constraint firstItem="E1F-cT-fzg" firstAttribute="leading" secondItem="DQl-ED-KJh" secondAttribute="leading" id="hzk-44-NhR"/>
+                            <constraint firstItem="E1F-cT-fzg" firstAttribute="bottom" secondItem="O3P-s2-188" secondAttribute="bottom" id="t8N-Ew-ooQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DQl-ED-KJh"/>
+                    </view>
+                    <connections>
+                        <outlet property="featuredGamesTableView" destination="E1F-cT-fzg" id="suq-6s-1uD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RYn-KO-iPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1628" y="-658"/>
         </scene>
         <!--Summoner View Controller-->
         <scene sceneID="jLn-cQ-q1z">
@@ -108,9 +167,9 @@
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a summoner name" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xxz-uH-t7m">
                                 <rect key="frame" x="0.0" y="64" width="375" height="30"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.79914918664383561" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                 <connections>
@@ -170,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1iW-6v-1dk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1454" y="27"/>
+            <point key="canvasLocation" x="1628" y="27"/>
         </scene>
     </scenes>
     <resources>

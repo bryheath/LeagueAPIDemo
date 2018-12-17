@@ -11,25 +11,28 @@
 		556257D6219B2AD10089398D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556257D4219B2AD10089398D /* Main.storyboard */; };
 		556257DB219B2AD20089398D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556257D9219B2AD20089398D /* LaunchScreen.storyboard */; };
 		556257E3219B4B430089398D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 556257E2219B4B430089398D /* Assets.xcassets */; };
-		55B42C0D21C426C600531940 /* LeagueAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B42C0A21C426C600531940 /* LeagueAPI.framework */; };
-		55B42C0E21C426C600531940 /* LeagueAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55B42C0A21C426C600531940 /* LeagueAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55B42C1021C4289000531940 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B42C0F21C4289000531940 /* UILabelExtension.swift */; };
 		55BD9B4621C5357900EC155D /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD9B4521C5357900EC155D /* UIImageViewExtension.swift */; };
+		9716A95921C798E0002A18D2 /* FeaturedGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9716A95821C798E0002A18D2 /* FeaturedGamesViewController.swift */; };
+		9716A95B21C79EC4002A18D2 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9716A95A21C79EC4002A18D2 /* GameTableViewCell.swift */; };
 		9784184421C3EB6B005AE126 /* RequestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784184321C3EB6B005AE126 /* RequestListViewController.swift */; };
 		9784184821C3F3A0005AE126 /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784184721C3F3A0005AE126 /* RequestTableViewCell.swift */; };
 		9784184B21C3F715005AE126 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784184A21C3F715005AE126 /* Request.swift */; };
 		9784185021C40A09005AE126 /* SummonerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784184F21C40A09005AE126 /* SummonerViewController.swift */; };
 		9784185221C412A4005AE126 /* LeagueAPIDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784185121C412A4005AE126 /* LeagueAPIDemo.swift */; };
+		97C604E521C7A86200F52546 /* LeagueAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97C604E421C7A86200F52546 /* LeagueAPI.framework */; };
+		97C604E621C7A86200F52546 /* LeagueAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97C604E421C7A86200F52546 /* LeagueAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		97C604E921C7A91D00F52546 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C604E821C7A91D00F52546 /* UITableViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		556257E7219B56AE0089398D /* Embed Frameworks */ = {
+		97C604E721C7A86200F52546 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				55B42C0E21C426C600531940 /* LeagueAPI.framework in Embed Frameworks */,
+				97C604E621C7A86200F52546 /* LeagueAPI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,11 +49,15 @@
 		55B42C0A21C426C600531940 /* LeagueAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LeagueAPI.framework; path = Carthage/Build/iOS/LeagueAPI.framework; sourceTree = "<group>"; };
 		55B42C0F21C4289000531940 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		55BD9B4521C5357900EC155D /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		9716A95821C798E0002A18D2 /* FeaturedGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedGamesViewController.swift; sourceTree = "<group>"; };
+		9716A95A21C79EC4002A18D2 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		9784184321C3EB6B005AE126 /* RequestListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestListViewController.swift; sourceTree = "<group>"; };
 		9784184721C3F3A0005AE126 /* RequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
 		9784184A21C3F715005AE126 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		9784184F21C40A09005AE126 /* SummonerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerViewController.swift; sourceTree = "<group>"; };
 		9784185121C412A4005AE126 /* LeagueAPIDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueAPIDemo.swift; sourceTree = "<group>"; };
+		97C604E421C7A86200F52546 /* LeagueAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LeagueAPI.framework; path = Carthage/Build/iOS/LeagueAPI.framework; sourceTree = "<group>"; };
+		97C604E821C7A91D00F52546 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55B42C0D21C426C600531940 /* LeagueAPI.framework in Frameworks */,
+				97C604E521C7A86200F52546 /* LeagueAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +83,7 @@
 		556257C4219B2AD10089398D = {
 			isa = PBXGroup;
 			children = (
+				97C604E421C7A86200F52546 /* LeagueAPI.framework */,
 				556257CF219B2AD10089398D /* LeagueAPIDemo */,
 				556257CE219B2AD10089398D /* Products */,
 				55474D7921AC220E00A52488 /* Frameworks */,
@@ -110,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				9784184321C3EB6B005AE126 /* RequestListViewController.swift */,
+				9716A95821C798E0002A18D2 /* FeaturedGamesViewController.swift */,
 				9784184F21C40A09005AE126 /* SummonerViewController.swift */,
 			);
 			path = Controllers;
@@ -121,6 +130,7 @@
 				9784184621C3F376005AE126 /* UICells */,
 				55B42C0F21C4289000531940 /* UILabelExtension.swift */,
 				55BD9B4521C5357900EC155D /* UIImageViewExtension.swift */,
+				97C604E821C7A91D00F52546 /* UITableViewExtension.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -129,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				9784184721C3F3A0005AE126 /* RequestTableViewCell.swift */,
+				9716A95A21C79EC4002A18D2 /* GameTableViewCell.swift */,
 			);
 			path = UICells;
 			sourceTree = "<group>";
@@ -151,7 +162,7 @@
 				556257C9219B2AD10089398D /* Sources */,
 				556257CA219B2AD10089398D /* Frameworks */,
 				556257CB219B2AD10089398D /* Resources */,
-				556257E7219B56AE0089398D /* Embed Frameworks */,
+				97C604E721C7A86200F52546 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,10 +224,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9716A95921C798E0002A18D2 /* FeaturedGamesViewController.swift in Sources */,
 				9784185221C412A4005AE126 /* LeagueAPIDemo.swift in Sources */,
 				9784185021C40A09005AE126 /* SummonerViewController.swift in Sources */,
 				9784184421C3EB6B005AE126 /* RequestListViewController.swift in Sources */,
 				9784184B21C3F715005AE126 /* Request.swift in Sources */,
+				97C604E921C7A91D00F52546 /* UITableViewExtension.swift in Sources */,
+				9716A95B21C79EC4002A18D2 /* GameTableViewCell.swift in Sources */,
 				55B42C1021C4289000531940 /* UILabelExtension.swift in Sources */,
 				556257D1219B2AD10089398D /* AppDelegate.swift in Sources */,
 				55BD9B4621C5357900EC155D /* UIImageViewExtension.swift in Sources */,
