@@ -21,6 +21,7 @@ class RequestListViewController: UIViewController {
         Request(.SummonerByName, image: #imageLiteral(resourceName: "ryze_splash")),
         Request(.LiveGame , image: #imageLiteral(resourceName: "lucian_project")),
         Request(.MatchHistory, image: #imageLiteral(resourceName: "garen_splash")),
+        Request(.ChampionRotation, image: #imageLiteral(resourceName: "bard_bard")),
         Request(.ChampionInfo , image: #imageLiteral(resourceName: "arcade_ahri"))
     ]
     
