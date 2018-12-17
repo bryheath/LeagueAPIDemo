@@ -56,6 +56,17 @@ class FeaturedGamesViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC = segue.destination as? GameViewController {
+            self.prepareGameVC(destinationVC, sender: sender)
+        }
+    }
+    
+    func prepareGameVC(_ gameController: GameViewController, sender: Any?) {
+        guard let gameInfo = sender as? GameInfo else {
+            print("GameViewController sender is not GameInfo type")
+            return
+        }
+        gameController.game = gameInfo
     }
 }
 

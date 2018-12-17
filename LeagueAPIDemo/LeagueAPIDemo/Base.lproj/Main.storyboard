@@ -148,6 +148,7 @@
                     </view>
                     <connections>
                         <outlet property="featuredGamesTableView" destination="E1F-cT-fzg" id="suq-6s-1uD"/>
+                        <segue destination="HZ7-sE-iOp" kind="show" identifier="showGame" id="Xx2-co-Bsb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RYn-KO-iPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -230,6 +231,174 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1iW-6v-1dk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1628" y="27"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="1bL-sp-wjy">
+            <objects>
+                <viewController id="HZ7-sE-iOp" customClass="GameViewController" customModule="LeagueAPIDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Mg-WJ-6Hg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8EB-LI-evs">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="banCell" id="C2I-Un-6bI" customClass="BanTableViewCell" customModule="LeagueAPIDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C2I-Un-6bI" id="tvv-Vd-ZOE">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NHY-Ug-Iwz" userLabel="ChampionSquare1">
+                                                    <rect key="frame" x="8" y="8" width="53.5" height="53.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="NHY-Ug-Iwz" secondAttribute="height" multiplier="1:1" id="cZH-LI-fSc"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ma8-Gz-Tup" userLabel="ChampionSquare2">
+                                                    <rect key="frame" x="69.5" y="8" width="53.5" height="53.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Ma8-Gz-Tup" secondAttribute="height" multiplier="1:1" id="sg8-hm-ZQu"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7xl-ka-H9Q" userLabel="ChampionSquare4">
+                                                    <rect key="frame" x="192.5" y="8" width="53.5" height="53.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="7xl-ka-H9Q" secondAttribute="height" multiplier="1:1" id="6qA-Yh-rWz"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Awt-IZ-IV9" userLabel="ChampionSquare5">
+                                                    <rect key="frame" x="254" y="8" width="53.5" height="53.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Awt-IZ-IV9" secondAttribute="height" multiplier="1:1" id="Yj7-kM-q1T"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rjf-nv-PGC" userLabel="ChampionSquare3">
+                                                    <rect key="frame" x="131" y="8" width="53.5" height="53.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Rjf-nv-PGC" secondAttribute="height" multiplier="1:1" id="4Ch-SJ-aT4"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Awt-IZ-IV9" firstAttribute="top" secondItem="NHY-Ug-Iwz" secondAttribute="top" id="26a-Ni-efp"/>
+                                                <constraint firstItem="7xl-ka-H9Q" firstAttribute="bottom" secondItem="NHY-Ug-Iwz" secondAttribute="bottom" id="7l6-18-vFZ"/>
+                                                <constraint firstItem="Rjf-nv-PGC" firstAttribute="top" secondItem="NHY-Ug-Iwz" secondAttribute="top" id="Dya-jA-uIO"/>
+                                                <constraint firstItem="Awt-IZ-IV9" firstAttribute="bottom" secondItem="NHY-Ug-Iwz" secondAttribute="bottom" id="FtE-qw-Xej"/>
+                                                <constraint firstItem="NHY-Ug-Iwz" firstAttribute="top" secondItem="tvv-Vd-ZOE" secondAttribute="top" constant="8" id="Mfv-G3-odM"/>
+                                                <constraint firstItem="Rjf-nv-PGC" firstAttribute="leading" secondItem="Ma8-Gz-Tup" secondAttribute="trailing" constant="8" id="TYW-8J-hX8"/>
+                                                <constraint firstItem="7xl-ka-H9Q" firstAttribute="top" secondItem="NHY-Ug-Iwz" secondAttribute="top" id="YDc-Je-TgP"/>
+                                                <constraint firstItem="Ma8-Gz-Tup" firstAttribute="top" secondItem="NHY-Ug-Iwz" secondAttribute="top" id="Yao-Dh-F5E"/>
+                                                <constraint firstItem="Ma8-Gz-Tup" firstAttribute="leading" secondItem="NHY-Ug-Iwz" secondAttribute="trailing" constant="8" id="hb6-J5-qFV"/>
+                                                <constraint firstItem="Awt-IZ-IV9" firstAttribute="leading" secondItem="7xl-ka-H9Q" secondAttribute="trailing" constant="8" id="idB-V2-CpU"/>
+                                                <constraint firstItem="7xl-ka-H9Q" firstAttribute="leading" secondItem="Rjf-nv-PGC" secondAttribute="trailing" constant="8" id="lbP-tn-BOz"/>
+                                                <constraint firstItem="Ma8-Gz-Tup" firstAttribute="bottom" secondItem="NHY-Ug-Iwz" secondAttribute="bottom" id="mJn-DB-ibQ"/>
+                                                <constraint firstItem="NHY-Ug-Iwz" firstAttribute="bottom" secondItem="tvv-Vd-ZOE" secondAttribute="bottom" constant="-8" id="p6r-l2-zxi"/>
+                                                <constraint firstItem="NHY-Ug-Iwz" firstAttribute="leading" secondItem="tvv-Vd-ZOE" secondAttribute="leading" constant="8" id="uoM-WB-MbV"/>
+                                                <constraint firstItem="Rjf-nv-PGC" firstAttribute="bottom" secondItem="NHY-Ug-Iwz" secondAttribute="bottom" id="vxn-8t-LOJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="banChampionSquare1" destination="NHY-Ug-Iwz" id="lxh-j1-mwG"/>
+                                            <outlet property="banChampionSquare2" destination="Ma8-Gz-Tup" id="v5s-f2-hwC"/>
+                                            <outlet property="banChampionSquare3" destination="Rjf-nv-PGC" id="DCh-IH-s5P"/>
+                                            <outlet property="banChampionSquare4" destination="7xl-ka-H9Q" id="cmq-WN-t57"/>
+                                            <outlet property="banChampionSquare5" destination="Awt-IZ-IV9" id="aEn-jn-Lcq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="playerCell" id="2zK-99-Ljy" customClass="PlayerTableViewCell" customModule="LeagueAPIDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="98" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2zK-99-Ljy" id="m8e-m8-hSn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IeM-YV-MEd" userLabel="ChampionSquare">
+                                                    <rect key="frame" x="8" y="8" width="53.5" height="53.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="IeM-YV-MEd" secondAttribute="height" multiplier="1:1" id="H7Z-FX-mVd"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dGq-Z1-vfJ" userLabel="SummonerSquare">
+                                                    <rect key="frame" x="69.5" y="8" width="53.5" height="53.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="dGq-Z1-vfJ" secondAttribute="height" multiplier="1:1" id="YDq-yr-jxF"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8k5-tM-ieq" userLabel="RankSquare">
+                                                    <rect key="frame" x="131" y="8" width="53.5" height="53.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="8k5-tM-ieq" secondAttribute="height" multiplier="1:1" id="Z27-GB-xAq"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1t-dC-cyl" userLabel="SummonerName">
+                                                    <rect key="frame" x="192.5" y="8" width="174.5" height="37.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mastery level: 7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ItE-7G-aRd" userLabel="ChampionMastery">
+                                                    <rect key="frame" x="192.5" y="45.5" width="174.5" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="8xd-Tp-GYZ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8k5-tM-ieq" firstAttribute="top" secondItem="IeM-YV-MEd" secondAttribute="top" id="0qZ-ps-Rbk"/>
+                                                <constraint firstItem="IeM-YV-MEd" firstAttribute="top" secondItem="m8e-m8-hSn" secondAttribute="top" constant="8" id="2z0-4l-KCu"/>
+                                                <constraint firstItem="8k5-tM-ieq" firstAttribute="leading" secondItem="dGq-Z1-vfJ" secondAttribute="trailing" constant="8" id="4f3-Oh-1fd"/>
+                                                <constraint firstItem="ItE-7G-aRd" firstAttribute="trailing" secondItem="e1t-dC-cyl" secondAttribute="trailing" id="DQu-Xg-bE0"/>
+                                                <constraint firstAttribute="trailing" secondItem="e1t-dC-cyl" secondAttribute="trailing" constant="8" id="HbW-pN-LcR"/>
+                                                <constraint firstItem="dGq-Z1-vfJ" firstAttribute="top" secondItem="IeM-YV-MEd" secondAttribute="top" id="KbX-dz-CYQ"/>
+                                                <constraint firstItem="ItE-7G-aRd" firstAttribute="bottom" secondItem="IeM-YV-MEd" secondAttribute="bottom" id="MwT-bt-orM"/>
+                                                <constraint firstItem="dGq-Z1-vfJ" firstAttribute="leading" secondItem="IeM-YV-MEd" secondAttribute="trailing" constant="8" id="V6a-Yj-2fU"/>
+                                                <constraint firstItem="e1t-dC-cyl" firstAttribute="leading" secondItem="8k5-tM-ieq" secondAttribute="trailing" constant="8" id="WTK-Lt-h6G"/>
+                                                <constraint firstItem="e1t-dC-cyl" firstAttribute="top" secondItem="IeM-YV-MEd" secondAttribute="top" id="XAT-NO-KkS"/>
+                                                <constraint firstItem="dGq-Z1-vfJ" firstAttribute="bottom" secondItem="IeM-YV-MEd" secondAttribute="bottom" id="cUx-nn-biY"/>
+                                                <constraint firstItem="IeM-YV-MEd" firstAttribute="leading" secondItem="m8e-m8-hSn" secondAttribute="leading" constant="8" id="gXZ-XW-W1u"/>
+                                                <constraint firstItem="ItE-7G-aRd" firstAttribute="leading" secondItem="e1t-dC-cyl" secondAttribute="leading" id="pA2-um-yL2"/>
+                                                <constraint firstItem="ItE-7G-aRd" firstAttribute="top" secondItem="e1t-dC-cyl" secondAttribute="bottom" id="pne-MM-cRX"/>
+                                                <constraint firstItem="8k5-tM-ieq" firstAttribute="bottom" secondItem="IeM-YV-MEd" secondAttribute="bottom" id="q0n-Uv-z7c"/>
+                                                <constraint firstAttribute="bottom" secondItem="IeM-YV-MEd" secondAttribute="bottom" constant="8" id="yuY-I2-wT7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="championSquare" destination="IeM-YV-MEd" id="1q4-5r-7kA"/>
+                                            <outlet property="masteryLabel" destination="ItE-7G-aRd" id="YK9-gI-20J"/>
+                                            <outlet property="rankedSquare" destination="8k5-tM-ieq" id="16y-bB-548"/>
+                                            <outlet property="summonerName" destination="e1t-dC-cyl" id="YJ5-Z0-PJq"/>
+                                            <outlet property="summonerSquare" destination="dGq-Z1-vfJ" id="f8R-Wl-CEy"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="HZ7-sE-iOp" id="5d2-Hw-IMt"/>
+                                    <outlet property="delegate" destination="HZ7-sE-iOp" id="KoF-fh-UA0"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8EB-LI-evs" firstAttribute="bottom" secondItem="lLz-U2-tUc" secondAttribute="bottom" id="Omc-4x-Gpg"/>
+                            <constraint firstItem="8EB-LI-evs" firstAttribute="top" secondItem="lLz-U2-tUc" secondAttribute="top" id="Pcc-oE-YwI"/>
+                            <constraint firstItem="8EB-LI-evs" firstAttribute="leading" secondItem="lLz-U2-tUc" secondAttribute="leading" id="Vbm-E6-olz"/>
+                            <constraint firstItem="8EB-LI-evs" firstAttribute="trailing" secondItem="lLz-U2-tUc" secondAttribute="trailing" id="Ybh-3o-VA8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lLz-U2-tUc"/>
+                    </view>
+                    <connections>
+                        <outlet property="gameTableView" destination="8EB-LI-evs" id="gDh-1q-sWk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n6I-K6-R4P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2654" y="27"/>
         </scene>
     </scenes>
     <resources>
