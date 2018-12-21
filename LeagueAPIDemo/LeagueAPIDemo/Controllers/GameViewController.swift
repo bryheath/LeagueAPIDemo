@@ -106,6 +106,15 @@ class GameViewController: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC = segue.destination as? SummonerViewController {
+            self.setupSummonerVC(destinationVC, sender: sender)
+        }
+    }
+    
+    func setupSummonerVC(_ summonerVC: SummonerViewController, sender: Any?) {
+        if let participant = sender as? Participant {
+            summonerVC.summonerNameParameter = participant.summonerName
+        }
     }
 }
 
@@ -206,6 +215,7 @@ extension GameViewController: UITableViewDataSource {
 extension GameViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         guard indexPath.section > 0 else { return }
         let participantAtIndex: Participant = self.participant(at: indexPath)
         self.performSegue(withIdentifier: "showParticipant", sender: participantAtIndex)

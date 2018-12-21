@@ -53,9 +53,29 @@ class ChampionRotationViewController: UIViewController {
         }
     }
     
+    func getChampionDetail(championId: ChampionId, completion: @escaping (ChampionDetails) -> Void) {
+        league.getChampionDetails(by: championId) { (champion, errorMsg) in
+            if let champion = champion {
+                completion(champion)
+            }
+            else {
+                print("Request failed cause: \(errorMsg ?? "No error description")")
+            }
+        }
+    }
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC = segue.destination as? ChampionViewController {
+            self.setupChampionVC(destinationVC, sender: sender)
+        }
+    }
+    
+    func setupChampionVC(_ championVC: ChampionViewController, sender: Any?) {
+        if let championId = sender as? ChampionId {
+            championVC.championIdParameter = championId
+        }
     }
 }
 
@@ -72,14 +92,9 @@ extension ChampionRotationViewController: UITableViewDataSource {
     
     func setupChampionCell(for championId: ChampionId) -> ChampionTableViewCell {
         let newCell: ChampionTableViewCell = self.championRotationTableView.dequeueReusableCell(withIdentifier: "championCell") as! ChampionTableViewCell
-        league.getChampionDetails(by: championId) { (champion, errorMsg) in
-            if let champion = champion {
-                newCell.championName.setText(champion.name)
-                newCell.championTitle.setText(champion.title)
-            }
-            else {
-                print("Request failed cause: \(errorMsg ?? "No error description")")
-            }
+        self.getChampionDetail(championId: championId) { championDetais in
+            newCell.championName.setText(championDetais.name)
+            newCell.championTitle.setText(championDetais.title)
         }
         self.getChampionImage(championId: championId) { image in
             newCell.championSquare.setImage(image)
@@ -91,6 +106,7 @@ extension ChampionRotationViewController: UITableViewDataSource {
 extension ChampionRotationViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         let championIdAtIndex: ChampionId = self.championRotation[indexPath.row]
         self.performSegue(withIdentifier: "showChampion", sender: championIdAtIndex)
     }

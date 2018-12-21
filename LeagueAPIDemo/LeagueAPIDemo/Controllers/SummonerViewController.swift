@@ -20,11 +20,21 @@ class SummonerViewController: UIViewController {
     
     // MARK: - Variables
     
+    public var summonerNameParameter: String?
+    
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.summonerName.text = nil
         self.summonerLevel.text = nil
+        self.applySummonerNameParameter()
+    }
+    
+    // MARK: - Setup
+    
+    func applySummonerNameParameter() {
+        guard let summonerName = self.summonerNameParameter else { return }
+        self.getInfo(of: summonerName)
     }
     
     // MARK: - UI
