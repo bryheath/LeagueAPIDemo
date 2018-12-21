@@ -27,6 +27,8 @@
 		97C604ED21C7B12800F52546 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C604EC21C7B12800F52546 /* GameViewController.swift */; };
 		97C604EF21C7BB3300F52546 /* BanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C604EE21C7BB3300F52546 /* BanTableViewCell.swift */; };
 		97C604F221C7C04700F52546 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C604F121C7C04700F52546 /* ArrayExtension.swift */; };
+		97C604F421C7C56800F52546 /* ChampionRotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C604F321C7C56800F52546 /* ChampionRotationViewController.swift */; };
+		97C604F621C7C5A200F52546 /* ChampionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C604F521C7C5A200F52546 /* ChampionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -66,6 +68,8 @@
 		97C604EC21C7B12800F52546 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		97C604EE21C7BB3300F52546 /* BanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanTableViewCell.swift; sourceTree = "<group>"; };
 		97C604F121C7C04700F52546 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		97C604F321C7C56800F52546 /* ChampionRotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionRotationViewController.swift; sourceTree = "<group>"; };
+		97C604F521C7C5A200F52546 /* ChampionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,7 @@
 				9716A95821C798E0002A18D2 /* FeaturedGamesViewController.swift */,
 				9784184F21C40A09005AE126 /* SummonerViewController.swift */,
 				97C604EC21C7B12800F52546 /* GameViewController.swift */,
+				97C604F321C7C56800F52546 /* ChampionRotationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 				9716A95A21C79EC4002A18D2 /* GameTableViewCell.swift */,
 				97C604EA21C7B00800F52546 /* PlayerTableViewCell.swift */,
 				97C604EE21C7BB3300F52546 /* BanTableViewCell.swift */,
+				97C604F521C7C5A200F52546 /* ChampionTableViewCell.swift */,
 			);
 			path = UICells;
 			sourceTree = "<group>";
@@ -248,6 +254,7 @@
 				97C604EB21C7B00800F52546 /* PlayerTableViewCell.swift in Sources */,
 				9716A95921C798E0002A18D2 /* FeaturedGamesViewController.swift in Sources */,
 				9784185221C412A4005AE126 /* LeagueAPIDemo.swift in Sources */,
+				97C604F621C7C5A200F52546 /* ChampionTableViewCell.swift in Sources */,
 				9784185021C40A09005AE126 /* SummonerViewController.swift in Sources */,
 				97C604ED21C7B12800F52546 /* GameViewController.swift in Sources */,
 				9784184421C3EB6B005AE126 /* RequestListViewController.swift in Sources */,
@@ -257,6 +264,7 @@
 				55B42C1021C4289000531940 /* UILabelExtension.swift in Sources */,
 				556257D1219B2AD10089398D /* AppDelegate.swift in Sources */,
 				97C604EF21C7BB3300F52546 /* BanTableViewCell.swift in Sources */,
+				97C604F421C7C56800F52546 /* ChampionRotationViewController.swift in Sources */,
 				55BD9B4621C5357900EC155D /* UIImageViewExtension.swift in Sources */,
 				9784184821C3F3A0005AE126 /* RequestTableViewCell.swift in Sources */,
 			);

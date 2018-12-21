@@ -91,6 +91,7 @@
                         <outlet property="requestTableView" destination="SaD-GV-bHD" id="Y1m-Qq-1NU"/>
                         <segue destination="BPs-mZ-oRd" kind="show" identifier="SummonerByNameRequest" id="5Uy-C9-fLv"/>
                         <segue destination="Oyu-0H-2ze" kind="show" identifier="FeaturedGamesRequest" id="dhz-WB-hyL"/>
+                        <segue destination="RCd-ub-al2" kind="show" identifier="ChampionRotationRequest" id="qNL-2Z-kv5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -232,6 +233,90 @@
             </objects>
             <point key="canvasLocation" x="1628" y="27"/>
         </scene>
+        <!--Champion Rotation View Controller-->
+        <scene sceneID="6Og-RM-vKM">
+            <objects>
+                <viewController id="RCd-ub-al2" customClass="ChampionRotationViewController" customModule="LeagueAPIDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R9E-UT-PJc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MIn-CN-P9F">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="championCell" id="0nO-Dr-Yko" customClass="ChampionTableViewCell" customModule="LeagueAPIDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0nO-Dr-Yko" id="Bnm-0e-240">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1ra-Cw-dyj">
+                                                    <rect key="frame" x="8" y="8" width="83.5" height="83.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="1ra-Cw-dyj" secondAttribute="height" multiplier="1:1" id="04T-sU-bg5"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ms-2e-v5c">
+                                                    <rect key="frame" x="125" y="8" width="250" height="46.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vga-QL-b2D">
+                                                    <rect key="frame" x="125" y="59.5" width="250" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="jaX-bd-S1n"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1ra-Cw-dyj" firstAttribute="top" secondItem="Bnm-0e-240" secondAttribute="top" constant="8" id="5Eb-UX-euv"/>
+                                                <constraint firstItem="2ms-2e-v5c" firstAttribute="top" secondItem="1ra-Cw-dyj" secondAttribute="top" id="BAh-qb-DRm"/>
+                                                <constraint firstItem="2ms-2e-v5c" firstAttribute="trailing" secondItem="Bnm-0e-240" secondAttribute="trailing" id="G7W-VO-uN6"/>
+                                                <constraint firstItem="vga-QL-b2D" firstAttribute="bottom" secondItem="1ra-Cw-dyj" secondAttribute="bottom" id="H3a-cW-Sai"/>
+                                                <constraint firstItem="vga-QL-b2D" firstAttribute="trailing" secondItem="2ms-2e-v5c" secondAttribute="trailing" id="NE8-qd-BRw"/>
+                                                <constraint firstItem="vga-QL-b2D" firstAttribute="top" secondItem="2ms-2e-v5c" secondAttribute="bottom" constant="5" id="UpG-qB-y07"/>
+                                                <constraint firstItem="vga-QL-b2D" firstAttribute="leading" secondItem="2ms-2e-v5c" secondAttribute="leading" id="bG3-wd-ZUn"/>
+                                                <constraint firstItem="1ra-Cw-dyj" firstAttribute="leading" secondItem="Bnm-0e-240" secondAttribute="leading" constant="8" id="d0e-yB-L2i"/>
+                                                <constraint firstItem="2ms-2e-v5c" firstAttribute="leading" secondItem="1ra-Cw-dyj" secondAttribute="trailing" constant="33.5" id="rQf-mX-8wJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="1ra-Cw-dyj" secondAttribute="bottom" constant="8" id="zKg-Rp-7bz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="championName" destination="2ms-2e-v5c" id="s0U-yY-Uyq"/>
+                                            <outlet property="championSquare" destination="1ra-Cw-dyj" id="G6O-Uj-9pB"/>
+                                            <outlet property="championTitle" destination="vga-QL-b2D" id="Hvz-Q4-Ju6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="RCd-ub-al2" id="pzy-78-RQp"/>
+                                    <outlet property="delegate" destination="RCd-ub-al2" id="wyY-gF-6PY"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Chg-Vg-h5B" firstAttribute="trailing" secondItem="MIn-CN-P9F" secondAttribute="trailing" id="Bzw-cX-A5c"/>
+                            <constraint firstItem="MIn-CN-P9F" firstAttribute="top" secondItem="Chg-Vg-h5B" secondAttribute="top" id="cP9-Iy-quF"/>
+                            <constraint firstItem="Chg-Vg-h5B" firstAttribute="bottom" secondItem="MIn-CN-P9F" secondAttribute="bottom" id="xNJ-Yo-42P"/>
+                            <constraint firstItem="MIn-CN-P9F" firstAttribute="leading" secondItem="Chg-Vg-h5B" secondAttribute="leading" id="zYR-YU-03r"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Chg-Vg-h5B"/>
+                    </view>
+                    <connections>
+                        <outlet property="championRotationTableView" destination="MIn-CN-P9F" id="uBV-es-OjF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6d0-rn-91b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1628" y="778"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="1bL-sp-wjy">
             <objects>
@@ -333,7 +418,7 @@
                                                         <constraint firstAttribute="width" secondItem="8k5-tM-ieq" secondAttribute="height" multiplier="1:1" id="Z27-GB-xAq"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1t-dC-cyl" userLabel="SummonerName">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summoner name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1t-dC-cyl" userLabel="SummonerName">
                                                     <rect key="frame" x="192.5" y="8" width="174.5" height="37.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <nil key="textColor"/>
@@ -354,7 +439,7 @@
                                                 <constraint firstItem="IeM-YV-MEd" firstAttribute="top" secondItem="m8e-m8-hSn" secondAttribute="top" constant="8" id="2z0-4l-KCu"/>
                                                 <constraint firstItem="8k5-tM-ieq" firstAttribute="leading" secondItem="dGq-Z1-vfJ" secondAttribute="trailing" constant="8" id="4f3-Oh-1fd"/>
                                                 <constraint firstItem="ItE-7G-aRd" firstAttribute="trailing" secondItem="e1t-dC-cyl" secondAttribute="trailing" id="DQu-Xg-bE0"/>
-                                                <constraint firstAttribute="trailing" secondItem="e1t-dC-cyl" secondAttribute="trailing" constant="8" id="HbW-pN-LcR"/>
+                                                <constraint firstItem="e1t-dC-cyl" firstAttribute="trailing" secondItem="m8e-m8-hSn" secondAttribute="trailing" constant="-8" id="HbW-pN-LcR"/>
                                                 <constraint firstItem="dGq-Z1-vfJ" firstAttribute="top" secondItem="IeM-YV-MEd" secondAttribute="top" id="KbX-dz-CYQ"/>
                                                 <constraint firstItem="ItE-7G-aRd" firstAttribute="bottom" secondItem="IeM-YV-MEd" secondAttribute="bottom" id="MwT-bt-orM"/>
                                                 <constraint firstItem="dGq-Z1-vfJ" firstAttribute="leading" secondItem="IeM-YV-MEd" secondAttribute="trailing" constant="8" id="V6a-Yj-2fU"/>
@@ -402,7 +487,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="1600" height="1269"/>
+        <image name="background" width="384" height="304.55999755859375"/>
         <image name="bard_bard" width="1131" height="300"/>
     </resources>
 </document>
