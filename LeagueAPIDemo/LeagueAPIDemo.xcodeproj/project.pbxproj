@@ -23,6 +23,7 @@
 		97C33CAB21CD650300AA8256 /* ChampionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C33CAA21CD650300AA8256 /* ChampionViewController.swift */; };
 		97C33CAD21CD684F00AA8256 /* SpellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C33CAC21CD684F00AA8256 /* SpellTableViewCell.swift */; };
 		97C33CAF21CD6A7F00AA8256 /* UITextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C33CAE21CD6A7F00AA8256 /* UITextViewExtension.swift */; };
+		97C33CB121CD7A0700AA8256 /* LiveGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C33CB021CD7A0700AA8256 /* LiveGameViewController.swift */; };
 		97C604E521C7A86200F52546 /* LeagueAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97C604E421C7A86200F52546 /* LeagueAPI.framework */; };
 		97C604E621C7A86200F52546 /* LeagueAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97C604E421C7A86200F52546 /* LeagueAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		97C604E921C7A91D00F52546 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C604E821C7A91D00F52546 /* UITableViewExtension.swift */; };
@@ -68,6 +69,7 @@
 		97C33CAA21CD650300AA8256 /* ChampionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionViewController.swift; sourceTree = "<group>"; };
 		97C33CAC21CD684F00AA8256 /* SpellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellTableViewCell.swift; sourceTree = "<group>"; };
 		97C33CAE21CD6A7F00AA8256 /* UITextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtension.swift; sourceTree = "<group>"; };
+		97C33CB021CD7A0700AA8256 /* LiveGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveGameViewController.swift; sourceTree = "<group>"; };
 		97C604E421C7A86200F52546 /* LeagueAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LeagueAPI.framework; path = Carthage/Build/iOS/LeagueAPI.framework; sourceTree = "<group>"; };
 		97C604E821C7A91D00F52546 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		97C604EA21C7B00800F52546 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				97C604EC21C7B12800F52546 /* GameViewController.swift */,
 				97C604F321C7C56800F52546 /* ChampionRotationViewController.swift */,
 				97C33CAA21CD650300AA8256 /* ChampionViewController.swift */,
+				97C33CB021CD7A0700AA8256 /* LiveGameViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				97C33CAB21CD650300AA8256 /* ChampionViewController.swift in Sources */,
 				9784184421C3EB6B005AE126 /* RequestListViewController.swift in Sources */,
 				9784184B21C3F715005AE126 /* Request.swift in Sources */,
+				97C33CB121CD7A0700AA8256 /* LiveGameViewController.swift in Sources */,
 				97C604E921C7A91D00F52546 /* UITableViewExtension.swift in Sources */,
 				97C33CAD21CD684F00AA8256 /* SpellTableViewCell.swift in Sources */,
 				9716A95B21C79EC4002A18D2 /* GameTableViewCell.swift in Sources */,

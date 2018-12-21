@@ -93,6 +93,7 @@
                         <segue destination="Oyu-0H-2ze" kind="show" identifier="FeaturedGamesRequest" id="dhz-WB-hyL"/>
                         <segue destination="RCd-ub-al2" kind="show" identifier="ChampionRotationRequest" id="qNL-2Z-kv5"/>
                         <segue destination="9rE-Vg-pt3" kind="show" identifier="ChampionInfoRequest" id="RYm-UD-Ju6"/>
+                        <segue destination="lgh-4q-ePF" kind="show" identifier="LiveGameRequest" id="GW2-nN-CGJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -155,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RYn-KO-iPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1628" y="-658"/>
+            <point key="canvasLocation" x="1628" y="-1014"/>
         </scene>
         <!--Summoner View Controller-->
         <scene sceneID="jLn-cQ-q1z">
@@ -232,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1iW-6v-1dk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1628" y="27"/>
+            <point key="canvasLocation" x="1628" y="-305"/>
         </scene>
         <!--Champion Rotation View Controller-->
         <scene sceneID="6Og-RM-vKM">
@@ -317,7 +318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6d0-rn-91b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1628" y="1324"/>
+            <point key="canvasLocation" x="1628" y="1785"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="1bL-sp-wjy">
@@ -618,15 +619,85 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wHg-NF-ZF7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1628" y="2059"/>
+            <point key="canvasLocation" x="1628" y="2506"/>
+        </scene>
+        <!--Live Game View Controller-->
+        <scene sceneID="55y-kX-EP3">
+            <objects>
+                <viewController id="lgh-4q-ePF" customClass="LiveGameViewController" customModule="LeagueAPIDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YqA-Fn-cyw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LiveMatchBackground" translatesAutoresizingMaskIntoConstraints="NO" id="UvC-Uf-GsZ" userLabel="BackgroundImage">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kr7-xC-ex6">
+                                <rect key="frame" x="8" y="303" width="359" height="61.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search for summoner in game" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VER-XC-nHd">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="31.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a summoner name" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8mP-W3-NcY">
+                                        <rect key="frame" x="0.0" y="31.5" width="359" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="QUz-UO-i2h"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="lgh-4q-ePF" id="1O2-Ep-bop"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="VER-XC-nHd" firstAttribute="trailing" secondItem="kr7-xC-ex6" secondAttribute="trailing" id="2hT-rr-mad"/>
+                                    <constraint firstItem="8mP-W3-NcY" firstAttribute="leading" secondItem="kr7-xC-ex6" secondAttribute="leading" id="56D-xs-2Nr"/>
+                                    <constraint firstItem="8mP-W3-NcY" firstAttribute="top" secondItem="VER-XC-nHd" secondAttribute="bottom" id="QWH-h3-QgT"/>
+                                    <constraint firstItem="8mP-W3-NcY" firstAttribute="trailing" secondItem="kr7-xC-ex6" secondAttribute="trailing" id="U9Y-gQ-7rP"/>
+                                    <constraint firstItem="VER-XC-nHd" firstAttribute="top" secondItem="kr7-xC-ex6" secondAttribute="top" id="ib5-ey-R9e"/>
+                                    <constraint firstAttribute="bottom" secondItem="8mP-W3-NcY" secondAttribute="bottom" id="oom-8T-tGj"/>
+                                    <constraint firstItem="VER-XC-nHd" firstAttribute="leading" secondItem="kr7-xC-ex6" secondAttribute="leading" id="zf2-Yx-Q58"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UvC-Uf-GsZ" firstAttribute="leading" secondItem="t32-w7-2Du" secondAttribute="leading" id="2uC-zH-AVu"/>
+                            <constraint firstItem="kr7-xC-ex6" firstAttribute="centerY" secondItem="YqA-Fn-cyw" secondAttribute="centerY" id="41Z-To-A30"/>
+                            <constraint firstItem="UvC-Uf-GsZ" firstAttribute="top" secondItem="YqA-Fn-cyw" secondAttribute="top" id="4SK-ZU-IXW"/>
+                            <constraint firstItem="t32-w7-2Du" firstAttribute="trailing" secondItem="kr7-xC-ex6" secondAttribute="trailing" constant="8" id="V68-DM-Jem"/>
+                            <constraint firstItem="UvC-Uf-GsZ" firstAttribute="bottom" secondItem="YqA-Fn-cyw" secondAttribute="bottom" id="ag2-QC-YE8"/>
+                            <constraint firstItem="UvC-Uf-GsZ" firstAttribute="trailing" secondItem="t32-w7-2Du" secondAttribute="trailing" id="kLV-HU-ffY"/>
+                            <constraint firstItem="kr7-xC-ex6" firstAttribute="leading" secondItem="t32-w7-2Du" secondAttribute="leading" constant="8" id="t3D-hD-7DG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="t32-w7-2Du"/>
+                    </view>
+                    <connections>
+                        <outlet property="textbar" destination="8mP-W3-NcY" id="Yy8-Qf-5Ez"/>
+                        <segue destination="HZ7-sE-iOp" kind="show" identifier="showGame" id="ym7-pD-fsJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UFo-wK-ZR2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1628" y="394"/>
         </scene>
     </scenes>
     <resources>
+        <image name="LiveMatchBackground" width="1920" height="1166"/>
         <image name="background" width="384" height="304.55999755859375"/>
         <image name="bard_bard" width="1131" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hLD-IQ-gfQ"/>
-        <segue reference="Ho6-K0-ltX"/>
+        <segue reference="RYm-UD-Ju6"/>
+        <segue reference="ym7-pD-fsJ"/>
+        <segue reference="5Uy-C9-fLv"/>
     </inferredMetricsTieBreakers>
 </document>
