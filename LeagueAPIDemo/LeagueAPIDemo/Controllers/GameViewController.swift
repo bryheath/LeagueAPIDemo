@@ -183,7 +183,6 @@ extension GameViewController: UITableViewDataSource {
     
     func setupBanCell(for blueTeam: Bool) -> BanTableViewCell {
         let newCell: BanTableViewCell = self.gameTableView.dequeueReusableCell(withIdentifier: "banCell") as! BanTableViewCell
-        newCell.isUserInteractionEnabled = false
         let teamBans: [BannedChampion] = blueTeam ? self.blueBans : self.redBans
         for (index, ban) in teamBans.enumerated() {
             let ban: BannedChampion = teamBans[index]

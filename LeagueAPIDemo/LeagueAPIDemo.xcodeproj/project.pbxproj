@@ -20,6 +20,8 @@
 		9784184B21C3F715005AE126 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784184A21C3F715005AE126 /* Request.swift */; };
 		9784185021C40A09005AE126 /* SummonerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784184F21C40A09005AE126 /* SummonerViewController.swift */; };
 		9784185221C412A4005AE126 /* LeagueAPIDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784185121C412A4005AE126 /* LeagueAPIDemo.swift */; };
+		97B2646A21CEC37300539121 /* ParticipantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B2646921CEC37300539121 /* ParticipantViewController.swift */; };
+		97B2646C21CECAE500539121 /* ParticipantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B2646B21CECAE500539121 /* ParticipantTableViewCell.swift */; };
 		97C33CAB21CD650300AA8256 /* ChampionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C33CAA21CD650300AA8256 /* ChampionViewController.swift */; };
 		97C33CAD21CD684F00AA8256 /* SpellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C33CAC21CD684F00AA8256 /* SpellTableViewCell.swift */; };
 		97C33CAF21CD6A7F00AA8256 /* UITextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C33CAE21CD6A7F00AA8256 /* UITextViewExtension.swift */; };
@@ -68,6 +70,8 @@
 		9784184A21C3F715005AE126 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		9784184F21C40A09005AE126 /* SummonerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerViewController.swift; sourceTree = "<group>"; };
 		9784185121C412A4005AE126 /* LeagueAPIDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueAPIDemo.swift; sourceTree = "<group>"; };
+		97B2646921CEC37300539121 /* ParticipantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantViewController.swift; sourceTree = "<group>"; };
+		97B2646B21CECAE500539121 /* ParticipantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantTableViewCell.swift; sourceTree = "<group>"; };
 		97C33CAA21CD650300AA8256 /* ChampionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionViewController.swift; sourceTree = "<group>"; };
 		97C33CAC21CD684F00AA8256 /* SpellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellTableViewCell.swift; sourceTree = "<group>"; };
 		97C33CAE21CD6A7F00AA8256 /* UITextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtension.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 				97C33CAA21CD650300AA8256 /* ChampionViewController.swift */,
 				97C33CB021CD7A0700AA8256 /* LiveGameViewController.swift */,
 				97C33CB221CE614200AA8256 /* MatchHistoryViewController.swift */,
+				97B2646921CEC37300539121 /* ParticipantViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 				97C604F521C7C5A200F52546 /* ChampionTableViewCell.swift */,
 				97C33CAC21CD684F00AA8256 /* SpellTableViewCell.swift */,
 				97C33CB421CE751200AA8256 /* MatchTableViewCell.swift */,
+				97B2646B21CECAE500539121 /* ParticipantTableViewCell.swift */,
 			);
 			path = UICells;
 			sourceTree = "<group>";
@@ -276,6 +282,7 @@
 				97C604F621C7C5A200F52546 /* ChampionTableViewCell.swift in Sources */,
 				9784185021C40A09005AE126 /* SummonerViewController.swift in Sources */,
 				97C604ED21C7B12800F52546 /* GameViewController.swift in Sources */,
+				97B2646A21CEC37300539121 /* ParticipantViewController.swift in Sources */,
 				97C33CAB21CD650300AA8256 /* ChampionViewController.swift in Sources */,
 				9784184421C3EB6B005AE126 /* RequestListViewController.swift in Sources */,
 				9784184B21C3F715005AE126 /* Request.swift in Sources */,
@@ -283,6 +290,7 @@
 				97C604E921C7A91D00F52546 /* UITableViewExtension.swift in Sources */,
 				97C33CB321CE614200AA8256 /* MatchHistoryViewController.swift in Sources */,
 				97C33CAD21CD684F00AA8256 /* SpellTableViewCell.swift in Sources */,
+				97B2646C21CECAE500539121 /* ParticipantTableViewCell.swift in Sources */,
 				9716A95B21C79EC4002A18D2 /* GameTableViewCell.swift in Sources */,
 				55B42C1021C4289000531940 /* UILabelExtension.swift in Sources */,
 				556257D1219B2AD10089398D /* AppDelegate.swift in Sources */,

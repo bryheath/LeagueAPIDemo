@@ -116,9 +116,14 @@ class MatchHistoryViewController: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationVC = segue.destination as? UIViewController {
-            
+        if let destinationVC = segue.destination as? ParticipantViewController {
+            self.setupParticipantVC(destinationVC, sender: sender)
         }
+    }
+    
+    func setupParticipantVC(_ participantVC: ParticipantViewController, sender: Any?) {
+        guard let matchDetails = sender as? Match else { return }
+        participantVC.matchDetails = matchDetails
     }
 }
 
@@ -191,7 +196,8 @@ extension MatchHistoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         let matchAtIndex: MatchReference = self.matches[indexPath.row]
-        self.performSegue(withIdentifier: "showMatch", sender: matchAtIndex)
+        guard let matchDetails = self.matchDetails[matchAtIndex.gameId.value] else { return }
+        self.performSegue(withIdentifier: "showParticipants", sender: matchDetails)
     }
 }
 
