@@ -24,6 +24,8 @@
 		97C33CAD21CD684F00AA8256 /* SpellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C33CAC21CD684F00AA8256 /* SpellTableViewCell.swift */; };
 		97C33CAF21CD6A7F00AA8256 /* UITextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C33CAE21CD6A7F00AA8256 /* UITextViewExtension.swift */; };
 		97C33CB121CD7A0700AA8256 /* LiveGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C33CB021CD7A0700AA8256 /* LiveGameViewController.swift */; };
+		97C33CB321CE614200AA8256 /* MatchHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C33CB221CE614200AA8256 /* MatchHistoryViewController.swift */; };
+		97C33CB521CE751200AA8256 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C33CB421CE751200AA8256 /* MatchTableViewCell.swift */; };
 		97C604E521C7A86200F52546 /* LeagueAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97C604E421C7A86200F52546 /* LeagueAPI.framework */; };
 		97C604E621C7A86200F52546 /* LeagueAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97C604E421C7A86200F52546 /* LeagueAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		97C604E921C7A91D00F52546 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C604E821C7A91D00F52546 /* UITableViewExtension.swift */; };
@@ -70,6 +72,8 @@
 		97C33CAC21CD684F00AA8256 /* SpellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellTableViewCell.swift; sourceTree = "<group>"; };
 		97C33CAE21CD6A7F00AA8256 /* UITextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtension.swift; sourceTree = "<group>"; };
 		97C33CB021CD7A0700AA8256 /* LiveGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveGameViewController.swift; sourceTree = "<group>"; };
+		97C33CB221CE614200AA8256 /* MatchHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchHistoryViewController.swift; sourceTree = "<group>"; };
+		97C33CB421CE751200AA8256 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
 		97C604E421C7A86200F52546 /* LeagueAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LeagueAPI.framework; path = Carthage/Build/iOS/LeagueAPI.framework; sourceTree = "<group>"; };
 		97C604E821C7A91D00F52546 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		97C604EA21C7B00800F52546 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				97C604F321C7C56800F52546 /* ChampionRotationViewController.swift */,
 				97C33CAA21CD650300AA8256 /* ChampionViewController.swift */,
 				97C33CB021CD7A0700AA8256 /* LiveGameViewController.swift */,
+				97C33CB221CE614200AA8256 /* MatchHistoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 				97C604EE21C7BB3300F52546 /* BanTableViewCell.swift */,
 				97C604F521C7C5A200F52546 /* ChampionTableViewCell.swift */,
 				97C33CAC21CD684F00AA8256 /* SpellTableViewCell.swift */,
+				97C33CB421CE751200AA8256 /* MatchTableViewCell.swift */,
 			);
 			path = UICells;
 			sourceTree = "<group>";
@@ -265,6 +271,7 @@
 				97C604F221C7C04700F52546 /* ArrayExtension.swift in Sources */,
 				97C604EB21C7B00800F52546 /* PlayerTableViewCell.swift in Sources */,
 				9716A95921C798E0002A18D2 /* FeaturedGamesViewController.swift in Sources */,
+				97C33CB521CE751200AA8256 /* MatchTableViewCell.swift in Sources */,
 				9784185221C412A4005AE126 /* LeagueAPIDemo.swift in Sources */,
 				97C604F621C7C5A200F52546 /* ChampionTableViewCell.swift in Sources */,
 				9784185021C40A09005AE126 /* SummonerViewController.swift in Sources */,
@@ -274,6 +281,7 @@
 				9784184B21C3F715005AE126 /* Request.swift in Sources */,
 				97C33CB121CD7A0700AA8256 /* LiveGameViewController.swift in Sources */,
 				97C604E921C7A91D00F52546 /* UITableViewExtension.swift in Sources */,
+				97C33CB321CE614200AA8256 /* MatchHistoryViewController.swift in Sources */,
 				97C33CAD21CD684F00AA8256 /* SpellTableViewCell.swift in Sources */,
 				9716A95B21C79EC4002A18D2 /* GameTableViewCell.swift in Sources */,
 				55B42C1021C4289000531940 /* UILabelExtension.swift in Sources */,
