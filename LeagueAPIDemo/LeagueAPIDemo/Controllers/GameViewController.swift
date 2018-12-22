@@ -103,6 +103,27 @@ class GameViewController: UIViewController {
         }
     }
     
+    func getChampionMastery(participant: Participant, completion: @escaping (Int?) -> Void) {
+        if let summonerId = participant.summonerId {
+            self.getChampionMastery(summonerId: summonerId, championId: participant.championId) { masteryLevel in
+                completion(masteryLevel)
+            }
+        }
+        else {
+            league.riotAPI.getSummoner(byName: participant.summonerName, on: preferedRegion) { (summoner, errorMsg) in
+                if let summoner = summoner {
+                    self.getChampionMastery(summonerId: summoner.id, championId: participant.championId) { masteryLevel in
+                        completion(masteryLevel)
+                    }
+                }
+                else {
+                    print("Request failed cause: \(errorMsg ?? "No error description")")
+                    completion(nil)
+                }
+            }
+        }
+    }
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -203,9 +224,12 @@ extension GameViewController: UITableViewDataSource {
         }
         // Missing rank icon
         newCell.summonerName.text = participant.summonerName
-        if let summonerId = participant.summonerId {
-            self.getChampionMastery(summonerId: summonerId, championId: participant.championId) { masteryLevel in
-                newCell.masteryLabel.text = "\(masteryLevel ?? 0)"
+        self.getChampionMastery(participant: participant) { masteryLevel in
+            if let masteryLevel = masteryLevel {
+                newCell.masteryLabel.setText("Mastery level \(masteryLevel)")
+            }
+            else {
+                newCell.masteryLabel.setText(nil)
             }
         }
         return newCell

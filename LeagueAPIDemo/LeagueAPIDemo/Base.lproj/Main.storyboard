@@ -427,7 +427,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mastery level: 7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ItE-7G-aRd" userLabel="ChampionMastery">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mastery level ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ItE-7G-aRd" userLabel="ChampionMastery">
                                                     <rect key="frame" x="192.5" y="45.5" width="174.5" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="8xd-Tp-GYZ"/>
