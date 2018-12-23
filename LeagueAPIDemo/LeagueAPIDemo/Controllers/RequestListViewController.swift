@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LeagueAPI
 
 class RequestListViewController: UIViewController {
     

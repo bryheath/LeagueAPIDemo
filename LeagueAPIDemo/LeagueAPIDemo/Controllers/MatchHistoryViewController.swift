@@ -20,7 +20,7 @@ class MatchHistoryViewController: UIViewController {
     
     private var summoner: Summoner?
     private var matches: [MatchReference] = []
-    private var matchDetails: [Long : Match] = [:]
+    private var matchDetails: [GameId : Match] = [:]
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -50,13 +50,13 @@ class MatchHistoryViewController: UIViewController {
     }
     
     func getMatchDetails(for gameId: GameId, completion: @escaping (Match) -> Void) {
-        if let localGameDetails = self.matchDetails[gameId.value] {
+        if let localGameDetails = self.matchDetails[gameId] {
             completion(localGameDetails)
         }
         else {
             league.riotAPI.getMatch(by: gameId, on: preferedRegion) { (game, errorMsg) in
                 if let game = game {
-                    self.matchDetails[gameId.value] = game
+                    self.matchDetails[gameId] = game
                     completion(game)
                 }
                 else {
@@ -196,7 +196,7 @@ extension MatchHistoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         let matchAtIndex: MatchReference = self.matches[indexPath.row]
-        guard let matchDetails = self.matchDetails[matchAtIndex.gameId.value] else { return }
+        guard let matchDetails = self.matchDetails[matchAtIndex.gameId] else { return }
         self.performSegue(withIdentifier: "showParticipants", sender: matchDetails)
     }
 }

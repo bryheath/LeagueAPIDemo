@@ -103,6 +103,47 @@ class GameViewController: UIViewController {
         }
     }
     
+    func getSummonerBestRank(summonerId: SummonerId, completion: @escaping (RankedTier) -> Void) {
+        league.riotAPI.getRankedPositions(for: summonerId, on: preferedRegion) { (rankedPositions, errorMsg) in
+            if let rankedPositions = rankedPositions {
+                let rankedTiers: [RankedTier] = rankedPositions.map( { position in
+                    return position.tier
+                })
+                let orderedTiers: [RankedTier.Tiers] = [.Challenger, .GrandMaster, .Master, .Diamond, .Platinum, .Gold, .Silver, .Bronze, .Iron]
+                for tier in orderedTiers {
+                    if let bestTier = rankedTiers.filter( { rankedTier in return rankedTier.tier == tier }).first {
+                        completion(bestTier)
+                        return
+                    }
+                }
+                completion(RankedTier(.Unranked)!)
+            }
+            else {
+                print("Request failed cause: \(errorMsg ?? "No error description")")
+            }
+        }
+    }
+    
+    func getSummonerRanked(participant: Participant, completion: @escaping (RankedTier) -> Void) {
+        if let summonerId = participant.summonerId {
+            self.getSummonerBestRank(summonerId: summonerId) { bestRank in
+                completion(bestRank)
+            }
+        }
+        else {
+            league.riotAPI.getSummoner(byName: participant.summonerName, on: preferedRegion) { (summoner, errorMsg) in
+                if let summoner = summoner {
+                    self.getSummonerBestRank(summonerId: summoner.id) { bestRank in
+                        completion(bestRank)
+                    }
+                }
+                else {
+                    print("Request failed cause: \(errorMsg ?? "No error description")")
+                }
+            }
+        }
+    }
+    
     func getChampionMastery(participant: Participant, completion: @escaping (Int?) -> Void) {
         if let summonerId = participant.summonerId {
             self.getChampionMastery(summonerId: summonerId, championId: participant.championId) { masteryLevel in
@@ -221,7 +262,9 @@ extension GameViewController: UITableViewDataSource {
         self.getSummonerImage(profileIconId: participant.profileIconId) { image in
             newCell.summonerSquare.setImage(image)
         }
-        // Missing rank icon
+        self.getSummonerRanked(participant: participant) { bestRankedTier in
+            newCell.rankedSquare.setImage(league.getEmblem(for: bestRankedTier))
+        }
         newCell.summonerName.text = participant.summonerName
         self.getChampionMastery(participant: participant) { masteryLevel in
             if let masteryLevel = masteryLevel {
