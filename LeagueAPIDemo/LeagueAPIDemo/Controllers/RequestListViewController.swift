@@ -30,7 +30,7 @@ class RequestListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        Logger.setAllChannels(enabled: true)
     }
 }
 

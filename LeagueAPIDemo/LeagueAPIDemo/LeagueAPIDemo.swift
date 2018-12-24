@@ -10,4 +10,4 @@ import Foundation
 import LeagueAPI
 
 public let league: LeagueAPI = LeagueAPI(APIToken: "*INSERT YOUR KEY HERE*")
-public let preferedRegion: Region = Region.EUW
+public var preferedRegion: Region = Region.EUW
