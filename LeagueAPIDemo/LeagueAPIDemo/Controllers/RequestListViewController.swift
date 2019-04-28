@@ -23,7 +23,9 @@ class RequestListViewController: UIViewController {
         Request(.LiveGame , image: #imageLiteral(resourceName: "lucian_project")),
         Request(.MatchHistory, image: #imageLiteral(resourceName: "garen_splash")),
         Request(.ChampionRotation, image: #imageLiteral(resourceName: "bard_bard")),
-        Request(.ChampionInfo , image: #imageLiteral(resourceName: "arcade_ahri"))
+        Request(.ChampionInfo , image: #imageLiteral(resourceName: "arcade_ahri")),
+        Request(.Status, image: #imageLiteral(resourceName: "heimer_splash")),
+        Request(.VerificationCode, image: #imageLiteral(resourceName: "irelia_splash"))
     ]
     
     // MARK: - View Lifecycle

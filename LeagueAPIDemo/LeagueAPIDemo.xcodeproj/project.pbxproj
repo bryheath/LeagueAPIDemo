@@ -38,6 +38,8 @@
 		97C604F221C7C04700F52546 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C604F121C7C04700F52546 /* ArrayExtension.swift */; };
 		97C604F421C7C56800F52546 /* ChampionRotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C604F321C7C56800F52546 /* ChampionRotationViewController.swift */; };
 		97C604F621C7C5A200F52546 /* ChampionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C604F521C7C5A200F52546 /* ChampionTableViewCell.swift */; };
+		97E3B4E022766C7D00F9EFAE /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E3B4DF22766C7D00F9EFAE /* StatusViewController.swift */; };
+		97E3B4E222766DB000F9EFAE /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E3B4E122766DB000F9EFAE /* StatusTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -88,6 +90,8 @@
 		97C604F121C7C04700F52546 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		97C604F321C7C56800F52546 /* ChampionRotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionRotationViewController.swift; sourceTree = "<group>"; };
 		97C604F521C7C5A200F52546 /* ChampionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionTableViewCell.swift; sourceTree = "<group>"; };
+		97E3B4DF22766C7D00F9EFAE /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		97E3B4E122766DB000F9EFAE /* StatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,7 @@
 				97C33CB221CE614200AA8256 /* MatchHistoryViewController.swift */,
 				97B2646921CEC37300539121 /* ParticipantViewController.swift */,
 				97A415BC21D13CF400200313 /* RegionSelectionViewController.swift */,
+				97E3B4DF22766C7D00F9EFAE /* StatusViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 				97C33CAC21CD684F00AA8256 /* SpellTableViewCell.swift */,
 				97C33CB421CE751200AA8256 /* MatchTableViewCell.swift */,
 				97B2646B21CECAE500539121 /* ParticipantTableViewCell.swift */,
+				97E3B4E122766DB000F9EFAE /* StatusTableViewCell.swift */,
 			);
 			path = UICells;
 			sourceTree = "<group>";
@@ -281,6 +287,7 @@
 				97C604F221C7C04700F52546 /* ArrayExtension.swift in Sources */,
 				97C604EB21C7B00800F52546 /* PlayerTableViewCell.swift in Sources */,
 				9716A95921C798E0002A18D2 /* FeaturedGamesViewController.swift in Sources */,
+				97E3B4E222766DB000F9EFAE /* StatusTableViewCell.swift in Sources */,
 				97C33CB521CE751200AA8256 /* MatchTableViewCell.swift in Sources */,
 				9784185221C412A4005AE126 /* LeagueAPIDemo.swift in Sources */,
 				97C604F621C7C5A200F52546 /* ChampionTableViewCell.swift in Sources */,
@@ -288,6 +295,7 @@
 				97C604ED21C7B12800F52546 /* GameViewController.swift in Sources */,
 				97B2646A21CEC37300539121 /* ParticipantViewController.swift in Sources */,
 				97C33CAB21CD650300AA8256 /* ChampionViewController.swift in Sources */,
+				97E3B4E022766C7D00F9EFAE /* StatusViewController.swift in Sources */,
 				9784184421C3EB6B005AE126 /* RequestListViewController.swift in Sources */,
 				9784184B21C3F715005AE126 /* Request.swift in Sources */,
 				97C33CB121CD7A0700AA8256 /* LiveGameViewController.swift in Sources */,

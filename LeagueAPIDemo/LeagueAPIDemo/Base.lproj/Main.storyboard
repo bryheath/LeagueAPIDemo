@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XEX-Iy-rJQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XEX-Iy-rJQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -101,6 +101,7 @@
                         <segue destination="9rE-Vg-pt3" kind="show" identifier="ChampionInfoRequest" id="RYm-UD-Ju6"/>
                         <segue destination="lgh-4q-ePF" kind="show" identifier="LiveGameRequest" id="GW2-nN-CGJ"/>
                         <segue destination="oWP-WC-k1u" kind="show" identifier="MatchHistoryRequest" id="xU6-Ub-nHS"/>
+                        <segue destination="2dZ-Jw-eqJ" kind="show" identifier="StatusRequest" id="sGV-mK-mM4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -691,7 +692,7 @@
                                                 <constraint firstItem="VxA-s5-k4R" firstAttribute="top" secondItem="wfm-K1-kMz" secondAttribute="top" id="mBV-co-cWK"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="spellImage" destination="wfm-K1-kMz" id="UkM-1e-8mS"/>
                                             <outlet property="spellName" destination="VxA-s5-k4R" id="Y71-mx-74V"/>
@@ -819,7 +820,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boards-wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="IED-Z3-c7E" userLabel="BackgroundImage">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000045" height="667"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a summoner name" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qZd-Sh-TaT">
                                 <rect key="frame" x="0.0" y="64" width="375" height="30"/>
@@ -1203,16 +1204,104 @@
             </objects>
             <point key="canvasLocation" x="2344" y="1079"/>
         </scene>
+        <!--Status View Controller-->
+        <scene sceneID="5EC-C8-jic">
+            <objects>
+                <viewController id="2dZ-Jw-eqJ" customClass="StatusViewController" customModule="LeagueAPIDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HZS-ws-4gA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heimer_full_splash" translatesAutoresizingMaskIntoConstraints="NO" id="uGc-yf-S7W" userLabel="BackgroundImage">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Server Status for Region" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vn8-lf-sK1" userLabel="statusTitle">
+                                <rect key="frame" x="0.0" y="88" width="375" height="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I7v-zg-89c">
+                                <rect key="frame" x="0.0" y="124" width="375" height="543"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="serviceCell" id="uoi-TZ-Qyz" customClass="StatusTableViewCell" customModule="LeagueAPIDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uoi-TZ-Qyz" id="kY4-Oa-UNa">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXq-7B-pHd">
+                                                    <rect key="frame" x="27" y="11.5" width="57" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lib-cK-SEH">
+                                                    <rect key="frame" x="96" y="11.5" width="50" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.29724606995137859" green="0.29724606995137859" blue="0.29724606995137859" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Lib-cK-SEH" firstAttribute="centerY" secondItem="hXq-7B-pHd" secondAttribute="centerY" id="P6O-7o-K8E"/>
+                                                <constraint firstItem="hXq-7B-pHd" firstAttribute="leading" secondItem="kY4-Oa-UNa" secondAttribute="leadingMargin" constant="12" id="YA8-rH-yJh"/>
+                                                <constraint firstItem="Lib-cK-SEH" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="kY4-Oa-UNa" secondAttribute="trailingMargin" constant="-12" id="avQ-dc-1c4"/>
+                                                <constraint firstItem="Lib-cK-SEH" firstAttribute="leading" secondItem="hXq-7B-pHd" secondAttribute="trailing" constant="12" id="oz5-ld-K3s"/>
+                                                <constraint firstItem="hXq-7B-pHd" firstAttribute="centerY" secondItem="kY4-Oa-UNa" secondAttribute="centerY" id="vkW-d0-MfT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="serviceName" destination="hXq-7B-pHd" id="l8q-PK-6xg"/>
+                                            <outlet property="serviceStatus" destination="Lib-cK-SEH" id="Ji4-QC-B7c"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2dZ-Jw-eqJ" id="33k-ui-zQS"/>
+                                    <outlet property="delegate" destination="2dZ-Jw-eqJ" id="Be4-uL-ltd"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uGc-yf-S7W" firstAttribute="top" secondItem="HZS-ws-4gA" secondAttribute="top" id="4sV-oE-ltd"/>
+                            <constraint firstItem="I7v-zg-89c" firstAttribute="trailing" secondItem="db6-5b-0cU" secondAttribute="trailing" id="6qA-Xf-u8x"/>
+                            <constraint firstItem="I7v-zg-89c" firstAttribute="top" secondItem="Vn8-lf-sK1" secondAttribute="bottom" constant="12" id="E3G-iV-wsH"/>
+                            <constraint firstItem="uGc-yf-S7W" firstAttribute="bottom" secondItem="HZS-ws-4gA" secondAttribute="bottom" id="GuQ-HP-MTm"/>
+                            <constraint firstItem="I7v-zg-89c" firstAttribute="bottom" secondItem="db6-5b-0cU" secondAttribute="bottom" id="Gyl-gp-4vS"/>
+                            <constraint firstItem="uGc-yf-S7W" firstAttribute="trailing" secondItem="db6-5b-0cU" secondAttribute="trailing" id="NBx-r5-fxs"/>
+                            <constraint firstItem="I7v-zg-89c" firstAttribute="leading" secondItem="db6-5b-0cU" secondAttribute="leading" id="Sdo-3g-usV"/>
+                            <constraint firstItem="db6-5b-0cU" firstAttribute="trailing" secondItem="Vn8-lf-sK1" secondAttribute="trailing" id="cp9-nR-o3L"/>
+                            <constraint firstItem="Vn8-lf-sK1" firstAttribute="top" secondItem="db6-5b-0cU" secondAttribute="top" constant="24" id="mUH-BY-MNh"/>
+                            <constraint firstItem="uGc-yf-S7W" firstAttribute="leading" secondItem="db6-5b-0cU" secondAttribute="leading" id="p4Z-Kh-2l3"/>
+                            <constraint firstItem="Vn8-lf-sK1" firstAttribute="leading" secondItem="db6-5b-0cU" secondAttribute="leading" id="t6I-mi-VR7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="db6-5b-0cU"/>
+                    </view>
+                    <connections>
+                        <outlet property="serviceStatusTableView" destination="I7v-zg-89c" id="7vy-uT-t5T"/>
+                        <outlet property="statusTitle" destination="Vn8-lf-sK1" id="eqg-Eb-MfA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fyJ-J8-KX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1628" y="3239.7301349325339"/>
+        </scene>
     </scenes>
     <resources>
         <image name="LiveMatchBackground" width="1920" height="1166"/>
-        <image name="background" width="384" height="304.55999755859375"/>
+        <image name="background" width="1600" height="1269"/>
         <image name="bard_bard" width="1131" height="300"/>
         <image name="boards-wallpaper" width="1689" height="1062"/>
+        <image name="heimer_full_splash" width="1215" height="717"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RYm-UD-Ju6"/>
+        <segue reference="hLD-IQ-gfQ"/>
         <segue reference="ym7-pD-fsJ"/>
-        <segue reference="5Uy-C9-fLv"/>
+        <segue reference="mx3-Fc-oAI"/>
     </inferredMetricsTieBreakers>
 </document>

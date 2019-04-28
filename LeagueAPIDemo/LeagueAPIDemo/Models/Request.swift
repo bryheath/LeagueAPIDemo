@@ -15,6 +15,8 @@ enum RequestTypes: String {
     case MatchHistory
     case ChampionRotation
     case ChampionInfo
+    case Status
+    case VerificationCode
 }
 
 class Request {
