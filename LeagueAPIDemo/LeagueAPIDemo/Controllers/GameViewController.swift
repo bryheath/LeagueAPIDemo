@@ -104,7 +104,7 @@ class GameViewController: UIViewController {
     }
     
     func getSummonerBestRank(summonerId: SummonerId, completion: @escaping (RankedTier) -> Void) {
-        league.riotAPI.getRankedPositions(for: summonerId, on: preferedRegion) { (rankedPositions, errorMsg) in
+        league.riotAPI.getRankedEntries(for: summonerId, on: preferedRegion) { (rankedPositions, errorMsg) in
             if let rankedPositions = rankedPositions {
                 let rankedTiers: [RankedTier] = rankedPositions.map( { position in
                     return position.tier
