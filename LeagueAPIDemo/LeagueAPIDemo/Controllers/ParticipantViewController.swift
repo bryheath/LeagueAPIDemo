@@ -211,7 +211,7 @@ extension ParticipantViewController: UITableViewDataSource {
             newCell.summonerName.text = participantIdentity.summonerName
         }
         newCell.kdaLabel.text = "\(participant.stats.kills)/\(participant.stats.deaths)/\(participant.stats.assists) - \(participant.stats.totalMinionsKilled)/\(participant.stats.neutralMinionsKilled)"
-        newCell.rankedSquare.setImage(league.getEmblem(for: participant.highestAchievedSeasonTier))
+        newCell.rankedSquare.setImage(league.getEmblem(for: participant.highestAchievedSeasonTier ?? RankedTier(.Unranked)!))
         self.getChampionImage(championId: participant.championId, splash: true) { image in
             newCell.championSplashBackground.setImage(image)
         }

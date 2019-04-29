@@ -102,6 +102,7 @@
                         <segue destination="lgh-4q-ePF" kind="show" identifier="LiveGameRequest" id="GW2-nN-CGJ"/>
                         <segue destination="oWP-WC-k1u" kind="show" identifier="MatchHistoryRequest" id="xU6-Ub-nHS"/>
                         <segue destination="2dZ-Jw-eqJ" kind="show" identifier="StatusRequest" id="sGV-mK-mM4"/>
+                        <segue destination="n2S-MK-o8i" kind="show" identifier="VerificationCodeRequest" id="GfO-4H-43n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -820,7 +821,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boards-wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="IED-Z3-c7E" userLabel="BackgroundImage">
-                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000045" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a summoner name" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qZd-Sh-TaT">
                                 <rect key="frame" x="0.0" y="64" width="375" height="30"/>
@@ -1289,7 +1290,82 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fyJ-J8-KX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1628" y="3239.7301349325339"/>
+            <point key="canvasLocation" x="1628" y="3251"/>
+        </scene>
+        <!--Verification View Controller-->
+        <scene sceneID="KBL-Lt-BpY">
+            <objects>
+                <viewController id="n2S-MK-o8i" customClass="VerificationViewController" customModule="LeagueAPIDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XLL-86-XPk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heimer_full_splash" translatesAutoresizingMaskIntoConstraints="NO" id="dXH-aG-4we" userLabel="BackgroundImage">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From your LoL client, enter verification code &quot;LeagueAPI&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS9-1D-IEd" userLabel="instructions">
+                                <rect key="frame" x="0.0" y="88" width="375" height="49"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ase-Yb-BXs">
+                                <rect key="frame" x="12" y="149" width="351" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Verify">
+                                    <color key="titleColor" red="0.86427837610244751" green="0.24031451344490051" blue="0.22741791605949402" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="verifyCodeWithSender:" destination="n2S-MK-o8i" eventType="touchUpInside" id="FG8-Qw-lUn"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRp-Rg-zAy">
+                                <rect key="frame" x="12" y="191" width="351" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGR-b0-JCF">
+                                        <rect key="frame" x="8" y="4.5" width="335" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.86427837610000002" green="0.24031451340000001" blue="0.22741791610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cGR-b0-JCF" secondAttribute="trailing" constant="8" id="PEi-Zr-wHs"/>
+                                    <constraint firstItem="cGR-b0-JCF" firstAttribute="centerY" secondItem="HRp-Rg-zAy" secondAttribute="centerY" id="gXq-FW-H9V"/>
+                                    <constraint firstItem="cGR-b0-JCF" firstAttribute="leading" secondItem="HRp-Rg-zAy" secondAttribute="leading" constant="8" id="vEE-HA-Mxw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dXH-aG-4we" firstAttribute="top" secondItem="XLL-86-XPk" secondAttribute="top" id="14g-pX-ejj"/>
+                            <constraint firstItem="HRp-Rg-zAy" firstAttribute="top" secondItem="ase-Yb-BXs" secondAttribute="bottom" constant="12" id="8Po-Z6-OKj"/>
+                            <constraint firstItem="ase-Yb-BXs" firstAttribute="leading" secondItem="iCk-7c-Ohf" secondAttribute="leading" constant="12" id="C30-Xv-Kfo"/>
+                            <constraint firstItem="HRp-Rg-zAy" firstAttribute="trailing" secondItem="ase-Yb-BXs" secondAttribute="trailing" id="LhW-cn-4PO"/>
+                            <constraint firstItem="HRp-Rg-zAy" firstAttribute="leading" secondItem="ase-Yb-BXs" secondAttribute="leading" id="WFH-2i-ZqS"/>
+                            <constraint firstItem="ase-Yb-BXs" firstAttribute="top" secondItem="DS9-1D-IEd" secondAttribute="bottom" constant="12" id="a7Z-3w-Nsj"/>
+                            <constraint firstItem="iCk-7c-Ohf" firstAttribute="trailing" secondItem="DS9-1D-IEd" secondAttribute="trailing" id="diL-4D-uJ7"/>
+                            <constraint firstItem="DS9-1D-IEd" firstAttribute="top" secondItem="iCk-7c-Ohf" secondAttribute="top" constant="24" id="gvz-Ku-iAB"/>
+                            <constraint firstItem="dXH-aG-4we" firstAttribute="leading" secondItem="iCk-7c-Ohf" secondAttribute="leading" id="h2d-jo-tpa"/>
+                            <constraint firstItem="DS9-1D-IEd" firstAttribute="leading" secondItem="iCk-7c-Ohf" secondAttribute="leading" id="mU6-Gw-2vq"/>
+                            <constraint firstItem="dXH-aG-4we" firstAttribute="bottom" secondItem="XLL-86-XPk" secondAttribute="bottom" id="nr3-kL-g6V"/>
+                            <constraint firstItem="iCk-7c-Ohf" firstAttribute="trailing" secondItem="ase-Yb-BXs" secondAttribute="trailing" constant="12" id="obf-fR-dy0"/>
+                            <constraint firstItem="HRp-Rg-zAy" firstAttribute="height" secondItem="ase-Yb-BXs" secondAttribute="height" id="omy-ux-CxF"/>
+                            <constraint firstItem="dXH-aG-4we" firstAttribute="trailing" secondItem="iCk-7c-Ohf" secondAttribute="trailing" id="x5z-2U-bFM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iCk-7c-Ohf"/>
+                    </view>
+                    <connections>
+                        <outlet property="instructions" destination="DS9-1D-IEd" id="rzu-e7-JvY"/>
+                        <outlet property="resultBackground" destination="HRp-Rg-zAy" id="Aru-Cm-ByA"/>
+                        <outlet property="resultLabel" destination="cGR-b0-JCF" id="Cdb-nI-56w"/>
+                        <outlet property="verifyButton" destination="ase-Yb-BXs" id="68R-Zo-59N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FTS-Ta-oi8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1628" y="3959"/>
         </scene>
     </scenes>
     <resources>
@@ -1300,8 +1376,8 @@
         <image name="heimer_full_splash" width="1215" height="717"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hLD-IQ-gfQ"/>
+        <segue reference="RYm-UD-Ju6"/>
         <segue reference="ym7-pD-fsJ"/>
-        <segue reference="mx3-Fc-oAI"/>
+        <segue reference="5Uy-C9-fLv"/>
     </inferredMetricsTieBreakers>
 </document>
