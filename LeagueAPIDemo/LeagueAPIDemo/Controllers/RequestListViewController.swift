@@ -22,8 +22,10 @@ class RequestListViewController: UIViewController {
         Request(.SummonerByName, image: #imageLiteral(resourceName: "ryze_splash")),
         Request(.LiveGame , image: #imageLiteral(resourceName: "lucian_project")),
         Request(.MatchHistory, image: #imageLiteral(resourceName: "garen_splash")),
+        Request(.TFTMatchHistory, image: #imageLiteral(resourceName: "tft_emote")),
         Request(.ChampionRotation, image: #imageLiteral(resourceName: "bard_bard")),
         Request(.ChampionInfo , image: #imageLiteral(resourceName: "arcade_ahri")),
+        Request(.RunneteraLeaderboard, image: #imageLiteral(resourceName: "runeterra")),
         Request(.Status, image: #imageLiteral(resourceName: "heimer_splash")),
         Request(.VerificationCode, image: #imageLiteral(resourceName: "irelia_splash"))
     ]

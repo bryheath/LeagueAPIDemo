@@ -13,8 +13,10 @@ enum RequestTypes: String {
     case SummonerByName
     case LiveGame
     case MatchHistory
+    case TFTMatchHistory
     case ChampionRotation
     case ChampionInfo
+    case RunneteraLeaderboard
     case Status
     case VerificationCode
 }
