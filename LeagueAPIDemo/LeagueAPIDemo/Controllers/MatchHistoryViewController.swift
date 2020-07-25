@@ -30,10 +30,10 @@ class MatchHistoryViewController: UIViewController {
     // MARK: - Functions
     
     func getMatchList(for summonerName: String) {
-        league.riotAPI.getSummoner(byName: summonerName, on: preferedRegion) { (summoner, errorMsg) in
+        league.lolAPI.getSummoner(byName: summonerName, on: preferedRegion) { (summoner, errorMsg) in
             if let summoner = summoner {
                 self.summoner = summoner
-                league.riotAPI.getMatchList(by: summoner.accountId, on: preferedRegion, endIndex: 20) { (matchList, errorMsg) in
+                league.lolAPI.getMatchList(by: summoner.accountId, on: preferedRegion, endIndex: 20) { (matchList, errorMsg) in
                     if let matchList = matchList {
                         self.matches = matchList.matches
                         self.matchHistoryTableView.reload()
@@ -54,7 +54,7 @@ class MatchHistoryViewController: UIViewController {
             completion(localGameDetails)
         }
         else {
-            league.riotAPI.getMatch(by: gameId, on: preferedRegion) { (game, errorMsg) in
+            league.lolAPI.getMatch(by: gameId, on: preferedRegion) { (game, errorMsg) in
                 if let game = game {
                     self.matchDetails[gameId] = game
                     completion(game)
@@ -67,7 +67,7 @@ class MatchHistoryViewController: UIViewController {
     }
     
     func getChampionImage(championId: ChampionId, completion: @escaping (UIImage?) -> Void) {
-        league.getChampionDetails(by: championId) { (champion, errorMsg) in
+        league.lolAPI.getChampionDetails(by: championId) { (champion, errorMsg) in
             if let champion = champion, let defaultSkin = champion.images?.square {
                 defaultSkin.getImage() { (image, error) in
                     completion(image)
@@ -80,7 +80,7 @@ class MatchHistoryViewController: UIViewController {
     }
     
     func getSummonerSpellImage(summonerSpellId: SummonerSpellId, completion: @escaping (UIImage?) -> Void) {
-        league.getSummonerSpell(by: summonerSpellId) { (summonerSpell, errorMsg) in
+        league.lolAPI.getSummonerSpell(by: summonerSpellId) { (summonerSpell, errorMsg) in
             if let summonerSpell = summonerSpell {
                 summonerSpell.image.getImage() { (image, _) in
                     completion(image)

@@ -30,7 +30,7 @@ class RunneteraLeaderboardViewController: UIViewController {
     // MARK: - Functions
     
     func getLeaderboardPlayers(worldRegion: WorldRegion) {
-        league.riotAPI.getRunneteraLeaderboard(on: worldRegion) { (leaderboard, errorMsg) in
+        league.lorAPI.getLeaderboard(on: worldRegion) { (leaderboard, errorMsg) in
             if let leaderboard = leaderboard {
                 self.leaderboardPlayers = leaderboard
                 self.leaderboardTableView.reload()

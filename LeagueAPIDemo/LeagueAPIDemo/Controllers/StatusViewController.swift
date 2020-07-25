@@ -38,7 +38,7 @@ class StatusViewController: UIViewController {
     // MARK: - Functions
     
     func getStatusInfos(region: Region) {
-        league.riotAPI.getStatus(on: region) { (status, errorMsg) in
+        league.lolAPI.getStatus(on: region) { (status, errorMsg) in
             if let status = status {
                 self.updateUI(for: status)
             }

@@ -29,7 +29,7 @@ class ChampionRotationViewController: UIViewController {
     // MARK: - Functions
     
     func getChampionRotation() {
-        league.riotAPI.getChampionRotation(on: preferedRegion) { (rotations, errorMsg) in
+        league.lolAPI.getChampionRotation(on: preferedRegion) { (rotations, errorMsg) in
             if let rotations = rotations {
                 self.championRotation = rotations.rotation
                 self.championRotationTableView.reload()
@@ -41,7 +41,7 @@ class ChampionRotationViewController: UIViewController {
     }
     
     func getChampionImage(championId: ChampionId, completion: @escaping (UIImage?) -> Void) {
-        league.getChampionDetails(by: championId) { (champion, errorMsg) in
+        league.lolAPI.getChampionDetails(by: championId) { (champion, errorMsg) in
             if let champion = champion, let defaultSkin = champion.images?.square {
                 defaultSkin.getImage() { (image, error) in
                     completion(image)
@@ -54,7 +54,7 @@ class ChampionRotationViewController: UIViewController {
     }
     
     func getChampionDetail(championId: ChampionId, completion: @escaping (ChampionDetails) -> Void) {
-        league.getChampionDetails(by: championId) { (champion, errorMsg) in
+        league.lolAPI.getChampionDetails(by: championId) { (champion, errorMsg) in
             if let champion = champion {
                 completion(champion)
             }

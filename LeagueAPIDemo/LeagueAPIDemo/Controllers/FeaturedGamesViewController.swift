@@ -29,7 +29,7 @@ class FeaturedGamesViewController: UIViewController {
     // MARK: - Functions
     
     func getFeaturedGames() {
-        league.riotAPI.getFeaturedGames(on: preferedRegion) { (featuredGames, errorMsg) in
+        league.lolAPI.getFeaturedGames(on: preferedRegion) { (featuredGames, errorMsg) in
             if let featuredGames = featuredGames {
                 self.games = featuredGames.games
                 self.featuredGamesTableView.reload()
@@ -41,7 +41,7 @@ class FeaturedGamesViewController: UIViewController {
     }
     
     func getChampionImage(championId: ChampionId, completion: @escaping (UIImage?) -> Void) {
-        league.getChampionDetails(by: championId) { (champion, errorMsg) in
+        league.lolAPI.getChampionDetails(by: championId) { (champion, errorMsg) in
             if let champion = champion, let defaultSkin = champion.images?.loading {
                 defaultSkin.getImage() { (image, error) in
                     completion(image)

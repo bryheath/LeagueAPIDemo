@@ -30,9 +30,9 @@ class TFTMatchHistoryViewController: UIViewController {
     // MARK: - Functions
     
     func getMatchList(for summonerName: String) {
-        league.riotAPI.getTFTSummoner(byName: summonerName, on: preferedRegion) { (summoner, errorMsg) in
+        league.tftAPI.getSummoner(byName: summonerName, on: preferedRegion) { (summoner, errorMsg) in
             if let summoner = summoner {
-                league.riotAPI.getTFTMatchList(by: summoner.puuid, on: preferedRegion) { (tftgameids, errorMsg) in
+                league.tftAPI.getMatchList(by: summoner.puuid, count: 10, on: preferedRegion) { (tftgameids, errorMsg) in
                     if let tftgameids = tftgameids {
                         self.matchIds = tftgameids
                         for tftgameid in tftgameids {
@@ -55,7 +55,7 @@ class TFTMatchHistoryViewController: UIViewController {
             completion(localGameStatsDetails)
         }
         else {
-            league.riotAPI.getTFTMatch(by: tftgameId, on: preferedRegion) { (match, errorMsg) in
+            league.tftAPI.getMatch(by: tftgameId, on: preferedRegion) { (match, errorMsg) in
                 if let match = match {
                     self.matchInfos[tftgameId] = match.info
                     let playerStats = match.info.participants.first { (participant) in {
@@ -73,7 +73,7 @@ class TFTMatchHistoryViewController: UIViewController {
     }
     
     func getChampionImage(championId: ChampionId, completion: @escaping (UIImage?) -> Void) {
-        league.getChampionDetails(by: championId) { (champion, errorMsg) in
+        league.lolAPI.getChampionDetails(by: championId) { (champion, errorMsg) in
             if let champion = champion, let defaultSkin = champion.images?.square {
                 defaultSkin.getImage() { (image, error) in
                     completion(image)

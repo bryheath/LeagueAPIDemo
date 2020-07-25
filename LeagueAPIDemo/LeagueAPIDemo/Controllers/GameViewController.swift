@@ -67,7 +67,7 @@ class GameViewController: UIViewController {
     }
     
     func getChampionImage(championId: ChampionId, completion: @escaping (UIImage?) -> Void) {
-        league.getChampionDetails(by: championId) { (champion, errorMsg) in
+        league.lolAPI.getChampionDetails(by: championId) { (champion, errorMsg) in
             if let champion = champion, let defaultSkin = champion.images?.square {
                 defaultSkin.getImage() { (image, error) in
                     completion(image)
@@ -80,7 +80,7 @@ class GameViewController: UIViewController {
     }
     
     func getSummonerImage(profileIconId: ProfileIconId, completion: @escaping (UIImage?) -> Void) {
-        league.getProfileIcon(by: profileIconId) { (profileIcon, errorMsg) in
+        league.lolAPI.getProfileIcon(by: profileIconId) { (profileIcon, errorMsg) in
             if let profileIcon = profileIcon {
                 profileIcon.profileIcon.getImage() { (image, error) in
                     completion(image)
@@ -93,7 +93,7 @@ class GameViewController: UIViewController {
     }
     
     func getChampionMastery(summonerId: SummonerId, championId: ChampionId, completion: @escaping (Int?) -> Void) {
-        league.riotAPI.getChampionMastery(by: summonerId, for: championId, on: preferedRegion) { (championMastery, errorMsg) in
+        league.lolAPI.getChampionMastery(by: summonerId, for: championId, on: preferedRegion) { (championMastery, errorMsg) in
             if let championMastery = championMastery {
                 completion(championMastery.championLevel)
             }
@@ -104,7 +104,7 @@ class GameViewController: UIViewController {
     }
     
     func getSummonerBestRank(summonerId: SummonerId, completion: @escaping (RankedTier) -> Void) {
-        league.riotAPI.getRankedEntries(for: summonerId, on: preferedRegion) { (rankedPositions, errorMsg) in
+        league.lolAPI.getRankedEntries(for: summonerId, on: preferedRegion) { (rankedPositions, errorMsg) in
             if let rankedPositions = rankedPositions {
                 let rankedTiers: [RankedTier] = rankedPositions.map( { position in
                     return position.tier
@@ -131,7 +131,7 @@ class GameViewController: UIViewController {
             }
         }
         else {
-            league.riotAPI.getSummoner(byName: participant.summonerName, on: preferedRegion) { (summoner, errorMsg) in
+            league.lolAPI.getSummoner(byName: participant.summonerName, on: preferedRegion) { (summoner, errorMsg) in
                 if let summoner = summoner {
                     self.getSummonerBestRank(summonerId: summoner.id) { bestRank in
                         completion(bestRank)
@@ -151,7 +151,7 @@ class GameViewController: UIViewController {
             }
         }
         else {
-            league.riotAPI.getSummoner(byName: participant.summonerName, on: preferedRegion) { (summoner, errorMsg) in
+            league.lolAPI.getSummoner(byName: participant.summonerName, on: preferedRegion) { (summoner, errorMsg) in
                 if let summoner = summoner {
                     self.getChampionMastery(summonerId: summoner.id, championId: participant.championId) { masteryLevel in
                         completion(masteryLevel)
@@ -263,7 +263,7 @@ extension GameViewController: UITableViewDataSource {
             newCell.summonerSquare.setImage(image)
         }
         self.getSummonerRanked(participant: participant) { bestRankedTier in
-            newCell.rankedSquare.setImage(league.getEmblem(for: bestRankedTier))
+            newCell.rankedSquare.setImage(league.lolAPI.getEmblem(for: bestRankedTier))
         }
         newCell.summonerName.text = participant.summonerName
         self.getChampionMastery(participant: participant) { masteryLevel in

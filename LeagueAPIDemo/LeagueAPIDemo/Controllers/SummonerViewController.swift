@@ -42,7 +42,7 @@ class SummonerViewController: UIViewController {
     func updateUI(for summoner: Summoner) {
         self.summonerName.setText(summoner.name)
         self.summonerLevel.setText("Level \(summoner.level)")
-        league.getProfileIcon(by: summoner.iconId) { (profileIcon, errorMsg) in
+        league.lolAPI.getProfileIcon(by: summoner.iconId) { (profileIcon, errorMsg) in
             if let profileIcon = profileIcon {
                 profileIcon.profileIcon.getImage() { (image, error) in
                     self.summonerProfileIcon.setImage(image)
@@ -57,7 +57,7 @@ class SummonerViewController: UIViewController {
     // MARK: - Functions
     
     func getInfo(of summonerName: String) {
-        league.riotAPI.getSummoner(byName: summonerName, on: preferedRegion) { (summoner, errorMsg) in
+        league.lolAPI.getSummoner(byName: summonerName, on: preferedRegion) { (summoner, errorMsg) in
             if let summoner = summoner {
                 self.updateUI(for: summoner)
             }

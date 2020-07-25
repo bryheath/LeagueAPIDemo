@@ -57,7 +57,7 @@ class ChampionViewController: UIViewController {
     // MARK: - Functions
     
     func getChampionImage(championId: ChampionId, completion: @escaping (UIImage?) -> Void) {
-        league.getChampionDetails(by: championId) { (champion, errorMsg) in
+        league.lolAPI.getChampionDetails(by: championId) { (champion, errorMsg) in
             if let champion = champion, let defaultSkin = champion.images?.loading {
                 defaultSkin.getImage() { (image, error) in
                     completion(image)
@@ -70,7 +70,7 @@ class ChampionViewController: UIViewController {
     }
     
     func getChampionDetail(championId: ChampionId) {
-        league.getChampionDetails(by: championId) { (champion, errorMsg) in
+        league.lolAPI.getChampionDetails(by: championId) { (champion, errorMsg) in
             if let champion = champion {
                 self.updateUI(for: champion)
             }
@@ -81,7 +81,7 @@ class ChampionViewController: UIViewController {
     }
     
     func getChampionDetail(championName: String) {
-        league.getChampionDetails(byName: championName) { (champion, errorMsg) in
+        league.lolAPI.getChampionDetails(byName: championName) { (champion, errorMsg) in
             if let champion = champion {
                 self.updateUI(for: champion)
             }

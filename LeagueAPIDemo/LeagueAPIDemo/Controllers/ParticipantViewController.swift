@@ -77,7 +77,7 @@ class ParticipantViewController: UIViewController {
     }
     
     func getChampionImage(championId: ChampionId, splash: Bool, completion: @escaping (UIImage?) -> Void) {
-        league.getChampionDetails(by: championId) { (champion, errorMsg) in
+        league.lolAPI.getChampionDetails(by: championId) { (champion, errorMsg) in
             if let champion = champion, let defaultSkin = champion.images {
                 let selectedFormat: ImageWithUrl = splash ? defaultSkin.splash : defaultSkin.square
                 selectedFormat.getImage() { (image, error) in
@@ -91,7 +91,7 @@ class ParticipantViewController: UIViewController {
     }
     
     func getItemImage(itemId: ItemId, completion: @escaping (UIImage?) -> Void) {
-        league.getItem(by: itemId) { (item, errorMsg) in
+        league.lolAPI.getItem(by: itemId) { (item, errorMsg) in
             if let item = item {
                 item.image.getImage() { (image, error) in
                     completion(image)
@@ -104,7 +104,7 @@ class ParticipantViewController: UIViewController {
     }
     
     func getRuneImage(runePathId: RunePathId, completion: @escaping (UIImage?) -> Void) {
-        league.getRunePath(by: runePathId) { (runePath, errorMsg) in
+        league.lolAPI.getRunePath(by: runePathId) { (runePath, errorMsg) in
             if let runePath = runePath {
                 runePath.image.getImage() { (image, error) in
                     completion(image)
@@ -211,7 +211,7 @@ extension ParticipantViewController: UITableViewDataSource {
             newCell.summonerName.text = participantIdentity.summonerName
         }
         newCell.kdaLabel.text = "\(participant.stats.kills)/\(participant.stats.deaths)/\(participant.stats.assists) - \(participant.stats.totalMinionsKilled)/\(participant.stats.neutralMinionsKilled)"
-        newCell.rankedSquare.setImage(league.getEmblem(for: participant.highestAchievedSeasonTier ?? RankedTier(.Unranked)!))
+        newCell.rankedSquare.setImage(league.lolAPI.getEmblem(for: participant.highestAchievedSeasonTier ?? RankedTier(.Unranked)!))
         self.getChampionImage(championId: participant.championId, splash: true) { image in
             newCell.championSplashBackground.setImage(image)
         }

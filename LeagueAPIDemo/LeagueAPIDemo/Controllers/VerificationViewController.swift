@@ -60,7 +60,7 @@ class VerificationViewController: UIViewController {
     // MARK: - Functions
     
     func getSummonerId(summonerName: String, region: Region, handler: @escaping () -> Void = { () in }) {
-        league.riotAPI.getSummoner(byName: summonerName, on: region) { (summoner, errorMsg) in
+        league.lolAPI.getSummoner(byName: summonerName, on: region) { (summoner, errorMsg) in
             if let summoner = summoner {
                 self.summonerId = summoner.id
                 handler()
@@ -72,7 +72,7 @@ class VerificationViewController: UIViewController {
     }
     
     func getVerificationCode(summonerId: SummonerId, region: Region) {
-        league.riotAPI.getThirdPartyVerificationCode(by: summonerId, on: region) { (verificationCode, errorMsg) in
+        league.lolAPI.getThirdPartyVerificationCode(by: summonerId, on: region) { (verificationCode, errorMsg) in
             self.updateUI(for: verificationCode)
         }
     }
