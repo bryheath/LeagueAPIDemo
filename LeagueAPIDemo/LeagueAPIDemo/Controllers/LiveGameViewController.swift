@@ -27,7 +27,7 @@ class LiveGameViewController: UIViewController {
     func getLiveGame(of summonerName: String) {
         league.lolAPI.getSummoner(byName: summonerName, on: preferredRegion) { (summoner, errorMsg) in
             if let summoner = summoner {
-                league.lolAPI.getLiveGame(by: summoner.id, on: .EUW) { (liveGame, errorMsg) in
+                league.lolAPI.getLiveGame(by: summoner.id, on: preferredRegion) { (liveGame, errorMsg) in
                     if let liveGame = liveGame {
                         DispatchQueue.main.async {
                             self.performSegue(withIdentifier: "showGame", sender: liveGame)

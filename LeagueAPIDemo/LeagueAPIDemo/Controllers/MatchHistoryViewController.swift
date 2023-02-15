@@ -35,14 +35,13 @@ class MatchHistoryViewController: UIViewController {
                 self.summoner = summoner
                 league.lolAPI.getMatchList(by: summoner.puuid, on: preferredRegion, count: 20) { (matchList, errorMsg) in
                    
-//                    if let matchList = matchList {
-//                        matchList.
-////                        self.matches = matchList
-//                        self.matchHistoryTableView.reload()
-//                    }
-//                    else {
-//                        print("Request failed cause: \(errorMsg ?? "No error description")")
-//                    }
+                    if let matchList = matchList {
+                        self.matches = matchList
+                        self.matchHistoryTableView.reload()
+                    }
+                    else {
+                        print("Request failed cause: \(errorMsg ?? "No error description")")
+                    }
                 }
                 
             }
@@ -165,10 +164,8 @@ extension MatchHistoryViewController: UITableViewDataSource {
         self.getMatchDetails(matchId: matchId) { matchDetails in
             if let matchDetails = matchDetails {
                 if let player = matchDetails.info.participants.first(where: { $0.summonerId == summoner.id}) {
-                    if player.win {
-                        DispatchQueue.main.async {
-                            newCell.backgroundColor = player.win ? #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1) : #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
-                        }
+                    DispatchQueue.main.async {
+                        newCell.backgroundColor = player.win ? #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1) : #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
                     }
 
                     self.getChampionImage(participant: player) { image in
@@ -184,7 +181,9 @@ extension MatchHistoryViewController: UITableViewDataSource {
                 
                 let timeString = Datetime(timestamp: matchDetails.info.gameStartTimestamp).toString(format: "dd/MM/yy")
                 newCell.matchDate.setText(timeString)
-                newCell.mapName.setText(Map(Long(matchDetails.info.mapId)).note)
+                let queue = QueueMode(Long(matchDetails.info.queueId))
+                newCell.mapName.setText(queue.mode.description)
+                //newCell.mapName.setText("\(matchDetails.info.gameMode)   \(Map(Long(matchDetails.info.mapId)).name)")
             }
             
         }
@@ -206,4 +205,3 @@ extension MatchHistoryViewController: UITableViewDelegate {
         self.performSegue(withIdentifier: "showParticipants", sender: matchDetails)
     }
 }
-

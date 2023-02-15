@@ -259,7 +259,7 @@ extension ParticipantViewController: UITableViewDataSource {
         self.getRuneImage(runePathId: participant.perks.styles[0].style) { image in
                 newCell.rune1.setImage(image)
         }
-        self.getRuneImage(runePathId: participant.perks.styles[0].style) { image in
+        self.getRuneImage(runePathId: participant.perks.styles[1].style) { image in
                 newCell.rune2.setImage(image)
         }
         return newCell
