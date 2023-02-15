@@ -13,9 +13,8 @@
 		556257E3219B4B430089398D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 556257E2219B4B430089398D /* Assets.xcassets */; };
 		55B42C1021C4289000531940 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B42C0F21C4289000531940 /* UILabelExtension.swift */; };
 		55BD9B4621C5357900EC155D /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD9B4521C5357900EC155D /* UIImageViewExtension.swift */; };
-		9363628F299C432700138BF9 /* LeagueAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9363628D299C432700138BF9 /* LeagueAPI.framework */; };
-		93636290299C434300138BF9 /* LeagueAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9363628D299C432700138BF9 /* LeagueAPI.framework */; };
-		93636291299C434300138BF9 /* LeagueAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9363628D299C432700138BF9 /* LeagueAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		93BE76FF299C9D7200F2A090 /* LeagueAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93BE76FD299C9D5F00F2A090 /* LeagueAPI.framework */; };
+		93BE7700299C9D7200F2A090 /* LeagueAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 93BE76FD299C9D5F00F2A090 /* LeagueAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		97043841228524F70073F296 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97043840228524F70073F296 /* main.swift */; };
 		9716A95921C798E0002A18D2 /* FeaturedGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9716A95821C798E0002A18D2 /* FeaturedGamesViewController.swift */; };
 		9716A95B21C79EC4002A18D2 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9716A95A21C79EC4002A18D2 /* GameTableViewCell.swift */; };
@@ -75,7 +74,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				93636291299C434300138BF9 /* LeagueAPI.framework in Embed Frameworks */,
+				93BE7700299C9D7200F2A090 /* LeagueAPI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,7 +90,7 @@
 		556257E2219B4B430089398D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55B42C0F21C4289000531940 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		55BD9B4521C5357900EC155D /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
-		9363628D299C432700138BF9 /* LeagueAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LeagueAPI.framework; sourceTree = "<group>"; };
+		93BE76FD299C9D5F00F2A090 /* LeagueAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LeagueAPI.framework; sourceTree = "<group>"; };
 		9704383E228524F70073F296 /* LeagueAPI-CLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "LeagueAPI-CLI"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97043840228524F70073F296 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		9716A95821C798E0002A18D2 /* FeaturedGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedGamesViewController.swift; sourceTree = "<group>"; };
@@ -131,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93636290299C434300138BF9 /* LeagueAPI.framework in Frameworks */,
+				93BE76FF299C9D7200F2A090 /* LeagueAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +138,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9363628F299C432700138BF9 /* LeagueAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +147,7 @@
 		55474D7921AC220E00A52488 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9363628D299C432700138BF9 /* LeagueAPI.framework */,
+				93BE76FD299C9D5F00F2A090 /* LeagueAPI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
