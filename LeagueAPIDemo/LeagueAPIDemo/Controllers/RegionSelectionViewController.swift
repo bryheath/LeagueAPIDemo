@@ -42,7 +42,7 @@ extension RegionSelectionViewController: UITableViewDataSource {
     func setupRegionCell(for region: Region) -> UITableViewCell {
         let newCell: UITableViewCell = self.regionTableView.dequeueReusableCell(withIdentifier: "regionCell")!
         newCell.textLabel?.setText(region.rawValue)
-        if region == preferedRegion {
+        if region == preferredRegion {
             newCell.accessoryType = .checkmark
         }
         else {
@@ -57,7 +57,7 @@ extension RegionSelectionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         let regionAtIndex: Region = self.allRegions[indexPath.row]
-        preferedRegion = regionAtIndex
+        preferredRegion = regionAtIndex
         tableView.reloadData()
     }
 }

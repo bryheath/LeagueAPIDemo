@@ -30,9 +30,9 @@ class TFTMatchHistoryViewController: UIViewController {
     // MARK: - Functions
     
     func getMatchList(for summonerName: String) {
-        league.tftAPI.getSummoner(byName: summonerName, on: preferedRegion) { (summoner, errorMsg) in
+        league.tftAPI.getSummoner(byName: summonerName, on: preferredRegion) { (summoner, errorMsg) in
             if let summoner = summoner {
-                league.tftAPI.getMatchList(by: summoner.puuid, count: 10, on: preferedRegion) { (tftgameids, errorMsg) in
+                league.tftAPI.getMatchList(by: summoner.puuid, count: 10, on: preferredRegion) { (tftgameids, errorMsg) in
                     if let tftgameids = tftgameids {
                         self.matchIds = tftgameids
                         for tftgameid in tftgameids {
@@ -55,7 +55,7 @@ class TFTMatchHistoryViewController: UIViewController {
             completion(localGameStatsDetails)
         }
         else {
-            league.tftAPI.getMatch(by: tftgameId, on: preferedRegion) { (match, errorMsg) in
+            league.tftAPI.getMatch(by: tftgameId, on: preferredRegion) { (match, errorMsg) in
                 if let match = match {
                     self.matchInfos[tftgameId] = match.info
                     let playerStats = match.info.participants.first { (participant) in {

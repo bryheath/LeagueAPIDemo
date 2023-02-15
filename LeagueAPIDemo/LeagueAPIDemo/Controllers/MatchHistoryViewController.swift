@@ -30,10 +30,10 @@ class MatchHistoryViewController: UIViewController {
     // MARK: - Functions
     
     func getMatchList(for summonerName: String) {
-        league.lolAPI.getSummoner(byName: summonerName, on: preferedRegion) { (summoner, errorMsg) in
+        league.lolAPI.getSummoner(byName: summonerName, on: preferredRegion) { (summoner, errorMsg) in
             if let summoner = summoner {
                 self.summoner = summoner
-                league.lolAPI.getMatchList(by: summoner.accountId, on: preferedRegion, endIndex: 20) { (matchList, errorMsg) in
+                league.lolAPI.getMatchList(by: summoner.accountId, on: preferredRegion, endIndex: 20) { (matchList, errorMsg) in
                     if let matchList = matchList {
                         self.matches = matchList.matches
                         self.matchHistoryTableView.reload()
@@ -54,7 +54,7 @@ class MatchHistoryViewController: UIViewController {
             completion(localGameDetails)
         }
         else {
-            league.lolAPI.getMatch(by: gameId, on: preferedRegion) { (game, errorMsg) in
+            league.lolAPI.getMatch(by: gameId, on: preferredRegion) { (game, errorMsg) in
                 if let game = game {
                     self.matchDetails[gameId] = game
                     completion(game)

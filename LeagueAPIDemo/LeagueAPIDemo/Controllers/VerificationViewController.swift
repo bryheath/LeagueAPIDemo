@@ -26,11 +26,11 @@ class VerificationViewController: UIViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        if (preferedSummoner.isEmpty) {
-            self.instructions.text = "You must set preferedSummoner in code before trying this"
+        if (preferredSummoner.isEmpty) {
+            self.instructions.text = "You must set preferredSummoner in code before trying this"
             self.verifyButton.isEnabled = false
         } else {
-            self.instructions.text = "From \(preferedSummoner) LoL client, enter verification code \"LeagueAPI\""
+            self.instructions.text = "From \(preferredSummoner) LoL client, enter verification code \"LeagueAPI\""
         }
     }
     
@@ -49,9 +49,9 @@ class VerificationViewController: UIViewController {
     
     @IBAction func verifyCode(sender: UIButton) {
         if let summonerId = self.summonerId {
-            self.getVerificationCode(summonerId: summonerId, region: preferedRegion)
+            self.getVerificationCode(summonerId: summonerId, region: preferredRegion)
         } else {
-            self.getSummonerId(summonerName: preferedSummoner, region: preferedRegion) { () in
+            self.getSummonerId(summonerName: preferredSummoner, region: preferredRegion) { () in
                 self.verifyCode(sender: sender)
             }
         }

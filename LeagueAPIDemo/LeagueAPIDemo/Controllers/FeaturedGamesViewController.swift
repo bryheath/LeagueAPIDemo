@@ -29,7 +29,7 @@ class FeaturedGamesViewController: UIViewController {
     // MARK: - Functions
     
     func getFeaturedGames() {
-        league.lolAPI.getFeaturedGames(on: preferedRegion) { (featuredGames, errorMsg) in
+        league.lolAPI.getFeaturedGames(on: preferredRegion) { (featuredGames, errorMsg) in
             if let featuredGames = featuredGames {
                 self.games = featuredGames.games
                 self.featuredGamesTableView.reload()

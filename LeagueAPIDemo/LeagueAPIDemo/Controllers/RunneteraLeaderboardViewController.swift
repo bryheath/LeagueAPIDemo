@@ -23,8 +23,8 @@ class RunneteraLeaderboardViewController: UIViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.leaderboardTitle.text = "Leaderboard for \(preferedWorldRegion.rawValue)"
-        self.getLeaderboardPlayers(worldRegion: preferedWorldRegion)
+        self.leaderboardTitle.text = "Leaderboard for \(preferredWorldRegion.rawValue)"
+        self.getLeaderboardPlayers(worldRegion: preferredWorldRegion)
     }
     
     // MARK: - Functions

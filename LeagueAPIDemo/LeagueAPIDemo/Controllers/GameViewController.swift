@@ -93,7 +93,7 @@ class GameViewController: UIViewController {
     }
     
     func getChampionMastery(summonerId: SummonerId, championId: ChampionId, completion: @escaping (Int?) -> Void) {
-        league.lolAPI.getChampionMastery(by: summonerId, for: championId, on: preferedRegion) { (championMastery, errorMsg) in
+        league.lolAPI.getChampionMastery(by: summonerId, for: championId, on: preferredRegion) { (championMastery, errorMsg) in
             if let championMastery = championMastery {
                 completion(championMastery.championLevel)
             }
@@ -104,10 +104,10 @@ class GameViewController: UIViewController {
     }
     
     func getSummonerBestRank(summonerId: SummonerId, completion: @escaping (RankedTier) -> Void) {
-        league.lolAPI.getRankedEntries(for: summonerId, on: preferedRegion) { (rankedPositions, errorMsg) in
+        league.lolAPI.getRankedEntries(for: summonerId, on: preferredRegion) { (rankedPositions, errorMsg) in
             if let rankedPositions = rankedPositions {
                 let rankedTiers: [RankedTier] = rankedPositions.map( { position in
-                    return position.tier
+                    return position.tier!
                 })
                 let orderedTiers: [RankedTier.Tiers] = [.Challenger, .GrandMaster, .Master, .Diamond, .Platinum, .Gold, .Silver, .Bronze, .Iron]
                 for tier in orderedTiers {
@@ -131,7 +131,7 @@ class GameViewController: UIViewController {
             }
         }
         else {
-            league.lolAPI.getSummoner(byName: participant.summonerName, on: preferedRegion) { (summoner, errorMsg) in
+            league.lolAPI.getSummoner(byName: participant.summonerName, on: preferredRegion) { (summoner, errorMsg) in
                 if let summoner = summoner {
                     self.getSummonerBestRank(summonerId: summoner.id) { bestRank in
                         completion(bestRank)
@@ -151,7 +151,7 @@ class GameViewController: UIViewController {
             }
         }
         else {
-            league.lolAPI.getSummoner(byName: participant.summonerName, on: preferedRegion) { (summoner, errorMsg) in
+            league.lolAPI.getSummoner(byName: participant.summonerName, on: preferredRegion) { (summoner, errorMsg) in
                 if let summoner = summoner {
                     self.getChampionMastery(summonerId: summoner.id, championId: participant.championId) { masteryLevel in
                         completion(masteryLevel)

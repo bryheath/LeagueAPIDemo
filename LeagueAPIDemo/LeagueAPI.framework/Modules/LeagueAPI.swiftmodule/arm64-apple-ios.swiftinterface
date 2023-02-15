@@ -1,0 +1,2719 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LeagueAPI
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+@_exported import LeagueAPI
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+public class MatchMetadata<LOLMatchId> : Swift.Decodable where LOLMatchId : LeagueAPI.Identifier<Swift.String> {
+  public var dataVersion: Swift.String
+  public var participants: [LeagueAPI.SummonerPuuid]
+  public var gameId: LOLMatchId
+  public init(dataVersion: Swift.String, participants: [LeagueAPI.SummonerPuuid], gameId: LOLMatchId)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TeamId : LeagueAPI.Identifier<Swift.String> {
+  required public init(_ value: Swift.String)
+  @objc deinit
+}
+public enum Region : Swift.String {
+  case BR
+  case EUNE
+  case EUW
+  case JP
+  case KR
+  case LAN
+  case LAS
+  case NA
+  case OCE
+  case TR
+  case RU
+  case PBE
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public class Challenges : Swift.Decodable {
+  public var the12AssistStreakCount: Swift.Int?
+  public var abilityUses: Swift.Int?
+  public var acesBefore15Minutes: Swift.Int?
+  public var alliedJungleMonsterKills: Swift.Double?
+  public var baronTakedowns: Swift.Int?
+  public var blastConeOppositeOpponentCount: Swift.Int?
+  public var bountyGold: Swift.Int?
+  public var buffsStolen: Swift.Int?
+  public var completeSupportQuestInTime: Swift.Int?
+  public var controlWardsPlaced: Swift.Int?
+  public var damagePerMinute: Swift.Double?
+  public var damageTakenOnTeamPercentage: Swift.Double?
+  public var dancedWithRiftHerald: Swift.Int?
+  public var deathsByEnemyChamps: Swift.Int?
+  public var dodgeSkillShotsSmallWindow: Swift.Int?
+  public var doubleAces: Swift.Int?
+  public var dragonTakedowns: Swift.Int?
+  public var earlyLaningPhaseGoldExpAdvantage: Swift.Int?
+  public var effectiveHealAndShielding: Swift.Int?
+  public var elderDragonKillsWithOpposingSoul: Swift.Int?
+  public var elderDragonMultikills: Swift.Int?
+  public var enemyChampionImmobilizations: Swift.Int?
+  public var enemyJungleMonsterKills: Swift.Double?
+  public var epicMonsterKillsNearEnemyJungler: Swift.Int?
+  public var epicMonsterKillsWithin30SecondsOfSpawn: Swift.Int?
+  public var epicMonsterSteals: Swift.Int?
+  public var epicMonsterStolenWithoutSmite: Swift.Int?
+  public var flawlessAces: Swift.Int?
+  public var fullTeamTakedown: Swift.Int?
+  public var gameLength: Swift.Double?
+  public var goldPerMinute: Swift.Double?
+  public var hadAfkTeammate: Swift.Int?
+  public var hadOpenNexus: Swift.Int?
+  public var immobilizeAndKillWithAlly: Swift.Int?
+  public var initialBuffCount: Swift.Int?
+  public var initialCrabCount: Swift.Int?
+  public var jungleCsBefore10Minutes: Swift.Double?
+  public var junglerKillsEarlyJungle: Swift.Int?
+  public var junglerTakedownsNearDamagedEpicMonster: Swift.Int?
+  public var kTurretsDestroyedBeforePlatesFall: Swift.Int?
+  public var kda: Swift.Double?
+  public var killAfterHiddenWithAlly: Swift.Int?
+  public var killParticipation: Swift.Double?
+  public var killedChampTookFullTeamDamageSurvived: Swift.Int?
+  public var killsNearEnemyTurret: Swift.Int?
+  public var killsOnLanersEarlyJungleAsJungler: Swift.Int?
+  public var killsOnRecentlyHealedByAramPack: Swift.Int?
+  public var killsUnderOwnTurret: Swift.Int?
+  public var killsWithHelpFromEpicMonster: Swift.Int?
+  public var knockEnemyIntoTeamAndKill: Swift.Int?
+  public var landSkillShotsEarlyGame: Swift.Int?
+  public var laneMinionsFirst10Minutes: Swift.Int?
+  public var laningPhaseGoldExpAdvantage: Swift.Int?
+  public var legendaryCount: Swift.Int?
+  public var lostAnInhibitor: Swift.Int?
+  public var maxCsAdvantageOnLaneOpponent: Swift.Int?
+  public var maxKillDeficit: Swift.Int?
+  public var maxLevelLeadLaneOpponent: Swift.Int?
+  public var moreEnemyJungleThanOpponent: Swift.Double?
+  public var multiKillOneSpell: Swift.Int?
+  public var multiTurretRiftHeraldCount: Swift.Int?
+  public var multikills: Swift.Int?
+  public var multikillsAfterAggressiveFlash: Swift.Int?
+  public var mythicItemUsed: Swift.Int?
+  public var outerTurretExecutesBefore10Minutes: Swift.Int?
+  public var outnumberedKills: Swift.Int?
+  public var outnumberedNexusKill: Swift.Int?
+  public var perfectDragonSoulsTaken: Swift.Int?
+  public var perfectGame: Swift.Int?
+  public var pickKillWithAlly: Swift.Int?
+  public var poroExplosions: Swift.Int?
+  public var quickCleanse: Swift.Int?
+  public var quickFirstTurret: Swift.Int?
+  public var quickSoloKills: Swift.Int?
+  public var riftHeraldTakedowns: Swift.Int?
+  public var saveAllyFromDeath: Swift.Int?
+  public var scuttleCrabKills: Swift.Int?
+  public var skillshotsDodged: Swift.Int?
+  public var skillshotsHit: Swift.Int?
+  public var snowballsHit: Swift.Int?
+  public var soloBaronKills: Swift.Int?
+  public var soloKills: Swift.Int?
+  public var soloTurretsLategame: Swift.Int?
+  public var stealthWardsPlaced: Swift.Int?
+  public var survivedSingleDigitHpCount: Swift.Int?
+  public var survivedThreeImmobilizesInFight: Swift.Int?
+  public var takedownOnFirstTurret: Swift.Int?
+  public var takedowns: Swift.Int?
+  public var takedownsAfterGainingLevelAdvantage: Swift.Int?
+  public var takedownsBeforeJungleMinionSpawn: Swift.Int?
+  public var takedownsFirstXMinutes: Swift.Int?
+  public var takedownsInAlcove: Swift.Int?
+  public var takedownsInEnemyFountain: Swift.Int?
+  public var teamBaronKills: Swift.Int?
+  public var teamDamagePercentage: Swift.Double?
+  public var teamElderDragonKills: Swift.Int?
+  public var teamRiftHeraldKills: Swift.Int?
+  public var threeWardsOneSweeperCount: Swift.Int?
+  public var tookLargeDamageSurvived: Swift.Int?
+  public var turretPlatesTaken: Swift.Int?
+  public var turretTakedowns: Swift.Int?
+  public var turretsTakenWithRiftHerald: Swift.Int?
+  public var twentyMinionsIn3SecondsCount: Swift.Int?
+  public var unseenRecalls: Swift.Int?
+  public var visionScoreAdvantageLaneOpponent: Swift.Double?
+  public var visionScorePerMinute: Swift.Double?
+  public var wardTakedowns: Swift.Int?
+  public var wardTakedownsBefore20M: Swift.Int?
+  public var wardsGuarded: Swift.Int?
+  public init(the12AssistStreakCount: Swift.Int?, abilityUses: Swift.Int?, acesBefore15Minutes: Swift.Int?, alliedJungleMonsterKills: Swift.Double?, baronTakedowns: Swift.Int?, blastConeOppositeOpponentCount: Swift.Int?, bountyGold: Swift.Int?, buffsStolen: Swift.Int?, completeSupportQuestInTime: Swift.Int?, controlWardsPlaced: Swift.Int?, damagePerMinute: Swift.Double?, damageTakenOnTeamPercentage: Swift.Double?, dancedWithRiftHerald: Swift.Int?, deathsByEnemyChamps: Swift.Int?, dodgeSkillShotsSmallWindow: Swift.Int?, doubleAces: Swift.Int?, dragonTakedowns: Swift.Int?, earlyLaningPhaseGoldExpAdvantage: Swift.Int?, effectiveHealAndShielding: Swift.Int?, elderDragonKillsWithOpposingSoul: Swift.Int?, elderDragonMultikills: Swift.Int?, enemyChampionImmobilizations: Swift.Int?, enemyJungleMonsterKills: Swift.Double?, epicMonsterKillsNearEnemyJungler: Swift.Int?, epicMonsterKillsWithin30SecondsOfSpawn: Swift.Int?, epicMonsterSteals: Swift.Int?, epicMonsterStolenWithoutSmite: Swift.Int?, flawlessAces: Swift.Int?, fullTeamTakedown: Swift.Int?, gameLength: Swift.Double?, goldPerMinute: Swift.Double?, hadAfkTeammate: Swift.Int?, hadOpenNexus: Swift.Int?, immobilizeAndKillWithAlly: Swift.Int?, initialBuffCount: Swift.Int?, initialCrabCount: Swift.Int?, jungleCsBefore10Minutes: Swift.Double?, junglerKillsEarlyJungle: Swift.Int?, junglerTakedownsNearDamagedEpicMonster: Swift.Int?, kTurretsDestroyedBeforePlatesFall: Swift.Int?, kda: Swift.Double?, killAfterHiddenWithAlly: Swift.Int?, killParticipation: Swift.Double?, killedChampTookFullTeamDamageSurvived: Swift.Int?, killsNearEnemyTurret: Swift.Int?, killsOnLanersEarlyJungleAsJungler: Swift.Int?, killsOnRecentlyHealedByAramPack: Swift.Int?, killsUnderOwnTurret: Swift.Int?, killsWithHelpFromEpicMonster: Swift.Int?, knockEnemyIntoTeamAndKill: Swift.Int?, landSkillShotsEarlyGame: Swift.Int?, laneMinionsFirst10Minutes: Swift.Int?, laningPhaseGoldExpAdvantage: Swift.Int?, legendaryCount: Swift.Int?, lostAnInhibitor: Swift.Int?, maxCsAdvantageOnLaneOpponent: Swift.Int?, maxKillDeficit: Swift.Int?, maxLevelLeadLaneOpponent: Swift.Int?, moreEnemyJungleThanOpponent: Swift.Double?, multiKillOneSpell: Swift.Int?, multiTurretRiftHeraldCount: Swift.Int?, multikills: Swift.Int?, multikillsAfterAggressiveFlash: Swift.Int?, mythicItemUsed: Swift.Int?, outerTurretExecutesBefore10Minutes: Swift.Int?, outnumberedKills: Swift.Int?, outnumberedNexusKill: Swift.Int?, perfectDragonSoulsTaken: Swift.Int?, perfectGame: Swift.Int?, pickKillWithAlly: Swift.Int?, poroExplosions: Swift.Int?, quickCleanse: Swift.Int?, quickFirstTurret: Swift.Int?, quickSoloKills: Swift.Int?, riftHeraldTakedowns: Swift.Int?, saveAllyFromDeath: Swift.Int?, scuttleCrabKills: Swift.Int?, skillshotsDodged: Swift.Int?, skillshotsHit: Swift.Int?, snowballsHit: Swift.Int?, soloBaronKills: Swift.Int?, soloKills: Swift.Int?, soloTurretsLategame: Swift.Int?, stealthWardsPlaced: Swift.Int?, survivedSingleDigitHpCount: Swift.Int?, survivedThreeImmobilizesInFight: Swift.Int?, takedownOnFirstTurret: Swift.Int?, takedowns: Swift.Int?, takedownsAfterGainingLevelAdvantage: Swift.Int?, takedownsBeforeJungleMinionSpawn: Swift.Int?, takedownsFirstXMinutes: Swift.Int?, takedownsInAlcove: Swift.Int?, takedownsInEnemyFountain: Swift.Int?, teamBaronKills: Swift.Int?, teamDamagePercentage: Swift.Double?, teamElderDragonKills: Swift.Int?, teamRiftHeraldKills: Swift.Int?, threeWardsOneSweeperCount: Swift.Int?, tookLargeDamageSurvived: Swift.Int?, turretPlatesTaken: Swift.Int?, turretTakedowns: Swift.Int?, turretsTakenWithRiftHerald: Swift.Int?, twentyMinionsIn3SecondsCount: Swift.Int?, unseenRecalls: Swift.Int?, visionScoreAdvantageLaneOpponent: Swift.Double?, visionScorePerMinute: Swift.Double?, wardTakedowns: Swift.Int?, wardTakedownsBefore20M: Swift.Int?, wardsGuarded: Swift.Int?)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class LOLMatchFrame : Swift.Codable {
+  public var events: [LeagueAPI.LOLMatchEvent]
+  public var participantFrames: [Swift.String : LeagueAPI.LOLParticipantFrame]
+  public var timestamp: Swift.Int
+  public init(events: [LeagueAPI.LOLMatchEvent], participantFrames: [Swift.String : LeagueAPI.LOLParticipantFrame], timestamp: Swift.Int)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers public class RunneteraMatchId : LeagueAPI.Identifier<Swift.String> {
+  required public init(_ value: Swift.String)
+  @objc deinit
+}
+public class Team : Swift.Decodable {
+  public var bans: [LeagueAPI.Ban]
+  public var objectives: LeagueAPI.MatchObjectives
+  public var teamId: Swift.Int
+  public var win: Swift.Bool
+  public init(bans: [LeagueAPI.Ban], objectives: LeagueAPI.MatchObjectives, teamId: Swift.Int, win: Swift.Bool)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class ChallengeInfo : Swift.Codable, Swift.CustomDebugStringConvertible {
+  public var challengeId: Swift.Int
+  public var percentile: Swift.Double
+  public var level: LeagueAPI.Level
+  public var value: Swift.Int
+  public var achievedTime: Swift.Int?
+  public var position: Swift.Int?
+  public var playersInLevel: Swift.Int?
+  public init(challengeId: Swift.Int, percentile: Swift.Double, level: LeagueAPI.Level, value: Swift.Int, achievedTime: Swift.Int?, position: Swift.Int?, playersInLevel: Swift.Int?)
+  required public init(from decoder: Swift.Decoder) throws
+  public var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public class RunneteraMatch : Swift.Decodable {
+  public var metadata: LeagueAPI.MatchMetadata<LeagueAPI.RunneteraMatchId>
+  public var info: LeagueAPI.RunneteraMatchInfo
+  public init(metadata: LeagueAPI.MatchMetadata<LeagueAPI.RunneteraMatchId>, info: LeagueAPI.RunneteraMatchInfo)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class RiotAPI : LeagueAPI.APIClient {
+  public func getAccount(byPuuid puuid: LeagueAPI.SummonerPuuid, on region: LeagueAPI.WorldRegion, handler: @escaping (LeagueAPI.RiotAccount?, Swift.String?) -> Swift.Void)
+  public func getAccount(byRiotId riotId: LeagueAPI.RiotId, on region: LeagueAPI.WorldRegion, handler: @escaping (LeagueAPI.RiotAccount?, Swift.String?) -> Swift.Void)
+  public func getAccountActiveShards(puuid: LeagueAPI.SummonerPuuid, game: LeagueAPI.ShardGame, on region: LeagueAPI.WorldRegion, handler: @escaping (LeagueAPI.RiotAccountActiveShard?, Swift.String?) -> Swift.Void)
+  public func getAccount(byAuthorizationToken token: Swift.String, on region: LeagueAPI.WorldRegion, handler: @escaping (LeagueAPI.RiotAccount?, Swift.String?) -> Swift.Void)
+  @objc deinit
+}
+public class RunneteraCard : Swift.Decodable {
+  public var code: Swift.String
+  public var count: Swift.String
+  public init(code: Swift.String, count: Swift.String)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class FeaturedGames : Swift.Decodable {
+  public var refreshInterval: LeagueAPI.Duration
+  public var games: [LeagueAPI.GameInfo]
+  public init(refreshInterval: LeagueAPI.Duration, games: [LeagueAPI.GameInfo])
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class TournamentDetails : Swift.Decodable {
+  public var id: Swift.Int
+  public var tournamentCodeId: Swift.Int
+  public var providerId: LeagueAPI.ProviderId
+  public var name: Swift.String
+  public var password: Swift.String
+  public var code: LeagueAPI.TournamentCode
+  public var teamSize: Swift.Int
+  public var participantIds: [LeagueAPI.SummonerId]?
+  public var spectatorType: LeagueAPI.SpectatorType
+  public var pickType: LeagueAPI.PickType
+  public var map: LeagueAPI.MapType
+  public var region: LeagueAPI.TournamentRegion
+  public var metadata: Swift.String?
+  public init(id: Swift.Int, tournamentCodeId: Swift.Int, providerId: LeagueAPI.ProviderId, name: Swift.String, password: Swift.String, code: LeagueAPI.TournamentCode, teamSize: Swift.Int, participantIds: [LeagueAPI.SummonerId]?, spectatorType: LeagueAPI.SpectatorType, pickType: LeagueAPI.PickType, map: LeagueAPI.MapType, region: LeagueAPI.TournamentRegion, metadata: Swift.String?)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class Queue {
+  public enum QueueTypes : Swift.String, Swift.CustomStringConvertible {
+    case RankedSolo5V5
+    case RankedFlex5V5
+    case RankedFlex3V3
+    case RankedTFT
+    case RankedTFTTurbo
+    case Unknown
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var type: LeagueAPI.Queue.QueueTypes {
+    get
+  }
+  public init?(_ queueType: LeagueAPI.Queue.QueueTypes)
+  @objc deinit
+}
+public class Observer : Swift.Decodable {
+  public var encryptionKey: Swift.String
+  public init(encryptionKey: Swift.String)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class TFTMatch : Swift.Decodable {
+  public var info: LeagueAPI.TFTMatchInfo
+  public var metadata: LeagueAPI.MatchMetadata<LeagueAPI.TFTGameId>
+  public init(info: LeagueAPI.TFTMatchInfo, metadata: LeagueAPI.MatchMetadata<LeagueAPI.TFTGameId>)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public enum WorldRegion : Swift.String {
+  case America
+  case Asia
+  case Europe
+  case SouthEastAsia
+  case Esports
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public typealias LOLMatchId = Swift.String
+@_hasMissingDesignatedInitializers public class Item {
+  public var id: LeagueAPI.ItemId
+  public var name: Swift.String
+  public var presentation: Swift.String
+  public var description: Swift.String
+  public var image: LeagueAPI.ImageWithUrl
+  public var shop: LeagueAPI.ItemShop
+  public var composedByItemIds: [LeagueAPI.ItemId]
+  public var evolutionItemIds: [LeagueAPI.ItemId]
+  public var tags: [Swift.String]
+  public var availableMaps: [LeagueAPI.Map]
+  public init(id: LeagueAPI.ItemId, name: Swift.String, presentation: Swift.String, description: Swift.String, image: LeagueAPI.ImageWithUrl, shop: LeagueAPI.ItemShop, composedByItemIds: [LeagueAPI.ItemId], evolutionItemIds: [LeagueAPI.ItemId], purchasable: Swift.Bool, tags: [Swift.String], availableMaps: [LeagueAPI.Map])
+  @objc deinit
+}
+public class Message : Swift.Decodable {
+  public var id: LeagueAPI.Long
+  public var author: Swift.String
+  public var publish: Swift.Bool
+  public var publishLocations: [LeagueAPI.RiotClientLocation]
+  public var translations: [LeagueAPI.Translation]
+  public var createdAt: Swift.String
+  public var updatedAt: Swift.String
+  public init(id: LeagueAPI.Long, author: Swift.String, publish: Swift.Bool, publishLocations: [LeagueAPI.RiotClientLocation], translations: [LeagueAPI.Translation], createdAt: Swift.String, updatedAt: Swift.String)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class ChallengeId : LeagueAPI.Identifier<LeagueAPI.Long> {
+  required public init(_ value: LeagueAPI.Long)
+  @objc deinit
+}
+public class LOLTimelineParticipant : Swift.Decodable {
+  public var participantId: Swift.Int
+  public var puuid: LeagueAPI.SummonerPuuid
+  public init(participantId: Swift.Int, puuid: LeagueAPI.SummonerPuuid)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class League_API {
+  public var riotAPI: LeagueAPI.RiotAPI {
+    get
+  }
+  public var lolAPI: LeagueAPI.LoLAPI {
+    get
+  }
+  public var lorAPI: LeagueAPI.LoRAPI {
+    get
+  }
+  public var tftAPI: LeagueAPI.TFTAPI {
+    get
+  }
+  public init(APIToken: Swift.String)
+  public static func clearCache()
+  public static func cancelAllDelayedRequests()
+  public static func delayedRequestNumber() -> Swift.Int
+  @objc deinit
+}
+public class ChampionDifficulties : Swift.Decodable {
+  public var attack: Swift.Int
+  public var defense: Swift.Int
+  public var magic: Swift.Int
+  public var globalDifficulty: Swift.Int
+  public init(attack: Swift.Int, defense: Swift.Int, magic: Swift.Int, globalDifficulty: Swift.Int)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class IncidentSeverity {
+  public enum SeverityLevel : Swift.String, Swift.CustomStringConvertible {
+    case Info
+    case Warning
+    case Critical
+    case Unknown
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var severity: LeagueAPI.IncidentSeverity.SeverityLevel {
+    get
+  }
+  public init?(_ severity: LeagueAPI.IncidentSeverity.SeverityLevel)
+  @objc deinit
+}
+public class ImageWithUrl {
+  public var url: Swift.String {
+    get
+  }
+  public init(url: Swift.String, image: LeagueAPI.LAPIImage?)
+  public func getImage(handler: @escaping (LeagueAPI.LAPIImage?, Swift.String?) -> Swift.Void)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class Map {
+  public var map: LeagueAPI.Map.Maps {
+    get
+  }
+  public var place: LeagueAPI.Place {
+    get
+  }
+  public var note: Swift.String {
+    get
+  }
+  public var id: LeagueAPI.Long {
+    get
+  }
+  public var name: Swift.String {
+    get
+  }
+  public enum Maps : LeagueAPI.Long, Swift.CustomStringConvertible {
+    case SummerSummonersRift
+    case AutumnSummonersRift
+    case TutorialMap
+    case OriginalTwistedTreeline
+    case Dominion
+    case TwistedTreeline
+    case SummonersRift
+    case AramHowlingAbyss
+    case AramButchersBridge
+    case DarkStarMap
+    case StarGuardianMap
+    case ProjectMap
+    case OdysseyMap
+    case NexusBlitzMap
+    case Convergence
+    case Unknown
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: LeagueAPI.Long)
+    public typealias RawValue = LeagueAPI.Long
+    public var rawValue: LeagueAPI.Long {
+      get
+    }
+  }
+  convenience public init?(map: LeagueAPI.Map.Maps)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class GameType {
+  public enum Types : Swift.String, Swift.CustomStringConvertible {
+    case Custom
+    case MatchMaking
+    case Tutorial
+    case Unknown
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var type: LeagueAPI.GameType.Types {
+    get
+  }
+  public init?(_ type: LeagueAPI.GameType.Types)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class SkinImages {
+  public var square: LeagueAPI.ImageWithUrl
+  public var loading: LeagueAPI.ImageWithUrl
+  public var splash: LeagueAPI.ImageWithUrl
+  @objc deinit
+}
+public class PerkStyle : Swift.Decodable {
+  public var styleDescription: Swift.String
+  public var selections: [LeagueAPI.PerkStyleSelection]
+  public var style: LeagueAPI.RunePathId
+  public init(styleDescription: Swift.String, selections: [LeagueAPI.PerkStyleSelection], style: LeagueAPI.RunePathId)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ProfileIcon {
+  public var id: LeagueAPI.ProfileIconId
+  public var profileIcon: LeagueAPI.ImageWithUrl
+  public init(id: LeagueAPI.ProfileIconId, profileIcon: LeagueAPI.ImageWithUrl)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TeamRole {
+  public enum Roles : Swift.String, Swift.CustomStringConvertible {
+    case CAPTAIN
+    case MEMBER
+    case UNKNOWN
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var role: LeagueAPI.TeamRole.Roles {
+    get
+  }
+  public init?(_ role: LeagueAPI.TeamRole.Roles)
+  @objc deinit
+}
+public class ClashPlayer : Swift.Decodable {
+  public var summonerId: LeagueAPI.SummonerId
+  public var teamId: LeagueAPI.TeamId?
+  public var position: LeagueAPI.GameRole
+  public var teamRole: LeagueAPI.TeamRole
+  public init(summonerId: LeagueAPI.SummonerId, teamId: LeagueAPI.TeamId?, position: LeagueAPI.GameRole, teamRole: LeagueAPI.TeamRole)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class GameRole {
+  public enum Roles : Swift.String, Swift.CustomStringConvertible {
+    case UNSELECTED
+    case FILL
+    case TOP
+    case JUNGLE
+    case MID
+    case BOTTOM
+    case SUPPORT
+    case UNKNOWN
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var role: LeagueAPI.GameRole.Roles {
+    get
+  }
+  public init?(_ role: LeagueAPI.GameRole.Roles)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class RuneId : LeagueAPI.Identifier<LeagueAPI.Long> {
+  required public init(_ value: LeagueAPI.Long)
+  @objc deinit
+}
+public class RunneteraDeckCreation : Swift.Encodable {
+  public var name: Swift.String
+  public var code: Swift.String
+  public init(name: Swift.String, code: Swift.String)
+  public func encode(to encoder: Swift.Encoder) throws
+  @objc deinit
+}
+public enum LOLWardType : Swift.String, Swift.Codable {
+  case controlWard
+  case sightWard
+  case undefinedWard
+  case yellowTrinket
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public class TFTTrait : Swift.Decodable {
+  public var maxTier: Swift.Int
+  public var name: Swift.String
+  public var currentTier: Swift.Int
+  public var unitNumber: Swift.Int
+  public var style: Swift.Int?
+  public init(maxTier: Swift.Int, name: Swift.String, currentTier: Swift.Int, unitNumber: Swift.Int, style: Swift.Int?)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class StatPerks : Swift.Codable {
+  public var defense: Swift.Int
+  public var flex: Swift.Int
+  public var offense: Swift.Int
+  public init(defense: Swift.Int, flex: Swift.Int, offense: Swift.Int)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public class TournamentUpdate : Swift.Encodable {
+  public var spectatorType: LeagueAPI.SpectatorType
+  public var pickType: LeagueAPI.PickType
+  public var allowedSummonerIds: [LeagueAPI.SummonerId]?
+  public var mapType: LeagueAPI.MapType
+  public init(spectatorType: LeagueAPI.SpectatorType, pickType: LeagueAPI.PickType, allowedSummonerIds: [LeagueAPI.SummonerId]? = nil, mapType: LeagueAPI.MapType)
+  public func encode(to encoder: Swift.Encoder) throws
+  @objc deinit
+}
+public class TFTTraitTier : Swift.Decodable {
+  public enum TFTTraitTierStyle : Swift.String {
+    case Bronze
+    case Silver
+    case Gold
+    case Chromatic
+    case None
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var style: LeagueAPI.TFTTraitTier.TFTTraitTierStyle
+  public var minUnit: Swift.Int
+  public var maxUnit: Swift.Int?
+  public init(style: LeagueAPI.TFTTraitTier.TFTTraitTierStyle, minUnit: Swift.Int, maxUnit: Swift.Int?)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class GameMode {
+  public enum GameModes : Swift.String, Swift.CustomStringConvertible {
+    case Classic
+    case Odin
+    case Aram
+    case Tutorial
+    case Urf
+    case DoomBotsTeemo
+    case OneForAll
+    case Ascension
+    case Firstblood
+    case KingPoro
+    case Siege
+    case Assassinate
+    case Arsr
+    case DarkStar
+    case StarGuardian
+    case Project
+    case NexusBlitzFirstEdition
+    case Odyssey
+    case PraticeTool
+    case SnowUrf
+    case TutorialModule1
+    case TutorialModule2
+    case TutorialModule3
+    case TeamFightTactics
+    case NexusBlitz
+    case UltBook
+    case Unknown
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var mode: LeagueAPI.GameMode.GameModes {
+    get
+  }
+  public init?(_ gameMode: LeagueAPI.GameMode.GameModes)
+  @objc deinit
+}
+public enum LOLLaneType : Swift.String, Swift.Codable {
+  case botLane
+  case midLane
+  case topLane
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public class ChampionMastery : Swift.Decodable {
+  public var championId: LeagueAPI.ChampionId
+  public var summonerId: LeagueAPI.SummonerId
+  public var championLevel: Swift.Int
+  public var championPoints: Swift.Int
+  public var championPointsUntilNextLevel: LeagueAPI.Long
+  public var championPointsSinceLastLevel: LeagueAPI.Long
+  public var chestGranted: Swift.Bool
+  public var tokensEarned: Swift.Int
+  public var lastPlayTime: LeagueAPI.Datetime
+  public init(championId: LeagueAPI.ChampionId, summonerId: LeagueAPI.SummonerId, championLevel: Swift.Int, championPoints: Swift.Int, championPointsUntilNextLevel: LeagueAPI.Long, championPointsSinceLastLevel: LeagueAPI.Long, chestGranted: Swift.Bool, tokensEarned: Swift.Int, lastPlayTime: LeagueAPI.Datetime)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class MatchParticipant : Swift.Decodable {
+  public var assists: Swift.Int
+  public var baronKills: Swift.Int
+  public var bountyLevel: Swift.Int
+  public var challenges: LeagueAPI.Challenges
+  public var champExperience: Swift.Int
+  public var champLevel: Swift.Int
+  public var championId: LeagueAPI.ChampionId
+  public var championName: Swift.String
+  public var championTransform: Swift.Int
+  public var consumablesPurchased: Swift.Int
+  public var damageDealtToBuildings: Swift.Int
+  public var damageDealtToObjectives: Swift.Int
+  public var damageDealtToTurrets: Swift.Int
+  public var damageSelfMitigated: Swift.Int
+  public var deaths: Swift.Int
+  public var detectorWardsPlaced: Swift.Int
+  public var doubleKills: Swift.Int
+  public var dragonKills: Swift.Int
+  public var eligibleForProgression: Swift.Bool
+  public var firstBloodAssist: Swift.Bool
+  public var firstBloodKill: Swift.Bool
+  public var firstTowerAssist: Swift.Bool
+  public var firstTowerKill: Swift.Bool
+  public var gameEndedInEarlySurrender: Swift.Bool
+  public var gameEndedInSurrender: Swift.Bool
+  public var goldEarned: Swift.Int
+  public var goldSpent: Swift.Int
+  public var individualPosition: Swift.String
+  public var inhibitorKills: Swift.Int
+  public var inhibitorTakedowns: Swift.Int
+  public var inhibitorsLost: Swift.Int
+  public var item0: LeagueAPI.ItemId
+  public var item1: LeagueAPI.ItemId
+  public var item2: LeagueAPI.ItemId
+  public var item3: LeagueAPI.ItemId
+  public var item4: LeagueAPI.ItemId
+  public var item5: LeagueAPI.ItemId
+  public var item6: LeagueAPI.ItemId
+  public var itemsPurchased: Swift.Int
+  public var killingSprees: Swift.Int
+  public var kills: Swift.Int
+  public var lane: Swift.String
+  public var largestCriticalStrike: Swift.Int
+  public var largestKillingSpree: Swift.Int
+  public var largestMultiKill: Swift.Int
+  public var longestTimeSpentLiving: Swift.Int
+  public var magicDamageDealt: Swift.Int
+  public var magicDamageDealtToChampions: Swift.Int
+  public var magicDamageTaken: Swift.Int
+  public var neutralMinionsKilled: Swift.Int
+  public var nexusKills: Swift.Int
+  public var nexusLost: Swift.Int
+  public var nexusTakedowns: Swift.Int
+  public var objectivesStolen: Swift.Int
+  public var objectivesStolenAssists: Swift.Int
+  public var participantId: Swift.Int
+  public var pentaKills: Swift.Int
+  public var perks: LeagueAPI.MatchPerks
+  public var physicalDamageDealt: Swift.Int
+  public var physicalDamageDealtToChampions: Swift.Int
+  public var physicalDamageTaken: Swift.Int
+  public var profileIcon: LeagueAPI.ProfileIconId
+  public var puuid: LeagueAPI.SummonerPuuid
+  public var quadraKills: Swift.Int
+  public var riotIdName: Swift.String
+  public var riotIdTagline: Swift.String
+  public var role: Swift.String
+  public var sightWardsBoughtInGame: Swift.Int
+  public var spell1Casts: Swift.Int
+  public var spell2Casts: Swift.Int
+  public var spell3Casts: Swift.Int
+  public var spell4Casts: Swift.Int
+  public var summoner1Casts: Swift.Int
+  public var summoner1Id: LeagueAPI.SummonerSpellId
+  public var summoner2Casts: Swift.Int
+  public var summoner2Id: LeagueAPI.SummonerSpellId
+  public var summonerId: LeagueAPI.SummonerId
+  public var summonerLevel: Swift.Int
+  public var summonerName: Swift.String
+  public var teamEarlySurrendered: Swift.Bool
+  public var teamId: LeagueAPI.LOLTeamId
+  public var teamPosition: Swift.String
+  public var timeCCingOthers: Swift.Int
+  public var timePlayed: Swift.Int
+  public var totalDamageDealt: Swift.Int
+  public var totalDamageDealtToChampions: Swift.Int
+  public var totalDamageShieldedOnTeammates: Swift.Int
+  public var totalDamageTaken: Swift.Int
+  public var totalHeal: Swift.Int
+  public var totalHealsOnTeammates: Swift.Int
+  public var totalMinionsKilled: Swift.Int
+  public var totalTimeCcDealt: Swift.Int
+  public var totalTimeSpentDead: Swift.Int
+  public var totalUnitsHealed: Swift.Int
+  public var tripleKills: Swift.Int
+  public var trueDamageDealt: Swift.Int
+  public var trueDamageDealtToChampions: Swift.Int
+  public var trueDamageTaken: Swift.Int
+  public var turretKills: Swift.Int
+  public var turretTakedowns: Swift.Int
+  public var turretsLost: Swift.Int
+  public var unrealKills: Swift.Int
+  public var visionScore: Swift.Int
+  public var visionWardsBoughtInGame: Swift.Int
+  public var wardsKilled: Swift.Int
+  public var wardsPlaced: Swift.Int
+  public var win: Swift.Bool
+  public init(assists: Swift.Int, baronKills: Swift.Int, bountyLevel: Swift.Int, challenges: LeagueAPI.Challenges, champExperience: Swift.Int, champLevel: Swift.Int, championId: LeagueAPI.ChampionId, championName: Swift.String, championTransform: Swift.Int, consumablesPurchased: Swift.Int, damageDealtToBuildings: Swift.Int, damageDealtToObjectives: Swift.Int, damageDealtToTurrets: Swift.Int, damageSelfMitigated: Swift.Int, deaths: Swift.Int, detectorWardsPlaced: Swift.Int, doubleKills: Swift.Int, dragonKills: Swift.Int, eligibleForProgression: Swift.Bool, firstBloodAssist: Swift.Bool, firstBloodKill: Swift.Bool, firstTowerAssist: Swift.Bool, firstTowerKill: Swift.Bool, gameEndedInEarlySurrender: Swift.Bool, gameEndedInSurrender: Swift.Bool, goldEarned: Swift.Int, goldSpent: Swift.Int, individualPosition: Swift.String, inhibitorKills: Swift.Int, inhibitorTakedowns: Swift.Int, inhibitorsLost: Swift.Int, item0: LeagueAPI.ItemId, item1: LeagueAPI.ItemId, item2: LeagueAPI.ItemId, item3: LeagueAPI.ItemId, item4: LeagueAPI.ItemId, item5: LeagueAPI.ItemId, item6: LeagueAPI.ItemId, itemsPurchased: Swift.Int, killingSprees: Swift.Int, kills: Swift.Int, lane: Swift.String, largestCriticalStrike: Swift.Int, largestKillingSpree: Swift.Int, largestMultiKill: Swift.Int, longestTimeSpentLiving: Swift.Int, magicDamageDealt: Swift.Int, magicDamageDealtToChampions: Swift.Int, magicDamageTaken: Swift.Int, neutralMinionsKilled: Swift.Int, nexusKills: Swift.Int, nexusLost: Swift.Int, nexusTakedowns: Swift.Int, objectivesStolen: Swift.Int, objectivesStolenAssists: Swift.Int, participantId: Swift.Int, pentaKills: Swift.Int, perks: LeagueAPI.MatchPerks, physicalDamageDealt: Swift.Int, physicalDamageDealtToChampions: Swift.Int, physicalDamageTaken: Swift.Int, profileIcon: LeagueAPI.ProfileIconId, puuid: LeagueAPI.SummonerPuuid, quadraKills: Swift.Int, riotIdName: Swift.String, riotIdTagline: Swift.String, role: Swift.String, sightWardsBoughtInGame: Swift.Int, spell1Casts: Swift.Int, spell2Casts: Swift.Int, spell3Casts: Swift.Int, spell4Casts: Swift.Int, summoner1Casts: Swift.Int, summoner1Id: LeagueAPI.SummonerSpellId, summoner2Casts: Swift.Int, summoner2Id: LeagueAPI.SummonerSpellId, summonerId: LeagueAPI.SummonerId, summonerLevel: Swift.Int, summonerName: Swift.String, teamEarlySurrendered: Swift.Bool, teamId: LeagueAPI.LOLTeamId, teamPosition: Swift.String, timeCCingOthers: Swift.Int, timePlayed: Swift.Int, totalDamageDealt: Swift.Int, totalDamageDealtToChampions: Swift.Int, totalDamageShieldedOnTeammates: Swift.Int, totalDamageTaken: Swift.Int, totalHeal: Swift.Int, totalHealsOnTeammates: Swift.Int, totalMinionsKilled: Swift.Int, totalTimeCcDealt: Swift.Int, totalTimeSpentDead: Swift.Int, totalUnitsHealed: Swift.Int, tripleKills: Swift.Int, trueDamageDealt: Swift.Int, trueDamageDealtToChampions: Swift.Int, trueDamageTaken: Swift.Int, turretKills: Swift.Int, turretTakedowns: Swift.Int, turretsLost: Swift.Int, unrealKills: Swift.Int, visionScore: Swift.Int, visionWardsBoughtInGame: Swift.Int, wardsKilled: Swift.Int, wardsPlaced: Swift.Int, win: Swift.Bool)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public typealias ChallengePercentiles = [LeagueAPI.ChallengeIdString : LeagueAPI.Thresholds]
+public class ChallengePoints : Swift.Codable, Swift.CustomDebugStringConvertible {
+  public var level: LeagueAPI.Level
+  public var current: Swift.Int
+  public var max: Swift.Int
+  public var percentile: Swift.Double
+  public init(level: LeagueAPI.Level, current: Swift.Int, max: Swift.Int, percentile: Swift.Double)
+  required public init(from decoder: Swift.Decoder) throws
+  public var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers public class RiotClientLocation {
+  public enum ClientLocation : Swift.String, Swift.CustomStringConvertible {
+    case RiotClient
+    case RiotStatus
+    case Game
+    case Unknown
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var location: LeagueAPI.RiotClientLocation.ClientLocation {
+    get
+  }
+  public init?(_ location: LeagueAPI.RiotClientLocation.ClientLocation)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class RessourceType {
+  public enum RessourceTypes : Swift.String, Swift.CustomStringConvertible {
+    case Mana
+    case Energy
+    case BloodWell
+    case Courage
+    case Shield
+    case Fury
+    case Rage
+    case Ferocity
+    case Heat
+    case CrimsonRush
+    case Flow
+    case Grit
+    case None
+    case Unknown
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var type: LeagueAPI.RessourceType.RessourceTypes {
+    get
+  }
+  public init?(_ type: LeagueAPI.RessourceType.RessourceTypes)
+  @objc deinit
+}
+public class RunneteraPlayer : Swift.Decodable {
+  public var name: Swift.String
+  public var rank: Swift.Int
+  public var lp: Swift.Int
+  public init(name: Swift.String, rank: Swift.Int, lp: Swift.Int)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class APIClient {
+  @objc deinit
+}
+public typealias ChallengeConfigInfoList = [LeagueAPI.ChallengeConfigInfo]
+public class ChallengeConfigInfo : Swift.Codable, Swift.CustomDebugStringConvertible {
+  public var id: Swift.Int
+  public var localizedNames: [Swift.String : LeagueAPI.LocalizedName]
+  public var state: LeagueAPI.State
+  public var leaderboard: Swift.Bool
+  public var thresholds: LeagueAPI.Thresholds
+  public var tracking: LeagueAPI.Tracking?
+  public var startTimeStamp: Swift.Int?
+  public var endTimestamp: Swift.Int?
+  public init(id: Swift.Int, localizedNames: [Swift.String : LeagueAPI.LocalizedName], state: LeagueAPI.State, leaderboard: Swift.Bool, thresholds: LeagueAPI.Thresholds, tracking: LeagueAPI.Tracking?, startTimeStamp: Swift.Int?, endTimestamp: Swift.Int?)
+  required public init(from decoder: Swift.Decoder) throws
+  public var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+open class Datetime : Swift.Comparable, Swift.Equatable {
+  public var date: Foundation.Date {
+    get
+  }
+  public var year: Swift.Int {
+    get
+  }
+  public var month: Swift.Int {
+    get
+  }
+  public var day: Swift.Int {
+    get
+  }
+  public var hour: Swift.Int {
+    get
+  }
+  public var minute: Swift.Int {
+    get
+  }
+  public var second: Swift.Int {
+    get
+  }
+  public var monthName: Swift.String {
+    get
+  }
+  public var weekday: Swift.String {
+    get
+  }
+  public var weekdayIndex: Swift.Int {
+    get
+  }
+  public init()
+  public init(date: Foundation.Date)
+  public init(timestamp: LeagueAPI.Long)
+  public init?(year: Swift.Int, month: Swift.Int, day: Swift.Int, hour: Swift.Int = 0, minute: Swift.Int = 0, second: Swift.Int = 0, timeZone: Foundation.TimeZone? = nil)
+  convenience public init?(dateTime: LeagueAPI.Datetime, timeZone: Foundation.TimeZone)
+  convenience public init?(string: Swift.String, format: Swift.String)
+  public static func == (date1: LeagueAPI.Datetime, date2: LeagueAPI.Datetime) -> Swift.Bool
+  public static func < (date1: LeagueAPI.Datetime, date2: LeagueAPI.Datetime) -> Swift.Bool
+  public func datetimeByAdding(year: Swift.Int = 0, month: Swift.Int = 0, day: Swift.Int = 0, hour: Swift.Int = 0, minute: Swift.Int = 0, second: Swift.Int = 0) -> LeagueAPI.Datetime?
+  public static func interval(from date1: LeagueAPI.Datetime, to date2: LeagueAPI.Datetime) -> Swift.Double?
+  public func intervalFrom1970() -> Swift.Double?
+  public func toString(format: Swift.String = "yyyy/MM/dd hh:mm:ss") -> Swift.String
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class Skin {
+  public var id: LeagueAPI.SkinId
+  public var skinNumber: Swift.Int
+  public var name: Swift.String
+  public var hasChromas: Swift.Bool
+  public var skinImages: LeagueAPI.SkinImages
+  public init(id: LeagueAPI.SkinId, skinNumber: Swift.Int, name: Swift.String, hasChromas: Swift.Bool, skinImages: LeagueAPI.SkinImages)
+  @objc deinit
+}
+public class Summoner : Swift.Decodable {
+  public var id: LeagueAPI.SummonerId
+  public var accountId: LeagueAPI.AccountId
+  public var puuid: LeagueAPI.SummonerPuuid
+  public var name: Swift.String
+  public var level: LeagueAPI.Long
+  public var iconId: LeagueAPI.ProfileIconId
+  public var revisionDate: LeagueAPI.Datetime
+  public init(id: LeagueAPI.SummonerId, accountId: LeagueAPI.AccountId, puuid: LeagueAPI.SummonerPuuid, name: Swift.String, level: LeagueAPI.Long, iconId: LeagueAPI.ProfileIconId, revisionDate: LeagueAPI.Datetime)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class ItemShop : Swift.Decodable {
+  public var baseCost: Swift.Int
+  public var totalCost: Swift.Int
+  public var sellPrice: Swift.Int
+  public var purchasable: Swift.Bool
+  public init(baseCost: Swift.Int, totalCost: Swift.Int, sellPrice: Swift.Int, purchasable: Swift.Bool)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class Series : Swift.Decodable {
+  public var wins: Swift.Int
+  public var losses: Swift.Int
+  public var winRequired: Swift.Int
+  public var progress: Swift.String
+  public init(wins: Swift.Int, losses: Swift.Int, winRequired: Swift.Int, progress: Swift.String)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class MatchTimeline : Swift.Decodable {
+  public var metadata: LeagueAPI.LOLMatchMetadata
+  public var info: LeagueAPI.MatchTimelineInfo
+  public init(metadata: LeagueAPI.LOLMatchMetadata, info: LeagueAPI.MatchTimelineInfo)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class CompanionSkinId : LeagueAPI.Identifier<LeagueAPI.Long> {
+  required public init(_ value: LeagueAPI.Long)
+  @objc deinit
+}
+public class Translation : Swift.Decodable {
+  public var locale: Swift.String
+  public var content: Swift.String
+  public init(locale: Swift.String, content: Swift.String, heading: Swift.String)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public enum RiotGames : Swift.String, Swift.CustomStringConvertible {
+  case LEAGUE_OF_LEGENDS
+  case TFT
+  case LEGENDS_OF_RUNNETERRA
+  case VALORANT
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class ShardGame {
+  public enum ShardGames : Swift.String {
+    case LEGENDS_OF_RUNNETERRA
+    case VALORANT
+    case UNKNOWN
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var shardGame: LeagueAPI.ShardGame.ShardGames {
+    get
+  }
+  public init?(_ shardGame: LeagueAPI.ShardGame.ShardGames)
+  @objc deinit
+}
+public class ClashTeam : Swift.Decodable {
+  public var teamId: LeagueAPI.TeamId
+  public var tournamentId: LeagueAPI.TournamentId
+  public var name: Swift.String
+  public var iconId: LeagueAPI.ProfileIconId
+  public var tier: Swift.Int
+  public var captainId: LeagueAPI.SummonerId
+  public var abbreviation: Swift.String
+  public var players: [LeagueAPI.ClashPlayer]
+  public init(teamId: LeagueAPI.TeamId, tournamentId: LeagueAPI.TournamentId, name: Swift.String, iconId: LeagueAPI.ProfileIconId, tier: Swift.Int, captainId: LeagueAPI.SummonerId, abbreviation: Swift.String, players: [LeagueAPI.ClashPlayer])
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public enum LOLVictimDamageDealtType : Swift.String, Swift.Codable {
+  case minion
+  case monster
+  case other
+  case tower
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public class Objective : Swift.Codable {
+  public var first: Swift.Bool
+  public var kills: Swift.Int
+  public init(first: Swift.Bool, kills: Swift.Int)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+open class DateToken {
+  public enum Tokens : Swift.String {
+    case Year4Digits
+    case Year2Digits
+    case MonthDigits
+    case DayDigits
+    case HourDigits
+    case MinuteDigits
+    case SecondDigits
+    case MonthShort
+    case MonthLong
+    case DayShort
+    case DayLong
+    case Other
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var type: LeagueAPI.DateToken.Tokens
+  public var match: Swift.String
+  public init(type: LeagueAPI.DateToken.Tokens, match: Swift.String)
+  public static func match(tokens: [LeagueAPI.DateToken], with string: Swift.String) -> Swift.Bool
+  public static func tokenList(from pattern: Swift.String) -> [LeagueAPI.DateToken]
+  public static func recognizeToken(_ str: Swift.String, at index: Swift.Int) -> LeagueAPI.DateToken.Tokens?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DevicePlatform {
+  public enum Platform : Swift.String, Swift.CustomStringConvertible {
+    case Windows
+    case MacOS
+    case Android
+    case iOS
+    case PS4
+    case XBone
+    case Switch
+    case Unknown
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var platform: LeagueAPI.DevicePlatform.Platform {
+    get
+  }
+  public init?(_ platform: LeagueAPI.DevicePlatform.Platform)
+  @objc deinit
+}
+public class RunneteraMatchPlayer : Swift.Decodable {
+  public var puuid: LeagueAPI.SummonerPuuid
+  public var deckId: Swift.String
+  public var deckCode: Swift.String
+  public var factions: [Swift.String]
+  public var gameOutcome: Swift.String
+  public var orderToPlay: Swift.Int
+  public init(puuid: LeagueAPI.SummonerPuuid, deckId: Swift.String, deckCode: Swift.String, factions: [Swift.String], gameOutcome: Swift.String, orderToPlay: Swift.Int)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class Rune : Swift.Decodable {
+  public var id: LeagueAPI.RuneId
+  public var nameId: Swift.String
+  public var name: Swift.String
+  public var image: LeagueAPI.ImageWithUrl
+  public var shortDescription: Swift.String
+  public var longDescription: Swift.String
+  public init(id: LeagueAPI.RuneId, nameId: Swift.String, name: Swift.String, image: LeagueAPI.ImageWithUrl, shortDescription: Swift.String, longDescription: Swift.String)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class TournamentEvent : Swift.Decodable {
+  public var eventType: Swift.String
+  public var summonerId: LeagueAPI.SummonerId?
+  public var timestamp: Swift.String
+  public init(eventType: Swift.String, summonerId: LeagueAPI.SummonerId, timestamp: Swift.String)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class PlayerInfo : Swift.Codable, Swift.CustomDebugStringConvertible {
+  public var totalPoints: LeagueAPI.ChallengePoints
+  public var categoryPoints: LeagueAPI.CategoryPoints
+  public var challenges: [LeagueAPI.ChallengeInfo]
+  public var preferences: LeagueAPI.PlayerClientPreferences
+  public init(totalPoints: LeagueAPI.ChallengePoints, categoryPoints: LeagueAPI.CategoryPoints, challenges: [LeagueAPI.ChallengeInfo], preferences: LeagueAPI.PlayerClientPreferences)
+  public var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public class BannedChampion : Swift.Decodable {
+  public var championId: LeagueAPI.ChampionId
+  public var teamId: LeagueAPI.Long
+  public var banTurn: Swift.Int
+  public init(championId: LeagueAPI.ChampionId, teamId: LeagueAPI.Long, banTurn: Swift.Int)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class RiotId : Swift.Decodable {
+  public var gameName: Swift.String
+  public var tagLine: Swift.String
+  public init(gameName: Swift.String, tagLine: Swift.String)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class PerkStyleSelection : Swift.Codable {
+  public var perk: Swift.Int
+  public var var1: Swift.Int
+  public var var2: Swift.Int
+  public var var3: Swift.Int
+  public init(perk: Swift.Int, var1: Swift.Int, var2: Swift.Int, var3: Swift.Int)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers public class ThemeId : LeagueAPI.Identifier<LeagueAPI.Long> {
+  required public init(_ value: LeagueAPI.Long)
+  @objc deinit
+}
+public class RiotAccount : Swift.Decodable {
+  public var puuid: LeagueAPI.SummonerPuuid
+  public var riotId: LeagueAPI.RiotId
+  public init(puuid: LeagueAPI.SummonerPuuid, riotId: LeagueAPI.RiotId)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class MatchTimelineInfo : Swift.Decodable {
+  public var frameInterval: Swift.Int
+  public var frames: [LeagueAPI.LOLMatchFrame]
+  public var gameId: Swift.Int
+  public var participants: [LeagueAPI.LOLTimelineParticipant]
+  public init(frameInterval: Swift.Int, frames: [LeagueAPI.LOLMatchFrame], gameId: Swift.Int, participants: [LeagueAPI.LOLTimelineParticipant])
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class MatchPosition : Swift.Decodable {
+  public var x: Swift.Int
+  public var y: Swift.Int
+  public init(x: Swift.Int, y: Swift.Int)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class SummonerId : LeagueAPI.Identifier<Swift.String> {
+  required public init(_ value: Swift.String)
+  @objc deinit
+}
+public class ApexPlayerInfo : Swift.Codable, Swift.CustomDebugStringConvertible {
+  public var position: Swift.Int
+  public var puuid: Swift.String
+  public var value: Swift.Int
+  public init(position: Swift.Int, puuid: Swift.String, value: Swift.Int)
+  required public init(from decoder: Swift.Decoder) throws
+  public var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public class LOLMatchMetadata : Swift.Decodable {
+  public var dataVersion: Swift.String
+  public var matchId: LeagueAPI.LOLMatchId
+  public var participants: [Swift.String]
+  public init(dataVersion: Swift.String, matchId: LeagueAPI.LOLMatchId, participants: [Swift.String])
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class GameId : LeagueAPI.Identifier<LeagueAPI.Long> {
+  required public init(_ value: LeagueAPI.Long)
+  @objc deinit
+}
+public class ChampionRotations : Swift.Decodable {
+  public var rotation: [LeagueAPI.ChampionId]
+  public var newPlayerRotation: [LeagueAPI.ChampionId]
+  public var maxNewPlayerLevel: Swift.Int
+  public init(rotation: [LeagueAPI.ChampionId], newPlayerRotation: [LeagueAPI.ChampionId], maxNewPlayerLevel: Swift.Int)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class LoRAPI : LeagueAPI.APIClient {
+  public func getDecks(byAuthorizationToken token: Swift.String, on region: LeagueAPI.WorldRegion, handler: @escaping ([LeagueAPI.RunneteraDeck]?, Swift.String?) -> Swift.Void)
+  public func createDeck(byAuthorizationToken token: Swift.String, withDeckInfo deckInfo: LeagueAPI.RunneteraDeckCreation, on region: LeagueAPI.WorldRegion, handler: @escaping (Swift.String?, Swift.String?) -> Swift.Void)
+  public func getInventory(byAuthorizationToken token: Swift.String, on region: LeagueAPI.WorldRegion, handler: @escaping ([LeagueAPI.RunneteraCard]?, Swift.String?) -> Swift.Void)
+  public func getMatchIds(by puuid: LeagueAPI.SummonerPuuid, on region: LeagueAPI.WorldRegion, handler: @escaping ([Swift.String]?, Swift.String?) -> Swift.Void)
+  public func getMatch(by matchId: LeagueAPI.RunneteraMatchId, on region: LeagueAPI.WorldRegion, handler: @escaping (LeagueAPI.RunneteraMatch?, Swift.String?) -> Swift.Void)
+  public func getLeaderboard(on region: LeagueAPI.WorldRegion, handler: @escaping ([LeagueAPI.RunneteraPlayer]?, Swift.String?) -> Swift.Void)
+  public func getStatus(on region: LeagueAPI.WorldRegion, handler: @escaping (LeagueAPI.ServiceStatus?, Swift.String?) -> Swift.Void)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class AccountId : LeagueAPI.Identifier<Swift.String> {
+  required public init(_ value: Swift.String)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class TFTAPI : LeagueAPI.APIClient {
+  public func getChallengerLeague(on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.League?, Swift.String?) -> Swift.Void)
+  public func getGrandMasterLeague(on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.League?, Swift.String?) -> Swift.Void)
+  public func getLeague(by leagueId: LeagueAPI.TFTLeagueId, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.League?, Swift.String?) -> Swift.Void)
+  public func getMasterLeague(on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.League?, Swift.String?) -> Swift.Void)
+  public func getRankedEntries(for summonerId: LeagueAPI.SummonerId, on region: LeagueAPI.Region, handler: @escaping ([LeagueAPI.RankedEntry]?, Swift.String?) -> Swift.Void)
+  public func getEntries(on region: LeagueAPI.Region, division: LeagueAPI.RankedDivision, page: Swift.Int = 1, handler: @escaping ([LeagueAPI.RankedEntry]?, Swift.String?) -> Swift.Void)
+  public func getTopRatedLadders(on region: LeagueAPI.Region, handler: @escaping ([LeagueAPI.TFTRatedLadder]?, Swift.String?) -> Swift.Void)
+  public func getMatchList(by puuid: LeagueAPI.SummonerPuuid, count: Swift.Int? = nil, on region: LeagueAPI.Region, handler: @escaping ([LeagueAPI.TFTGameId]?, Swift.String?) -> Swift.Void)
+  public func getMatch(by gameId: LeagueAPI.TFTGameId, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.TFTMatch?, Swift.String?) -> Swift.Void)
+  public func getSummoner(by accountId: LeagueAPI.AccountId, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.Summoner?, Swift.String?) -> Swift.Void)
+  public func getSummoner(byName name: Swift.String, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.Summoner?, Swift.String?) -> Swift.Void)
+  public func getSummoner(by puuid: LeagueAPI.SummonerPuuid, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.Summoner?, Swift.String?) -> Swift.Void)
+  public func getSummoner(by summonerId: LeagueAPI.SummonerId, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.Summoner?, Swift.String?) -> Swift.Void)
+  public func getSummoner(byAuthorizationToken token: Swift.String, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.Summoner?, Swift.String?) -> Swift.Void)
+  public func getItem(byId id: LeagueAPI.TFTItemId) -> LeagueAPI.TFTItem?
+  public func getItem(byName name: Swift.String) -> LeagueAPI.TFTItem?
+  public func getItems() -> [LeagueAPI.TFTItem]
+  public func getChampion(byId id: LeagueAPI.TFTChampionId) -> LeagueAPI.TFTChampion?
+  public func getChampion(byName name: Swift.String) -> LeagueAPI.TFTChampion?
+  public func getChampions(byCost cost: Swift.Int) -> [LeagueAPI.TFTChampion]?
+  public func getChampions(withTrait trait: Swift.String) -> [LeagueAPI.TFTChampion]?
+  public func getAllChampions() -> [LeagueAPI.TFTChampion]
+  public func getTraitInfos(byId id: LeagueAPI.TFTTraitId) -> LeagueAPI.TFTTraitInfo?
+  public func getTraitInfos(byName name: Swift.String) -> LeagueAPI.TFTTraitInfo?
+  public func getAllTraitInfos() -> [LeagueAPI.TFTTraitInfo]
+  @objc deinit
+}
+public enum Level : Swift.String, Swift.Codable {
+  case bronze
+  case challenger
+  case diamond
+  case gold
+  case grandmaster
+  case iron
+  case master
+  case none
+  case platinum
+  case silver
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_inheritsConvenienceInitializers public class TFTChampionId : LeagueAPI.Identifier<Swift.String> {
+  required public init(_ value: Swift.String)
+  @objc deinit
+}
+public class TFTStage {
+  public var totalRound: Swift.Int
+  public var stage: Swift.Int {
+    get
+  }
+  public var stageRound: Swift.Int {
+    get
+  }
+  public init(_ totalRound: Swift.Int)
+  @objc deinit
+}
+public class PlayerClientPreferences : Swift.Codable, Swift.CustomDebugStringConvertible {
+  public var bannerAccent: Swift.String
+  public var title: Swift.String
+  public var challengeIds: [Swift.Int]
+  public init(bannerAccent: Swift.String, title: Swift.String, challengeIds: [Swift.Int])
+  public var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public class ClashTournamentPhase : Swift.Decodable {
+  public var tournamentId: LeagueAPI.TournamentId
+  public var registrationTime: LeagueAPI.Datetime
+  public var startTime: LeagueAPI.Datetime
+  public var cancelled: Swift.Bool
+  public init(tournamentId: LeagueAPI.TournamentId, registrationTime: LeagueAPI.Datetime, startTime: LeagueAPI.Datetime, cancelled: Swift.Bool)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TFTLeagueId : LeagueAPI.Identifier<Swift.String> {
+  required public init(_ value: Swift.String)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class ProfileIconId : LeagueAPI.Identifier<Swift.Int> {
+  required public init(_ value: Swift.Int)
+  @objc deinit
+}
+public enum LOLEventType : Swift.String, Swift.Codable {
+  case buildingKill
+  case championKill
+  case championSpecialKill
+  case dragonSoulGiven
+  case eliteMonsterKill
+  case gameEnd
+  case itemDestroyed
+  case itemPurchased
+  case itemSold
+  case itemUndo
+  case levelUp
+  case objectiveBountyPrestart
+  case pauseEnd
+  case skillLevelUp
+  case turretPlateDestroyed
+  case wardKill
+  case wardPlaced
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public class ClashTournament : Swift.Decodable {
+  public var tournamentId: LeagueAPI.TournamentId
+  public var themeId: LeagueAPI.ThemeId
+  public var nameKey: Swift.String
+  public var nameKeySecondary: Swift.String
+  public var schedule: [LeagueAPI.ClashTournamentPhase]
+  public init(tournamentId: LeagueAPI.TournamentId, themeId: LeagueAPI.ThemeId, nameKey: Swift.String, nameKeySecondary: Swift.String, schedule: [LeagueAPI.ClashTournamentPhase])
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class LOLMatchEvent : Swift.Codable {
+  public var realTimestamp: Swift.Int?
+  public var timestamp: Swift.Int
+  public var type: LeagueAPI.LOLEventType
+  public var itemId: Swift.Int?
+  public var participantId: Swift.Int?
+  public var levelUpType: LeagueAPI.LOLLevelUpType?
+  public var skillSlot: Swift.Int?
+  public var creatorId: Swift.Int?
+  public var wardType: LeagueAPI.LOLWardType?
+  public var level: Swift.Int?
+  public var assistingParticipantIds: [Swift.Int]?
+  public var bounty: Swift.Int?
+  public var killStreakLength: Swift.Int?
+  public var killerId: Swift.Int?
+  public var position: LeagueAPI.LOLPosition?
+  public var shutdownBounty: Swift.Int?
+  public var victimDamageDealt: [LeagueAPI.LOLVictimDamage]?
+  public var victimDamageReceived: [LeagueAPI.LOLVictimDamage]?
+  public var victimId: Swift.Int?
+  public var killType: Swift.String?
+  public var laneType: LeagueAPI.LOLLaneType?
+  public var teamId: Swift.Int?
+  public var killerTeamId: Swift.Int?
+  public var monsterType: Swift.String?
+  public var monsterSubType: Swift.String?
+  public var buildingType: LeagueAPI.LOLBuildingType?
+  public var towerType: Swift.String?
+  public var actualStartTime: Swift.Int?
+  public var afterId: Swift.Int?
+  public var beforeId: Swift.Int?
+  public var goldGain: Swift.Int?
+  public var multiKillLength: Swift.Int?
+  public var name: Swift.String?
+  public var gameId: Swift.Int?
+  public var winningTeam: Swift.Int?
+  public init(realTimestamp: Swift.Int?, timestamp: Swift.Int, type: LeagueAPI.LOLEventType, itemId: Swift.Int?, participantId: Swift.Int?, levelUpType: LeagueAPI.LOLLevelUpType?, skillSlot: Swift.Int?, creatorId: Swift.Int?, wardType: LeagueAPI.LOLWardType?, level: Swift.Int?, assistingParticipantIds: [Swift.Int]?, bounty: Swift.Int?, killStreakLength: Swift.Int?, killerId: Swift.Int?, position: LeagueAPI.LOLPosition?, shutdownBounty: Swift.Int?, victimDamageDealt: [LeagueAPI.LOLVictimDamage]?, victimDamageReceived: [LeagueAPI.LOLVictimDamage]?, victimId: Swift.Int?, killType: Swift.String?, laneType: LeagueAPI.LOLLaneType?, teamId: Swift.Int?, killerTeamId: Swift.Int?, monsterType: Swift.String?, monsterSubType: Swift.String?, buildingType: LeagueAPI.LOLBuildingType?, towerType: Swift.String?, actualStartTime: Swift.Int?, afterId: Swift.Int?, beforeId: Swift.Int?, goldGain: Swift.Int?, multiKillLength: Swift.Int?, name: Swift.String?, gameId: Swift.Int?, winningTeam: Swift.Int?)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public class LOLVictimDamage : Swift.Codable {
+  public var basic: Swift.Bool
+  public var magicDamage: Swift.Int
+  public var name: Swift.String?
+  public var participantId: Swift.Int
+  public var physicalDamage: Swift.Int
+  public var spellName: Swift.String
+  public var spellSlot: Swift.Int
+  public var trueDamage: Swift.Int
+  public var type: LeagueAPI.LOLVictimDamageDealtType
+  public init(basic: Swift.Bool, magicDamage: Swift.Int, name: Swift.String?, participantId: Swift.Int, physicalDamage: Swift.Int, spellName: Swift.String, spellSlot: Swift.Int, trueDamage: Swift.Int, type: LeagueAPI.LOLVictimDamageDealtType)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public class GameCustomObject : Swift.Decodable {
+  public var category: Swift.String
+  public var content: Swift.String
+  public init(category: Swift.String, content: Swift.String)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class LeagueInfo : Swift.Decodable {
+  public var summonerId: LeagueAPI.SummonerId
+  public var summonerName: Swift.String
+  public var rank: Swift.String?
+  public var leaguePoints: Swift.Int?
+  public var series: LeagueAPI.Series?
+  public var wins: Swift.Int
+  public var losses: Swift.Int
+  public var hotStreak: Swift.Bool?
+  public var veteran: Swift.Bool?
+  public var freshBlood: Swift.Bool?
+  public var inactive: Swift.Bool?
+  public init(summonerId: LeagueAPI.SummonerId, summonerName: Swift.String, rank: Swift.String, leaguePoints: Swift.Int, series: LeagueAPI.Series?, wins: Swift.Int, losses: Swift.Int, hotStreak: Swift.Bool, veteran: Swift.Bool, freshBlood: Swift.Bool, inactive: Swift.Bool)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class RiotAccountActiveShard : Swift.Decodable {
+  public var puuid: LeagueAPI.SummonerPuuid
+  public var game: LeagueAPI.ShardGame
+  public var shard: Swift.String
+  public init(puuid: LeagueAPI.SummonerPuuid, game: LeagueAPI.ShardGame, shard: Swift.String)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TFTItemId : LeagueAPI.Identifier<Swift.Int> {
+  required public init(_ value: Swift.Int)
+  @objc deinit
+}
+public class RunePage : Swift.Decodable {
+  public var primaryPath: LeagueAPI.RunePathId
+  public var secondaryPath: LeagueAPI.RunePathId
+  public var runeIds: [LeagueAPI.RuneId]
+  public init(primaryPath: LeagueAPI.RunePathId, secondaryPath: LeagueAPI.RunePathId, runeIds: [LeagueAPI.RuneId])
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class ItemId : LeagueAPI.Identifier<Swift.Int> {
+  public static var NoItemId: LeagueAPI.ItemId {
+    get
+  }
+  required public init(_ value: Swift.Int)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class Season {
+  public enum Seasons : Swift.Int {
+    case Preseason3
+    case Season3
+    case Preseason4
+    case Season4
+    case Preseason5
+    case Season5
+    case Preseason6
+    case Season6
+    case Preseason7
+    case Season7
+    case Preseason8
+    case Season8
+    case Preseason9
+    case Season9
+    case Unknown
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public var season: LeagueAPI.Season.Seasons {
+    get
+  }
+  public var name: Swift.String {
+    get
+  }
+  convenience public init?(_ season: LeagueAPI.Season.Seasons)
+  @objc deinit
+}
+extension Swift.Array {
+  public mutating func append(_ sequence: Swift.Array<Element>)
+  public mutating func keepLast(n: Swift.Int)
+  public mutating func fill(with element: Element, untilCount newCount: Swift.Int)
+  public func firstMatch(where filterFunction: (Element) -> Swift.Bool, notFoundMessage: Swift.String? = nil, completion: @escaping (Element?, Swift.String?) -> Swift.Void)
+  public mutating func removeAll(where removeCondition: (Element) -> Swift.Bool)
+  @discardableResult
+  public mutating func removeFirst(where removeCondition: @escaping (Element) -> Swift.Bool) -> Element?
+}
+extension Swift.Array where Element : Swift.Equatable {
+  public mutating func remove(_ element: Element)
+}
+public class TFTMatchInfo : Swift.Decodable {
+  public var gameDate: LeagueAPI.Datetime
+  public var participants: [LeagueAPI.TFTParticipant]
+  public var TFTSetNumber: Swift.Int
+  public var gameLength: Swift.Float
+  public var queueId: LeagueAPI.QueueMode
+  public var gameVersion: Swift.String
+  public init(gameDate: LeagueAPI.Datetime, participants: [LeagueAPI.TFTParticipant], TFTSetNumber: Swift.Int, gameLength: Swift.Float, queueId: LeagueAPI.QueueMode, gameVersion: Swift.String)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class TFTTraitInfo : Swift.Decodable {
+  public var id: LeagueAPI.TFTTraitId
+  public var name: Swift.String
+  public var description: Swift.String
+  public var type: Swift.String
+  public var sets: [LeagueAPI.TFTTraitTier]
+  public var icon: LeagueAPI.LAPIImage {
+    get
+  }
+  public init(id: LeagueAPI.TFTTraitId, name: Swift.String, description: Swift.String, type: Swift.String, sets: [LeagueAPI.TFTTraitTier])
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public typealias ChallengeIdString = Swift.String
+public typealias MatchList = [LeagueAPI.LOLMatchId]
+extension Swift.Array where Element == Swift.String {
+  public init(data: Foundation.Data) throws
+  public init(_ json: Swift.String, using encoding: Swift.String.Encoding = .utf8) throws
+  public init(fromURL url: Foundation.URL) throws
+  public func jsonData() throws -> Foundation.Data
+  public func jsonString(encoding: Swift.String.Encoding = .utf8) throws -> Swift.String?
+}
+@_inheritsConvenienceInitializers public class RunneteraDeckId : LeagueAPI.Identifier<Swift.String> {
+  required public init(_ value: Swift.String)
+  @objc deinit
+}
+public class Participant : Swift.Decodable {
+  public var summonerName: Swift.String
+  public var profileIconId: LeagueAPI.ProfileIconId
+  public var championId: LeagueAPI.ChampionId
+  public var isBot: Swift.Bool
+  public var teamId: LeagueAPI.Long
+  public var summonerSpell1: LeagueAPI.SummonerSpellId
+  public var summonerSpell2: LeagueAPI.SummonerSpellId
+  public var summonerId: LeagueAPI.SummonerId?
+  public var runePage: LeagueAPI.RunePage?
+  public var customizedObjects: [LeagueAPI.GameCustomObject]?
+  public init(summonerName: Swift.String, profileIconId: LeagueAPI.ProfileIconId, championId: LeagueAPI.ChampionId, isBot: Swift.Bool, teamId: LeagueAPI.Long, summonerSpell1: LeagueAPI.SummonerSpellId, summonerSpell2: LeagueAPI.SummonerSpellId, summonerId: LeagueAPI.SummonerId? = nil, runePage: LeagueAPI.RunePage? = nil, customizedObjects: [LeagueAPI.GameCustomObject]? = nil)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class SummonerSpellId : LeagueAPI.Identifier<LeagueAPI.Long> {
+  required public init(_ value: LeagueAPI.Long)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class SpectatorType {
+  public enum Types : Swift.String {
+    case None
+    case LobbyOnly
+    case All
+    case Unknown
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var type: LeagueAPI.SpectatorType.Types {
+    get
+  }
+  public init?(_ type: LeagueAPI.SpectatorType.Types)
+  @objc deinit
+}
+public class TournamentInfo : Swift.Encodable {
+  public var spectatorType: LeagueAPI.SpectatorType
+  public var teamSize: Swift.Int
+  public var pickType: LeagueAPI.PickType
+  public var allowedSummonerIds: [LeagueAPI.SummonerId]?
+  public var mapType: LeagueAPI.MapType
+  public var metadata: Swift.String?
+  public init?(spectatorType: LeagueAPI.SpectatorType, teamSize: Swift.Int, pickType: LeagueAPI.PickType, allowedSummonerIds: [LeagueAPI.SummonerId]? = nil, mapType: LeagueAPI.MapType, metadata: Swift.String? = nil)
+  public func encode(to encoder: Swift.Encoder) throws
+  @objc deinit
+}
+public class Identifier<T> : Swift.Equatable, Swift.CustomStringConvertible, Swift.Hashable where T : Swift.Decodable, T : Swift.Encodable, T : Swift.Hashable {
+  public var value: T
+  public var description: Swift.String {
+    get
+  }
+  required public init(_ value: T)
+  public static func == (lhs: LeagueAPI.Identifier<T>, rhs: LeagueAPI.Identifier<T>) -> Swift.Bool
+  public static func == (lhs: LeagueAPI.Identifier<T>, rhs: T) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  @objc deinit
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class LoLAPI : LeagueAPI.APIClient {
+  public func getAllChallengesConfig(on region: LeagueAPI.Region, handler: @escaping ([LeagueAPI.ChallengeConfigInfo]?, Swift.String?) -> Swift.Void)
+  public func getAllChallengesPercentiles(on region: LeagueAPI.Region, handler: @escaping ([LeagueAPI.ChallengeIdString : LeagueAPI.Thresholds]?, Swift.String?) -> Swift.Void)
+  public func getChallengeConfig(by challengeId: LeagueAPI.ChallengeId, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.ChallengeConfigInfo?, Swift.String?) -> Swift.Void)
+  public func getChallengeLeaderboard(by challengeId: LeagueAPI.ChallengeId, for level: LeagueAPI.Level, limit: Swift.Int? = nil, on region: LeagueAPI.Region, handler: @escaping ([LeagueAPI.ApexPlayerInfo]?, Swift.String?) -> Swift.Void)
+  public func getChallengePercentiles(by challengeId: LeagueAPI.ChallengeId, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.Thresholds?, Swift.String?) -> Swift.Void)
+  public func getChallengePlayerInfo(by puuid: LeagueAPI.SummonerPuuid, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.PlayerInfo?, Swift.String?) -> Swift.Void)
+  public func getChampionMasteries(by summonerId: LeagueAPI.SummonerId, on region: LeagueAPI.Region, handler: @escaping ([LeagueAPI.ChampionMastery]?, Swift.String?) -> Swift.Void)
+  public func getChampionMastery(by summonerId: LeagueAPI.SummonerId, for championId: LeagueAPI.ChampionId, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.ChampionMastery?, Swift.String?) -> Swift.Void)
+  public func getMasteryScore(for summonerId: LeagueAPI.SummonerId, on region: LeagueAPI.Region, handler: @escaping (Swift.Int?, Swift.String?) -> Swift.Void)
+  public func getChampionRotation(on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.ChampionRotations?, Swift.String?) -> Swift.Void)
+  public func getClashPlayers(by summonerId: LeagueAPI.SummonerId, on region: LeagueAPI.Region, handler: @escaping ([LeagueAPI.ClashPlayer]?, Swift.String?) -> Swift.Void)
+  public func getClashTeam(by teamId: LeagueAPI.TeamId, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.ClashTeam?, Swift.String?) -> Swift.Void)
+  public func getClashTournaments(on region: LeagueAPI.Region, handler: @escaping ([LeagueAPI.ClashTournament]?, Swift.String?) -> Swift.Void)
+  public func getClashTournament(by teamId: LeagueAPI.TeamId, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.ClashTournament?, Swift.String?) -> Swift.Void)
+  public func getClashTournament(by tournamentId: LeagueAPI.TournamentId, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.ClashTournament?, Swift.String?) -> Swift.Void)
+  public func getQueueEntriesExp(on region: LeagueAPI.Region, queue: LeagueAPI.Queue, division: LeagueAPI.RankedDivision, page: Swift.Int = 1, handler: @escaping ([LeagueAPI.RankedEntry]?, Swift.String?) -> Swift.Void)
+  public func getChallengerLeague(for queue: LeagueAPI.Queue, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.League?, Swift.String?) -> Swift.Void)
+  public func getGrandMasterLeague(for queue: LeagueAPI.Queue, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.League?, Swift.String?) -> Swift.Void)
+  public func getLeague(by leagueId: LeagueAPI.LeagueId, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.League?, Swift.String?) -> Swift.Void)
+  public func getMasterLeague(for queue: LeagueAPI.Queue, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.League?, Swift.String?) -> Swift.Void)
+  public func getRankedEntries(for summonerId: LeagueAPI.SummonerId, on region: LeagueAPI.Region, handler: @escaping ([LeagueAPI.RankedEntry]?, Swift.String?) -> Swift.Void)
+  public func getRankedEntry(for summonerId: LeagueAPI.SummonerId, in queue: LeagueAPI.Queue, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.RankedEntry?, Swift.String?) -> Swift.Void)
+  public func getQueueEntries(on region: LeagueAPI.Region, queue: LeagueAPI.Queue, division: LeagueAPI.RankedDivision, page: Swift.Int = 1, handler: @escaping ([LeagueAPI.RankedEntry]?, Swift.String?) -> Swift.Void)
+  public func getStatus(on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.ServiceStatus?, Swift.String?) -> Swift.Void)
+  public func getMatch(by matchId: LeagueAPI.LOLMatchId, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.Match?, Swift.String?) -> Swift.Void)
+  public func getMatchList(by puuid: LeagueAPI.SummonerPuuid, on region: LeagueAPI.Region, startTime: LeagueAPI.Datetime? = nil, endTime: LeagueAPI.Datetime? = nil, queue: LeagueAPI.QueueMode? = nil, type: LeagueAPI.GameType? = nil, start: Swift.Int? = nil, count: Swift.Int? = nil, handler: @escaping (LeagueAPI.MatchList?, Swift.String?) -> Swift.Void)
+  public func getMatchTimeline(by gameId: LeagueAPI.GameId, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.MatchTimeline?, Swift.String?) -> Swift.Void)
+  public func getMatchIds(by tournamentCode: LeagueAPI.TournamentCode, on region: LeagueAPI.Region, handler: @escaping ([LeagueAPI.GameId]?, Swift.String?) -> Swift.Void)
+  public func getMatch(by gameId: LeagueAPI.GameId, and tournamentCode: LeagueAPI.TournamentCode, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.Match?, Swift.String?) -> Swift.Void)
+  public func getLiveGame(by summonerId: LeagueAPI.SummonerId, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.GameInfo?, Swift.String?) -> Swift.Void)
+  public func getFeaturedGames(on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.FeaturedGames?, Swift.String?) -> Swift.Void)
+  public func getSummoner(by accountId: LeagueAPI.AccountId, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.Summoner?, Swift.String?) -> Swift.Void)
+  public func getSummoner(byName name: Swift.String, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.Summoner?, Swift.String?) -> Swift.Void)
+  public func getSummoner(by puuid: LeagueAPI.SummonerPuuid, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.Summoner?, Swift.String?) -> Swift.Void)
+  public func getSummoner(by summonerId: LeagueAPI.SummonerId, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.Summoner?, Swift.String?) -> Swift.Void)
+  public func getSummoner(byAuthorizationToken token: Swift.String, on region: LeagueAPI.Region, handler: @escaping (LeagueAPI.Summoner?, Swift.String?) -> Swift.Void)
+  public func getThirdPartyVerificationCode(by summonerId: LeagueAPI.SummonerId, on region: LeagueAPI.Region, handler: @escaping (Swift.String?, Swift.String?) -> Swift.Void)
+  public func newStubTournament(hostRegion: LeagueAPI.TournamentRegion, named name: Swift.String, hostUrl: Swift.String, amount: Swift.Int? = nil, info: LeagueAPI.TournamentInfo, handler: @escaping ((LeagueAPI.ProviderId, LeagueAPI.TournamentId, [LeagueAPI.TournamentCode])?, Swift.String?) -> Swift.Void)
+  public func createStubTournamentCode(tournamentId: LeagueAPI.TournamentId, amount: Swift.Int? = nil, info: LeagueAPI.TournamentInfo, handler: @escaping ([LeagueAPI.TournamentCode]?, Swift.String?) -> Swift.Void)
+  public func getStubTournamentEvents(tournamentCode: LeagueAPI.TournamentCode, handler: @escaping ([LeagueAPI.TournamentEvent]?, Swift.String?) -> Swift.Void)
+  public func createStubTournamentProvider(hostRegion: LeagueAPI.TournamentRegion, hostUrl: Swift.String, handler: @escaping (LeagueAPI.ProviderId?, Swift.String?) -> Swift.Void)
+  public func createStubTournament(providerId: LeagueAPI.ProviderId, named name: Swift.String, handler: @escaping (LeagueAPI.TournamentId?, Swift.String?) -> Swift.Void)
+  public func newTournament(hostRegion: LeagueAPI.TournamentRegion, named name: Swift.String, hostUrl: Swift.String, amount: Swift.Int? = nil, info: LeagueAPI.TournamentInfo, handler: @escaping ((LeagueAPI.ProviderId, LeagueAPI.TournamentId, [LeagueAPI.TournamentCode])?, Swift.String?) -> Swift.Void)
+  public func createTournamentCode(tournamentId: LeagueAPI.TournamentId, amount: Swift.Int? = nil, info: LeagueAPI.TournamentInfo, handler: @escaping ([LeagueAPI.TournamentCode]?, Swift.String?) -> Swift.Void)
+  public func updateTournament(tournamentCode: LeagueAPI.TournamentCode, updatedInfo: LeagueAPI.TournamentUpdate? = nil, handler: @escaping (Swift.String?) -> Swift.Void)
+  public func getTournamentInfo(tournamentCode: LeagueAPI.TournamentCode, handler: @escaping (LeagueAPI.TournamentDetails?, Swift.String?) -> Swift.Void)
+  public func getTournamentEvents(tournamentCode: LeagueAPI.TournamentCode, handler: @escaping ([LeagueAPI.TournamentEvent]?, Swift.String?) -> Swift.Void)
+  public func createTournamentProvider(hostRegion: LeagueAPI.TournamentRegion, hostUrl: Swift.String, handler: @escaping (LeagueAPI.ProviderId?, Swift.String?) -> Swift.Void)
+  public func createTournament(providerId: LeagueAPI.ProviderId, named name: Swift.String, handler: @escaping (LeagueAPI.TournamentId?, Swift.String?) -> Swift.Void)
+  public func getPatchVersion(handler: @escaping (Swift.String?, Swift.String?) -> Swift.Void)
+  public func getChampionDetails(by championId: LeagueAPI.ChampionId, handler: @escaping (LeagueAPI.ChampionDetails?, Swift.String?) -> Swift.Void)
+  public func getChampionDetails(byName name: Swift.String, handler: @escaping (LeagueAPI.ChampionDetails?, Swift.String?) -> Swift.Void)
+  public func getAllChampionIds(handler: @escaping ([LeagueAPI.ChampionId]?, Swift.String?) -> Swift.Void)
+  public func getAllChampionNames(handler: @escaping ([Swift.String]?, Swift.String?) -> Swift.Void)
+  public func getChampionNames(for role: LeagueAPI.ChampionRole, handler: @escaping ([Swift.String]?, Swift.String?) -> Swift.Void)
+  public func getProfileIconIds(handler: @escaping ([LeagueAPI.ProfileIconId]?, Swift.String?) -> Swift.Void)
+  public func getProfileIcon(by id: LeagueAPI.ProfileIconId, handler: @escaping (LeagueAPI.ProfileIcon?, Swift.String?) -> Swift.Void)
+  public func getSummonerSpells(handler: @escaping ([LeagueAPI.SummonerSpell]?, Swift.String?) -> Swift.Void)
+  public func getSummonerSpell(by id: LeagueAPI.SummonerSpellId, handler: @escaping (LeagueAPI.SummonerSpell?, Swift.String?) -> Swift.Void)
+  public func getSummonerSpell(byName name: Swift.String, handler: @escaping (LeagueAPI.SummonerSpell?, Swift.String?) -> Swift.Void)
+  public func getItems(handler: @escaping ([LeagueAPI.Item]?, Swift.String?) -> Swift.Void)
+  public func getItem(by id: LeagueAPI.ItemId, handler: @escaping (LeagueAPI.Item?, Swift.String?) -> Swift.Void)
+  public func getItem(byName name: Swift.String, handler: @escaping (LeagueAPI.Item?, Swift.String?) -> Swift.Void)
+  public func getItems(byTag tag: Swift.String, handler: @escaping ([LeagueAPI.Item]?, Swift.String?) -> Swift.Void)
+  public func getRunePaths(handler: @escaping ([LeagueAPI.RunePath]?, Swift.String?) -> Swift.Void)
+  public func getRunePath(by id: LeagueAPI.RunePathId, handler: @escaping (LeagueAPI.RunePath?, Swift.String?) -> Swift.Void)
+  public func getRunePath(byName name: Swift.String, handler: @escaping (LeagueAPI.RunePath?, Swift.String?) -> Swift.Void)
+  public func getRunes(forPathId pathId: LeagueAPI.RunePathId? = nil, handler: @escaping ([LeagueAPI.Rune]?, Swift.String?) -> Swift.Void)
+  public func getRune(by id: LeagueAPI.RuneId, handler: @escaping (LeagueAPI.Rune?, Swift.String?) -> Swift.Void)
+  public func getRune(byName name: Swift.String, handler: @escaping (LeagueAPI.Rune?, Swift.String?) -> Swift.Void)
+  public func getEmblem(for tier: LeagueAPI.RankedTier) -> LeagueAPI.LAPIImage?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers open class Logger {
+  public enum Channel {
+    case Debug
+    case Info
+    case Warning
+    case Error
+    public static func == (a: LeagueAPI.Logger.Channel, b: LeagueAPI.Logger.Channel) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static var channels: [LeagueAPI.Logger.Channel : Swift.Bool] {
+    get
+  }
+  public static func setAllChannels(enabled: Swift.Bool)
+  public static func setChannel(_ channel: LeagueAPI.Logger.Channel, enabled: Swift.Bool)
+  public static func debug(_ message: Swift.String)
+  public static func info(_ message: Swift.String)
+  public static func warning(_ message: Swift.String)
+  public static func error(_ message: Swift.String)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ChampionRole : Swift.Equatable {
+  public enum Role : Swift.String, Swift.CustomStringConvertible {
+    case Assassin
+    case Fighter
+    case Mage
+    case Marksman
+    case Support
+    case Tank
+    case Unknown
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var role: LeagueAPI.ChampionRole.Role {
+    get
+  }
+  public init?(_ role: LeagueAPI.ChampionRole.Role)
+  public static func == (lhs: LeagueAPI.ChampionRole, rhs: LeagueAPI.ChampionRole) -> Swift.Bool
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class RunneteraGameType {
+  public enum GameType : Swift.String, Swift.CustomStringConvertible {
+    case Ranked
+    case Normal
+    case AI
+    case Tutorial
+    case VanillaTrial
+    case Singleton
+    case StandardGauntlet
+    case Unknown
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var gameType: LeagueAPI.RunneteraGameType.GameType {
+    get
+  }
+  public init?(_ gameType: LeagueAPI.RunneteraGameType.GameType)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class LOLTeamId : LeagueAPI.Identifier<Swift.Int> {
+  required public init(_ value: Swift.Int)
+  @objc deinit
+}
+public enum Place : Swift.String, Swift.CustomStringConvertible {
+  case SummonersRift
+  case ProvingGrounds
+  case TwistedTreeline
+  case CrystalScar
+  case HowlingAbyss
+  case ButchersBridge
+  case CosmicRuins
+  case ValoranCityPark
+  case Substructure43
+  case NexusBlitz
+  case CrashSite
+  case Convergence
+  case Unknown
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public class TFTParticipant : Swift.Decodable {
+  public var placement: Swift.Int
+  public var level: Swift.Int
+  public var lastRound: LeagueAPI.TFTStage
+  public var timeEliminated: Swift.Float
+  public var companion: LeagueAPI.TFTCompanion
+  public var traits: [LeagueAPI.TFTTrait]
+  public var playersEliminated: Swift.Int
+  public var puuid: LeagueAPI.SummonerPuuid
+  public var totalDamageToPlayers: Swift.Int
+  public var units: [LeagueAPI.TFTUnit]
+  public var goldLeft: Swift.Int
+  public init(placement: Swift.Int, level: Swift.Int, lastRound: LeagueAPI.TFTStage, timeEliminated: Swift.Float, companion: LeagueAPI.TFTCompanion, traits: [LeagueAPI.TFTTrait], playersEliminated: Swift.Int, puuid: LeagueAPI.SummonerPuuid, totalDamageToPlayers: Swift.Int, units: [LeagueAPI.TFTUnit], goldLeft: Swift.Int)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TFTLadderTier {
+  public enum Tiers : Swift.String, Swift.CustomStringConvertible {
+    case Orange
+    case Purple
+    case Blue
+    case Green
+    case Gray
+    case Unknown
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var tier: LeagueAPI.TFTLadderTier.Tiers {
+    get
+  }
+  public init?(_ tier: LeagueAPI.TFTLadderTier.Tiers)
+  @objc deinit
+}
+public class LOLPosition : Swift.Codable {
+  public var x: Swift.Int
+  public var y: Swift.Int
+  public init(x: Swift.Int, y: Swift.Int)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers public class QueueMode {
+  public enum QueueModes : LeagueAPI.Long, Swift.CustomStringConvertible {
+    case Custom
+    case OldBlindPick5v5
+    case OldRankedSolo5v5
+    case OldRankedPremade5v5
+    case OldCoopvsAI
+    case OldBlindPick3v3
+    case OldRankedFlex3v3
+    case OldDraftPick5v5
+    case OldDominionBlindPick
+    case OldDominionDraftPick
+    case OldDominionCoopvsAI
+    case OldCoopvsAIIntroBotSummonersRift
+    case OldCoopvsAIBeginnerBotSummonersRift
+    case OldCoopvsAIIntermediateBotSummonersRift
+    case OldRankedTeam3v3
+    case OldRankedTeam5v5
+    case OldCoopvsAIIntermediateBotTwistedTreeline
+    case OldTeamBuilder5v5
+    case OldAram
+    case OldOneforAll
+    case SnowdownShowdown1V1
+    case SnowdownShowdown2V2
+    case HexakillSummonersRift
+    case UltraRapidFire
+    case OneForAllMirror
+    case CoopvsAIUltraRapidFire
+    case OldDoomBotsRank1
+    case OldDoomBotsRank2
+    case OldDoomBotsRank5
+    case OldAscension
+    case HexakillTwistedTreeline
+    case AramButcherBridge
+    case OldLegendOfThePoroKing
+    case Nemesis
+    case BlackMarketBrawlers
+    case OldNexusSiege
+    case DefinitelyNotDominion
+    case OldArurf
+    case AllRandomSummonersRift
+    case DraftPick5v5
+    case OldRankedDynamic5v5
+    case RankedSolo5v5
+    case BlindPick5v5
+    case RankedFlex5v5
+    case Aram
+    case BlindPick3v3
+    case RankedFlex3v3
+    case BloodHuntAssassin
+    case DarkStarSingularity
+    case Clash
+    case CoopvsAIIntermediateBotTwistedTreeline
+    case CoopvsAIIntroBotTwistedTreeline
+    case CoopvsAIBeginnerBotTwistedTreeline
+    case CoopvsAIIntroBotSummonersRift
+    case CoopvsAIBeginnerBotSummonersRift
+    case CoopvsAIIntermediateBotSummonersRift
+    case Arurf
+    case Ascension
+    case LegendOfThePoroKing
+    case NexusSiege
+    case DoomBotsVoting
+    case DoomBotsStandard
+    case StarGuardianInvasionNormal
+    case StarGuardianInvasionOnslaught
+    case ProjectHunters
+    case SnowArurf
+    case OneforAll
+    case OdysseyIntro
+    case OdysseyCadet
+    case OdysseyCrewMember
+    case OdysseyCaptain
+    case OdysseyOnslaught
+    case TeamFightTactics
+    case RankedTeamFightTactics
+    case TutorialTeamFightTactics
+    case TeamFightTacticsTest
+    case NexusBlitzFirstEdition
+    case NexusBlitz
+    case UltBook
+    case Tutorial1
+    case Tutorial2
+    case Tutorial3
+    case Unknown
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: LeagueAPI.Long)
+    public typealias RawValue = LeagueAPI.Long
+    public var rawValue: LeagueAPI.Long {
+      get
+    }
+  }
+  public var mode: LeagueAPI.QueueMode.QueueModes {
+    get
+  }
+  public var place: LeagueAPI.Place {
+    get
+  }
+  convenience public init?(_ mode: LeagueAPI.QueueMode.QueueModes)
+  convenience public init(_ id: LeagueAPI.Long)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class RunePathId : LeagueAPI.Identifier<LeagueAPI.Long> {
+  required public init(_ value: LeagueAPI.Long)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TournamentCode : LeagueAPI.Identifier<Swift.String> {
+  required public init(_ value: Swift.String)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class RankedTier {
+  public enum Tiers : Swift.String, Swift.CustomStringConvertible {
+    case Unranked
+    case Iron
+    case Bronze
+    case Silver
+    case Gold
+    case Platinum
+    case Diamond
+    case Master
+    case GrandMaster
+    case Challenger
+    case Unknown
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var tier: LeagueAPI.RankedTier.Tiers {
+    get
+  }
+  public init?(_ tier: LeagueAPI.RankedTier.Tiers)
+  @objc deinit
+}
+public enum Tracking : Swift.String, Swift.Codable {
+  case lifetime
+  case season
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_inheritsConvenienceInitializers public class TFTGameId : LeagueAPI.Identifier<Swift.String> {
+  required public init(_ value: Swift.String)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ChampionSpell {
+  public var id: Swift.String
+  public var name: Swift.String
+  public var description: Swift.String
+  public var image: LeagueAPI.ImageWithUrl
+  public var cooldowns: [LeagueAPI.Duration]
+  public var costs: [Swift.Int]
+  public var costType: Swift.String
+  public var ranges: [Swift.Int]
+  public var maxRank: Swift.Int
+  public init(id: Swift.String, name: Swift.String, description: Swift.String, image: LeagueAPI.ImageWithUrl, cooldowns: [LeagueAPI.Duration], costs: [Swift.Int], costType: Swift.String, ranges: [Swift.Int], maxRank: Swift.Int)
+  @objc deinit
+}
+public class MatchReference : Swift.Decodable {
+  public var gameId: LeagueAPI.GameId
+  public var season: Swift.Int
+  public var queue: LeagueAPI.QueueMode
+  public var championId: LeagueAPI.ChampionId
+  public var lane: Swift.String
+  public var role: Swift.String
+  public var platformId: Swift.String
+  public var gameDate: LeagueAPI.Datetime
+  public init(gameId: LeagueAPI.GameId, season: Swift.Int, queue: LeagueAPI.QueueMode, championId: LeagueAPI.ChampionId, lane: Swift.String, role: Swift.String, platformId: Swift.String, gameDate: LeagueAPI.Datetime)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class BuildInfo {
+  public static var isDebug: Swift.Bool {
+    get
+  }
+  @objc deinit
+}
+public class RankedEntry : Swift.Decodable {
+  public var tier: LeagueAPI.RankedTier?
+  public var leagueId: LeagueAPI.LeagueId?
+  public var leagueInfo: LeagueAPI.LeagueInfo?
+  public var queue: LeagueAPI.Queue
+  public init(tier: LeagueAPI.RankedTier, leagueId: LeagueAPI.LeagueId, leagueName: Swift.String, leagueInfo: LeagueAPI.LeagueInfo, queue: LeagueAPI.Queue)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class TFTUnit : Swift.Decodable {
+  public var tier: Swift.Int
+  public var itemsId: [LeagueAPI.TFTItemId]
+  public var characterId: LeagueAPI.TFTCharacterId?
+  public var name: Swift.String
+  public var rarity: Swift.Int?
+  public init(tier: Swift.Int, itemsId: [LeagueAPI.TFTItemId], characterId: LeagueAPI.TFTCharacterId?, name: Swift.String, rarity: Swift.Int?)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class SummonerSpell {
+  public var id: LeagueAPI.SummonerSpellId
+  public var nameId: Swift.String
+  public var name: Swift.String
+  public var description: Swift.String
+  public var cooldown: Swift.Double
+  public var range: Swift.Int
+  public var unlockLevel: Swift.Int
+  public var image: LeagueAPI.ImageWithUrl
+  public var availableGameModes: [LeagueAPI.GameMode]
+  public init(id: LeagueAPI.SummonerSpellId, nameId: Swift.String, name: Swift.String, description: Swift.String, cooldown: Swift.Double, range: Swift.Int, unlockLevel: Swift.Int, image: LeagueAPI.ImageWithUrl, availableGameModes: [LeagueAPI.GameMode])
+  @objc deinit
+}
+public class League : Swift.Decodable {
+  public var leagueId: LeagueAPI.LeagueId
+  public var tier: LeagueAPI.RankedTier
+  public var leagueInfoList: [LeagueAPI.LeagueInfo]
+  public var queue: LeagueAPI.Queue
+  public var name: Swift.String
+  public init(leagueId: LeagueAPI.LeagueId, tier: LeagueAPI.RankedTier, leagueInfoList: [LeagueAPI.LeagueInfo], queue: LeagueAPI.Queue, name: Swift.String)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class MapType {
+  public enum Types : Swift.String, Swift.CustomStringConvertible {
+    case SummonersRift
+    case TwistedTreeline
+    case HowlingAbyss
+    case Unknown
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var type: LeagueAPI.MapType.Types {
+    get
+  }
+  public init?(_ type: LeagueAPI.MapType.Types)
+  @objc deinit
+}
+public class LocalizedName : Swift.Codable, Swift.CustomDebugStringConvertible {
+  public var description: Swift.String
+  public var name: Swift.String
+  public var shortDescription: Swift.String
+  public init(description: Swift.String, name: Swift.String, shortDescription: Swift.String)
+  public var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public class Match : Swift.Decodable {
+  public var metadata: LeagueAPI.LOLMatchMetadata
+  public var info: LeagueAPI.MatchInfo
+  public init(metadata: LeagueAPI.LOLMatchMetadata, info: LeagueAPI.MatchInfo)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class RunePath : Swift.Decodable {
+  public var id: LeagueAPI.RunePathId
+  public var nameId: Swift.String
+  public var name: Swift.String
+  public var image: LeagueAPI.ImageWithUrl
+  public var runeStages: [LeagueAPI.RuneStage]
+  public init(id: LeagueAPI.RunePathId, nameId: Swift.String, name: Swift.String, image: LeagueAPI.ImageWithUrl, runeStages: [LeagueAPI.RuneStage])
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ChampionPassive {
+  public var name: Swift.String
+  public var description: Swift.String
+  public var image: LeagueAPI.ImageWithUrl
+  public init(name: Swift.String, description: Swift.String, image: LeagueAPI.ImageWithUrl)
+  @objc deinit
+}
+public class Ban : Swift.Decodable {
+  public var banTurn: Swift.Int
+  public var championId: LeagueAPI.ChampionId
+  public init(banTurn: Swift.Int, championId: LeagueAPI.ChampionId)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class TFTChampion : Swift.Decodable {
+  public var id: LeagueAPI.TFTChampionId
+  public var name: Swift.String
+  public var cost: Swift.Int
+  public var traitNames: [Swift.String]
+  public var icon: LeagueAPI.LAPIImage {
+    get
+  }
+  public init(id: LeagueAPI.TFTChampionId, name: Swift.String, cost: Swift.Int, traitNames: [Swift.String])
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class ChampionStats : Swift.Decodable {
+  public var health: Swift.Double
+  public var healthPerLevel: Swift.Double
+  public var healthRegen: Swift.Double
+  public var healthRegenPerLevel: Swift.Double
+  public var ressource: Swift.Double
+  public var ressourcePerLevel: Swift.Double
+  public var ressourceRegen: Swift.Double
+  public var ressourceRegenPerLevel: Swift.Double
+  public var attackDamage: Swift.Double
+  public var attackDamagePerLevel: Swift.Double
+  public var armor: Swift.Double
+  public var armorPerLevel: Swift.Double
+  public var magicResistance: Swift.Double
+  public var magicResistancePerLevel: Swift.Double
+  public var criticalChance: Swift.Double
+  public var criticalChancePerLevel: Swift.Double
+  public var attackSpeedOffset: Swift.Double?
+  public var attackSpeedPerLevel: Swift.Double
+  public var attackRange: Swift.Double
+  public var movementSpeed: Swift.Double
+  public init(health: Swift.Double, healthPerLevel: Swift.Double, healthRegen: Swift.Double, healthRegenPerLevel: Swift.Double, ressource: Swift.Double, ressourcePerLevel: Swift.Double, ressourceRegen: Swift.Double, ressourceRegenPerLevel: Swift.Double, attackDamage: Swift.Double, attackDamagePerLevel: Swift.Double, armor: Swift.Double, armorPerLevel: Swift.Double, magicResistance: Swift.Double, magicResistancePerLevel: Swift.Double, criticalChance: Swift.Double, criticalChancePerLevel: Swift.Double, attackSpeedOffset: Swift.Double?, attackSpeedPerLevel: Swift.Double, attackRange: Swift.Double, movementSpeed: Swift.Double)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class GameInfo : Swift.Decodable {
+  public var gameId: LeagueAPI.GameId
+  public var gameStartTime: LeagueAPI.Datetime
+  public var platformId: Swift.String
+  public var gameMode: LeagueAPI.GameMode
+  public var map: LeagueAPI.Map
+  public var gameType: LeagueAPI.GameType
+  public var bannedChampions: [LeagueAPI.BannedChampion]
+  public var observer: LeagueAPI.Observer
+  public var participants: [LeagueAPI.Participant]
+  public var gameLength: LeagueAPI.Duration
+  public var gameQueueConfig: LeagueAPI.QueueMode
+  public init(gameId: LeagueAPI.GameId, gameStartTime: LeagueAPI.Datetime, platformId: Swift.String, gameMode: LeagueAPI.GameMode, map: LeagueAPI.Map, gameType: LeagueAPI.GameType, bannedChampions: [LeagueAPI.BannedChampion], observer: LeagueAPI.Observer, participants: [LeagueAPI.Participant], gameLength: LeagueAPI.Duration, gameQueueConfig: LeagueAPI.QueueMode)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TournamentId : LeagueAPI.Identifier<LeagueAPI.Long> {
+  required public init(_ value: LeagueAPI.Long)
+  @objc deinit
+}
+public class Thresholds : Swift.Codable, Swift.CustomDebugStringConvertible {
+  public var challenger: Swift.Double?
+  public var silver: Swift.Double?
+  public var platinum: Swift.Double?
+  public var none: Swift.Double?
+  public var iron: Swift.Double?
+  public var gold: Swift.Double?
+  public var master: Swift.Double?
+  public var diamond: Swift.Double?
+  public var bronze: Swift.Double?
+  public var grandmaster: Swift.Double?
+  public init(challenger: Swift.Double?, silver: Swift.Double?, platinum: Swift.Double?, none: Swift.Double?, iron: Swift.Double?, gold: Swift.Double?, master: Swift.Double?, diamond: Swift.Double?, bronze: Swift.Double?, grandmaster: Swift.Double?)
+  public var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public class TFTItem : Swift.Decodable {
+  public var id: LeagueAPI.TFTItemId
+  public var name: Swift.String
+  public var description: Swift.String
+  public var icon: LeagueAPI.LAPIImage {
+    get
+  }
+  public init(id: LeagueAPI.TFTItemId, name: Swift.String, description: Swift.String)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class PickType {
+  public enum Types : Swift.String, Swift.CustomStringConvertible {
+    case Blind
+    case Draft
+    case AllRandom
+    case TournamentDraft
+    case Unknown
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var type: LeagueAPI.PickType.Types {
+    get
+  }
+  public init?(_ type: LeagueAPI.PickType.Types)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class RunneteraGameMode {
+  public enum GameMode : Swift.String, Swift.CustomStringConvertible {
+    case Constructed
+    case Expeditions
+    case Tutorial
+    case Unknown
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var gameMode: LeagueAPI.RunneteraGameMode.GameMode {
+    get
+  }
+  public init?(_ gameMode: LeagueAPI.RunneteraGameMode.GameMode)
+  @objc deinit
+}
+public typealias Long = Swift.Int64
+@_inheritsConvenienceInitializers public class TFTTraitId : LeagueAPI.Identifier<Swift.String> {
+  required public init(_ value: Swift.String)
+  @objc deinit
+}
+public class TFTRatedLadder : Swift.Decodable {
+  public var summonerId: LeagueAPI.SummonerId
+  public var summonerName: Swift.String
+  public var tier: LeagueAPI.TFTLadderTier
+  public var rating: Swift.Int
+  public var wins: Swift.Int
+  public var previousLadderPosition: Swift.Int
+  public init(summonerId: LeagueAPI.SummonerId, summonerName: Swift.String, tier: LeagueAPI.TFTLadderTier, rating: Swift.Int, wins: Swift.Int, previousLadderPosition: Swift.Int)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class ProviderId : LeagueAPI.Identifier<Swift.Int> {
+  required public init(_ value: Swift.Int)
+  @objc deinit
+}
+public class RunneteraDeck : Swift.Decodable {
+  public var id: LeagueAPI.RunneteraDeckId
+  public var name: Swift.String
+  public var code: Swift.String
+  public init(id: LeagueAPI.RunneteraDeckId, name: Swift.String, code: Swift.String)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public enum LOLLevelUpType : Swift.String, Swift.Codable {
+  case normal
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class TournamentRegion {
+  public var region: LeagueAPI.Region {
+    get
+  }
+  public init?(_ region: LeagueAPI.Region)
+  @objc deinit
+}
+public class MatchInfo : Swift.Decodable {
+  public var gameCreation: LeagueAPI.Long
+  public var gameDuration: LeagueAPI.Long
+  public var gameEndTimestamp: LeagueAPI.Long
+  public var gameId: LeagueAPI.GameId
+  public var gameMode: LeagueAPI.GameMode
+  public var gameName: Swift.String
+  public var gameStartTimestamp: LeagueAPI.Long
+  public var gameType: LeagueAPI.GameType
+  public var gameVersion: Swift.String
+  public var mapId: Swift.Int
+  public var participants: [LeagueAPI.MatchParticipant]
+  public var platformId: Swift.String
+  public var queueId: Swift.Int
+  public var teams: [LeagueAPI.Team]
+  public var tournamentCode: Swift.String
+  public init(gameCreation: LeagueAPI.Long, gameDuration: LeagueAPI.Long, gameEndTimestamp: LeagueAPI.Long, gameId: LeagueAPI.GameId, gameMode: LeagueAPI.GameMode, gameName: Swift.String, gameStartTimestamp: LeagueAPI.Long, gameType: LeagueAPI.GameType, gameVersion: Swift.String, mapId: Swift.Int, participants: [LeagueAPI.MatchParticipant], platformId: Swift.String, queueId: Swift.Int, teams: [LeagueAPI.Team], tournamentCode: Swift.String)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public enum State : Swift.String, Swift.Codable {
+  case enabled
+  case disabled
+  case hidden
+  case archived
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_inheritsConvenienceInitializers public class LeagueId : LeagueAPI.Identifier<Swift.String> {
+  required public init(_ value: Swift.String)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class SummonerPuuid : LeagueAPI.Identifier<Swift.String> {
+  required public init(_ value: Swift.String)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class MaintenanceStatus {
+  public enum Status : Swift.String, Swift.CustomStringConvertible {
+    case Scheduled
+    case InProgress
+    case Complete
+    case Unknown
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var status: LeagueAPI.MaintenanceStatus.Status {
+    get
+  }
+  public init?(_ status: LeagueAPI.MaintenanceStatus.Status)
+  @objc deinit
+}
+public class TFTCompanion : Swift.Decodable {
+  public var skinId: LeagueAPI.CompanionSkinId
+  public var contentId: Swift.String
+  public var species: Swift.String
+  public init(skinId: LeagueAPI.CompanionSkinId, contentId: Swift.String, species: Swift.String)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class RunneteraMatchInfo : Swift.Decodable {
+  public var gameMode: LeagueAPI.RunneteraGameMode
+  public var gameType: LeagueAPI.RunneteraGameType
+  public var gameStartTimeUtc: Swift.String
+  public var gameVersion: Swift.String
+  public var players: [LeagueAPI.RunneteraMatchPlayer]
+  public var totalTurnCount: Swift.Int
+  public init(gameMode: LeagueAPI.RunneteraGameMode, gameType: LeagueAPI.RunneteraGameType, gameStartTimeUtc: Swift.String, gameVersion: Swift.String, players: [LeagueAPI.RunneteraMatchPlayer], totalTurnCount: Swift.Int)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ChampionDetails {
+  public var championId: LeagueAPI.ChampionId
+  public var name: Swift.String
+  public var title: Swift.String
+  public var skins: [LeagueAPI.Skin]
+  public var spells: [LeagueAPI.ChampionSpell]
+  public var passive: LeagueAPI.ChampionPassive
+  public var presentationText: Swift.String
+  public var lore: Swift.String
+  public var roles: [LeagueAPI.ChampionRole]
+  public var ressourceType: LeagueAPI.RessourceType
+  public var stats: LeagueAPI.ChampionStats
+  public var difficulties: LeagueAPI.ChampionDifficulties
+  public var allyTips: [Swift.String]
+  public var enemyTips: [Swift.String]
+  public var images: LeagueAPI.SkinImages? {
+    get
+  }
+  public init(championId: LeagueAPI.ChampionId, name: Swift.String, title: Swift.String, skins: [LeagueAPI.Skin], spells: [LeagueAPI.ChampionSpell], passive: LeagueAPI.ChampionPassive, presentationText: Swift.String, lore: Swift.String, roles: [LeagueAPI.ChampionRole], ressourceType: LeagueAPI.RessourceType, stats: LeagueAPI.ChampionStats, difficulties: LeagueAPI.ChampionDifficulties, allyTips: [Swift.String], enemyTips: [Swift.String])
+  @objc deinit
+}
+public class MatchObjectives : Swift.Codable {
+  public var baron: LeagueAPI.Objective
+  public var champion: LeagueAPI.Objective
+  public var dragon: LeagueAPI.Objective
+  public var inhibitor: LeagueAPI.Objective
+  public var riftHerald: LeagueAPI.Objective
+  public var tower: LeagueAPI.Objective
+  public init(baron: LeagueAPI.Objective, champion: LeagueAPI.Objective, dragon: LeagueAPI.Objective, inhibitor: LeagueAPI.Objective, riftHerald: LeagueAPI.Objective, tower: LeagueAPI.Objective)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers public class ChampionId : LeagueAPI.Identifier<LeagueAPI.Long> {
+  required public init(_ value: LeagueAPI.Long)
+  @objc deinit
+}
+public class RankedDivision {
+  public var tier: LeagueAPI.RankedTier {
+    get
+  }
+  public var division: Swift.Int {
+    get
+  }
+  public var divisionRoman: Swift.String {
+    get
+  }
+  public init(tier: LeagueAPI.RankedTier, division: Swift.Int)
+  convenience public init(tier: LeagueAPI.RankedTier, divisionRoman: Swift.String)
+  @objc deinit
+}
+public class MatchPerks : Swift.Decodable {
+  public var statPerks: LeagueAPI.StatPerks
+  public var styles: [LeagueAPI.PerkStyle]
+  public init(statPerks: LeagueAPI.StatPerks, styles: [LeagueAPI.PerkStyle])
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+extension LeagueAPI.Datetime {
+  public enum Month : Swift.String {
+    case January
+    case February
+    case March
+    case April
+    case May
+    case June
+    case July
+    case August
+    case September
+    case October
+    case November
+    case December
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum WeekDay : Swift.String {
+    case Monday
+    case Tuesday
+    case Wednesday
+    case Thursday
+    case Friday
+    case Saturday
+    case Sunday
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public static func monthFromInt(_ val: Swift.Int) -> LeagueAPI.Datetime.Month?
+  public static func intFromMonth(_ month: LeagueAPI.Datetime.Month) -> Swift.Int
+  public static func shortToLongMonth(_ short: Swift.String) -> LeagueAPI.Datetime.Month?
+  public static func weekDayFromInt(_ val: Swift.Int) -> LeagueAPI.Datetime.WeekDay?
+}
+public class Incident : Swift.Decodable {
+  public var id: LeagueAPI.Long
+  public var status: LeagueAPI.MaintenanceStatus?
+  public var severity: LeagueAPI.IncidentSeverity?
+  public var titles: [LeagueAPI.Translation]
+  public var updates: [LeagueAPI.Message]
+  public var createdAt: Swift.String
+  public var archiveAt: Swift.String?
+  public var updatedAt: Swift.String?
+  public var platforms: [LeagueAPI.DevicePlatform]
+  public init(id: LeagueAPI.Long, status: LeagueAPI.MaintenanceStatus?, severity: LeagueAPI.IncidentSeverity?, titles: [LeagueAPI.Translation], updates: [LeagueAPI.Message], createdAt: Swift.String, archiveAt: Swift.String?, updatedAt: Swift.String?, platforms: [LeagueAPI.DevicePlatform])
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class ServiceStatus : Swift.Decodable {
+  public var id: Swift.String
+  public var name: Swift.String
+  public var locales: [Swift.String]
+  public var maintenances: [LeagueAPI.Incident]
+  public var incidents: [LeagueAPI.Incident]
+  public init(id: Swift.String, name: Swift.String, locales: [Swift.String], maintenances: [LeagueAPI.Incident], incidents: [LeagueAPI.Incident])
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class RuneStage : Swift.Decodable {
+  public var runes: [LeagueAPI.Rune]
+  public init(runes: [LeagueAPI.Rune])
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TFTCharacterId : LeagueAPI.Identifier<Swift.Int> {
+  required public init(_ value: Swift.Int)
+  @objc deinit
+}
+public typealias LAPIImage = UIKit.UIImage
+@_hasMissingDesignatedInitializers public class Version {
+  public static let LeagueAPI: Swift.String
+  public static let LOL_API: Swift.String
+  public static let TFT_API: Swift.String
+  public static let RUNNETERA_API: Swift.String
+  public static let CLASH_API: Swift.String
+  public static let RIOT_API: Swift.String
+  public static let LOL_CHALLENGE_API: Swift.String
+  @objc deinit
+}
+public class RunneteraPlayerArray : Swift.Decodable {
+  public var players: [LeagueAPI.RunneteraPlayer]
+  public init(players: [LeagueAPI.RunneteraPlayer])
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class Duration : Swift.Equatable, Swift.Comparable {
+  public var durationMilliseconds: Swift.Double {
+    get
+  }
+  public var durationSeconds: Swift.Double {
+    get
+  }
+  public var durationMinutes: Swift.Double {
+    get
+  }
+  public var durationHours: Swift.Double {
+    get
+  }
+  public var durationDays: Swift.Double {
+    get
+  }
+  public var milliseconds: Swift.Int {
+    get
+  }
+  public var seconds: Swift.Int {
+    get
+  }
+  public var minutes: Swift.Int {
+    get
+  }
+  public var hours: Swift.Int {
+    get
+  }
+  public var days: Swift.Int {
+    get
+  }
+  public init(milliseconds: Swift.Double)
+  public init(seconds: Swift.Double)
+  public init(minutes: Swift.Double)
+  public init(hours: Swift.Double)
+  public init(days: Swift.Double)
+  public func toString() -> Swift.String
+  public static func == (lhs: LeagueAPI.Duration, rhs: LeagueAPI.Duration) -> Swift.Bool
+  public static func < (lhs: LeagueAPI.Duration, rhs: LeagueAPI.Duration) -> Swift.Bool
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class SkinId : LeagueAPI.Identifier<Swift.String> {
+  required public init(_ value: Swift.String)
+  @objc deinit
+}
+public class CategoryPoints : Swift.Codable, Swift.CustomDebugStringConvertible {
+  public var veterancy: LeagueAPI.ChallengePoints
+  public var teamwork: LeagueAPI.ChallengePoints
+  public var imagination: LeagueAPI.ChallengePoints
+  public var collection: LeagueAPI.ChallengePoints
+  public var expertise: LeagueAPI.ChallengePoints
+  public init(veterancy: LeagueAPI.ChallengePoints, teamwork: LeagueAPI.ChallengePoints, imagination: LeagueAPI.ChallengePoints, collection: LeagueAPI.ChallengePoints, expertise: LeagueAPI.ChallengePoints)
+  required public init(from decoder: Swift.Decoder) throws
+  public var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public class LOLParticipantFrame : Swift.Codable {
+  public var championStats: [Swift.String : Swift.Int]
+  public var currentGold: Swift.Int
+  public var damageStats: [Swift.String : Swift.Int]
+  public var goldPerSecond: Swift.Int
+  public var jungleMinionsKilled: Swift.Int
+  public var level: Swift.Int
+  public var minionsKilled: Swift.Int
+  public var participantId: Swift.Int
+  public var position: LeagueAPI.LOLPosition
+  public var timeEnemySpentControlled: Swift.Int
+  public var totalGold: Swift.Int
+  public var xp: Swift.Int
+  public init(championStats: [Swift.String : Swift.Int], currentGold: Swift.Int, damageStats: [Swift.String : Swift.Int], goldPerSecond: Swift.Int, jungleMinionsKilled: Swift.Int, level: Swift.Int, minionsKilled: Swift.Int, participantId: Swift.Int, position: LeagueAPI.LOLPosition, timeEnemySpentControlled: Swift.Int, totalGold: Swift.Int, xp: Swift.Int)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public enum LOLBuildingType : Swift.String, Swift.Codable {
+  case inhibitorBuilding
+  case towerBuilding
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension LeagueAPI.Region : Swift.Equatable {}
+extension LeagueAPI.Region : Swift.Hashable {}
+extension LeagueAPI.Region : Swift.RawRepresentable {}
+extension LeagueAPI.Queue.QueueTypes : Swift.Equatable {}
+extension LeagueAPI.Queue.QueueTypes : Swift.Hashable {}
+extension LeagueAPI.Queue.QueueTypes : Swift.RawRepresentable {}
+extension LeagueAPI.WorldRegion : Swift.Equatable {}
+extension LeagueAPI.WorldRegion : Swift.Hashable {}
+extension LeagueAPI.WorldRegion : Swift.RawRepresentable {}
+extension LeagueAPI.IncidentSeverity.SeverityLevel : Swift.Equatable {}
+extension LeagueAPI.IncidentSeverity.SeverityLevel : Swift.Hashable {}
+extension LeagueAPI.IncidentSeverity.SeverityLevel : Swift.RawRepresentable {}
+extension LeagueAPI.Map.Maps : Swift.Equatable {}
+extension LeagueAPI.Map.Maps : Swift.Hashable {}
+extension LeagueAPI.Map.Maps : Swift.RawRepresentable {}
+extension LeagueAPI.GameType.Types : Swift.Equatable {}
+extension LeagueAPI.GameType.Types : Swift.Hashable {}
+extension LeagueAPI.GameType.Types : Swift.RawRepresentable {}
+extension LeagueAPI.TeamRole.Roles : Swift.Equatable {}
+extension LeagueAPI.TeamRole.Roles : Swift.Hashable {}
+extension LeagueAPI.TeamRole.Roles : Swift.RawRepresentable {}
+extension LeagueAPI.GameRole.Roles : Swift.Equatable {}
+extension LeagueAPI.GameRole.Roles : Swift.Hashable {}
+extension LeagueAPI.GameRole.Roles : Swift.RawRepresentable {}
+extension LeagueAPI.LOLWardType : Swift.Equatable {}
+extension LeagueAPI.LOLWardType : Swift.Hashable {}
+extension LeagueAPI.LOLWardType : Swift.RawRepresentable {}
+extension LeagueAPI.TFTTraitTier.TFTTraitTierStyle : Swift.Equatable {}
+extension LeagueAPI.TFTTraitTier.TFTTraitTierStyle : Swift.Hashable {}
+extension LeagueAPI.TFTTraitTier.TFTTraitTierStyle : Swift.RawRepresentable {}
+extension LeagueAPI.GameMode.GameModes : Swift.Equatable {}
+extension LeagueAPI.GameMode.GameModes : Swift.Hashable {}
+extension LeagueAPI.GameMode.GameModes : Swift.RawRepresentable {}
+extension LeagueAPI.LOLLaneType : Swift.Equatable {}
+extension LeagueAPI.LOLLaneType : Swift.Hashable {}
+extension LeagueAPI.LOLLaneType : Swift.RawRepresentable {}
+extension LeagueAPI.RiotClientLocation.ClientLocation : Swift.Equatable {}
+extension LeagueAPI.RiotClientLocation.ClientLocation : Swift.Hashable {}
+extension LeagueAPI.RiotClientLocation.ClientLocation : Swift.RawRepresentable {}
+extension LeagueAPI.RessourceType.RessourceTypes : Swift.Equatable {}
+extension LeagueAPI.RessourceType.RessourceTypes : Swift.Hashable {}
+extension LeagueAPI.RessourceType.RessourceTypes : Swift.RawRepresentable {}
+extension LeagueAPI.RiotGames : Swift.Equatable {}
+extension LeagueAPI.RiotGames : Swift.Hashable {}
+extension LeagueAPI.RiotGames : Swift.RawRepresentable {}
+extension LeagueAPI.ShardGame.ShardGames : Swift.Equatable {}
+extension LeagueAPI.ShardGame.ShardGames : Swift.Hashable {}
+extension LeagueAPI.ShardGame.ShardGames : Swift.RawRepresentable {}
+extension LeagueAPI.LOLVictimDamageDealtType : Swift.Equatable {}
+extension LeagueAPI.LOLVictimDamageDealtType : Swift.Hashable {}
+extension LeagueAPI.LOLVictimDamageDealtType : Swift.RawRepresentable {}
+extension LeagueAPI.DateToken.Tokens : Swift.Equatable {}
+extension LeagueAPI.DateToken.Tokens : Swift.Hashable {}
+extension LeagueAPI.DateToken.Tokens : Swift.RawRepresentable {}
+extension LeagueAPI.DevicePlatform.Platform : Swift.Equatable {}
+extension LeagueAPI.DevicePlatform.Platform : Swift.Hashable {}
+extension LeagueAPI.DevicePlatform.Platform : Swift.RawRepresentable {}
+extension LeagueAPI.Level : Swift.Equatable {}
+extension LeagueAPI.Level : Swift.Hashable {}
+extension LeagueAPI.Level : Swift.RawRepresentable {}
+extension LeagueAPI.LOLEventType : Swift.Equatable {}
+extension LeagueAPI.LOLEventType : Swift.Hashable {}
+extension LeagueAPI.LOLEventType : Swift.RawRepresentable {}
+extension LeagueAPI.Season.Seasons : Swift.Equatable {}
+extension LeagueAPI.Season.Seasons : Swift.Hashable {}
+extension LeagueAPI.Season.Seasons : Swift.RawRepresentable {}
+extension LeagueAPI.SpectatorType.Types : Swift.Equatable {}
+extension LeagueAPI.SpectatorType.Types : Swift.Hashable {}
+extension LeagueAPI.SpectatorType.Types : Swift.RawRepresentable {}
+extension LeagueAPI.Logger.Channel : Swift.Equatable {}
+extension LeagueAPI.Logger.Channel : Swift.Hashable {}
+extension LeagueAPI.ChampionRole.Role : Swift.Equatable {}
+extension LeagueAPI.ChampionRole.Role : Swift.Hashable {}
+extension LeagueAPI.ChampionRole.Role : Swift.RawRepresentable {}
+extension LeagueAPI.RunneteraGameType.GameType : Swift.Equatable {}
+extension LeagueAPI.RunneteraGameType.GameType : Swift.Hashable {}
+extension LeagueAPI.RunneteraGameType.GameType : Swift.RawRepresentable {}
+extension LeagueAPI.Place : Swift.Equatable {}
+extension LeagueAPI.Place : Swift.Hashable {}
+extension LeagueAPI.Place : Swift.RawRepresentable {}
+extension LeagueAPI.TFTLadderTier.Tiers : Swift.Equatable {}
+extension LeagueAPI.TFTLadderTier.Tiers : Swift.Hashable {}
+extension LeagueAPI.TFTLadderTier.Tiers : Swift.RawRepresentable {}
+extension LeagueAPI.QueueMode.QueueModes : Swift.Equatable {}
+extension LeagueAPI.QueueMode.QueueModes : Swift.Hashable {}
+extension LeagueAPI.QueueMode.QueueModes : Swift.RawRepresentable {}
+extension LeagueAPI.RankedTier.Tiers : Swift.Equatable {}
+extension LeagueAPI.RankedTier.Tiers : Swift.Hashable {}
+extension LeagueAPI.RankedTier.Tiers : Swift.RawRepresentable {}
+extension LeagueAPI.Tracking : Swift.Equatable {}
+extension LeagueAPI.Tracking : Swift.Hashable {}
+extension LeagueAPI.Tracking : Swift.RawRepresentable {}
+extension LeagueAPI.MapType.Types : Swift.Equatable {}
+extension LeagueAPI.MapType.Types : Swift.Hashable {}
+extension LeagueAPI.MapType.Types : Swift.RawRepresentable {}
+extension LeagueAPI.PickType.Types : Swift.Equatable {}
+extension LeagueAPI.PickType.Types : Swift.Hashable {}
+extension LeagueAPI.PickType.Types : Swift.RawRepresentable {}
+extension LeagueAPI.RunneteraGameMode.GameMode : Swift.Equatable {}
+extension LeagueAPI.RunneteraGameMode.GameMode : Swift.Hashable {}
+extension LeagueAPI.RunneteraGameMode.GameMode : Swift.RawRepresentable {}
+extension LeagueAPI.LOLLevelUpType : Swift.Equatable {}
+extension LeagueAPI.LOLLevelUpType : Swift.Hashable {}
+extension LeagueAPI.LOLLevelUpType : Swift.RawRepresentable {}
+extension LeagueAPI.State : Swift.Equatable {}
+extension LeagueAPI.State : Swift.Hashable {}
+extension LeagueAPI.State : Swift.RawRepresentable {}
+extension LeagueAPI.MaintenanceStatus.Status : Swift.Equatable {}
+extension LeagueAPI.MaintenanceStatus.Status : Swift.Hashable {}
+extension LeagueAPI.MaintenanceStatus.Status : Swift.RawRepresentable {}
+extension LeagueAPI.Datetime.Month : Swift.Equatable {}
+extension LeagueAPI.Datetime.Month : Swift.Hashable {}
+extension LeagueAPI.Datetime.Month : Swift.RawRepresentable {}
+extension LeagueAPI.Datetime.WeekDay : Swift.Equatable {}
+extension LeagueAPI.Datetime.WeekDay : Swift.Hashable {}
+extension LeagueAPI.Datetime.WeekDay : Swift.RawRepresentable {}
+extension LeagueAPI.LOLBuildingType : Swift.Equatable {}
+extension LeagueAPI.LOLBuildingType : Swift.Hashable {}
+extension LeagueAPI.LOLBuildingType : Swift.RawRepresentable {}

@@ -35,8 +35,9 @@ class ParticipantViewController: UIViewController {
     
     func fillTeams() {
         guard let matchDetails = self.matchDetails else { return }
-        let blueTeamId: Long = 100
-        for participant in matchDetails.participantsInfo {
+        let blueTeamId = LOLTeamId(100)
+        //for participant in matchDetails.participantsInfo {
+        for participant in matchDetails.info.participants  {
             if participant.teamId == blueTeamId {
                 self.blueTeam.append(participant)
             }
@@ -48,9 +49,9 @@ class ParticipantViewController: UIViewController {
     
     func fillBans() {
         guard let matchDetails = self.matchDetails else { return }
-        let blueTeamId: Long = 100
-        for teamInfo in matchDetails.teamsInfo {
-            if teamInfo.teamId == blueTeamId {
+        let blueTeamId = LOLTeamId(100)
+        for teamInfo in matchDetails.info.teams {
+            if teamInfo.teamId == blueTeamId.value {
                 self.blueBans = teamInfo.bans.map( { ban in
                     return ban.championId
                 })
@@ -65,10 +66,10 @@ class ParticipantViewController: UIViewController {
     
     // MARK: - Functions
     
-    func player(for participantId: Int) -> MatchPlayer? {
-        return self.matchDetails?.participants.filter( { participant in
+    func player(for participantId: Int) -> MatchParticipant? {
+        return self.matchDetails?.info.participants.filter( { participant in
             return participant.participantId == participantId
-        }).first?.player
+        }).first
     }
     
     func particiantDetails(at indexPath: IndexPath) -> MatchParticipant {
@@ -103,6 +104,8 @@ class ParticipantViewController: UIViewController {
         }
     }
     
+    
+    
     func getRuneImage(runePathId: RunePathId, completion: @escaping (UIImage?) -> Void) {
         league.lolAPI.getRunePath(by: runePathId) { (runePath, errorMsg) in
             if let runePath = runePath {
@@ -125,7 +128,7 @@ class ParticipantViewController: UIViewController {
     }
     
     func setupSummonerVC(_ summonerVC: SummonerViewController, sender: Any?) {
-        if let participant = sender as? MatchPlayer {
+        if let participant = sender as? MatchParticipant {
             summonerVC.summonerNameParameter = participant.summonerName
         }
     }
@@ -210,44 +213,78 @@ extension ParticipantViewController: UITableViewDataSource {
         if let participantIdentity = self.player(for: participant.participantId) {
             newCell.summonerName.text = participantIdentity.summonerName
         }
-        newCell.kdaLabel.text = "\(participant.stats.kills)/\(participant.stats.deaths)/\(participant.stats.assists) - \(participant.stats.totalMinionsKilled)/\(participant.stats.neutralMinionsKilled)"
-        newCell.rankedSquare.setImage(league.lolAPI.getEmblem(for: participant.highestAchievedSeasonTier ?? RankedTier(.Unranked)!))
+        
+        
+        newCell.kdaLabel.text = "\(participant.kills)/\(participant.deaths)/\(participant.assists) - \(participant.totalMinionsKilled)/\(participant.neutralMinionsKilled)"
+
+        
+        self.getSummonerBestRank(summonerId: participant.summonerId) { bestRankedTier in
+            newCell.rankedSquare.setImage(league.lolAPI.getEmblem(for: bestRankedTier ?? RankedTier(.Unranked)!))
+        }
+
         self.getChampionImage(championId: participant.championId, splash: true) { image in
             newCell.championSplashBackground.setImage(image)
         }
-        self.getItemImage(itemId: participant.stats.item0) { image in
+        //self.getItemImage(itemId: participant.stats.item0) { image in
+        self.getItemImage(itemId: participant.item0) { image in
             newCell.item1.setImage(image)
         }
-        self.getItemImage(itemId: participant.stats.item1) { image in
+        self.getItemImage(itemId: participant.item1) { image in
             newCell.item2.setImage(image)
         }
-        self.getItemImage(itemId: participant.stats.item2) { image in
+        self.getItemImage(itemId: participant.item2) { image in
             newCell.item3.setImage(image)
         }
-        self.getItemImage(itemId: participant.stats.item3) { image in
+        self.getItemImage(itemId: participant.item3) { image in
             newCell.item4.setImage(image)
         }
-        self.getItemImage(itemId: participant.stats.item4) { image in
+        self.getItemImage(itemId: participant.item4) { image in
             newCell.item5.setImage(image)
         }
-        self.getItemImage(itemId: participant.stats.item5) { image in
+        self.getItemImage(itemId: participant.item5) { image in
             newCell.item6.setImage(image)
         }
-        self.getItemImage(itemId: participant.stats.item6) { image in
+        self.getItemImage(itemId: participant.item6) { image in
             newCell.item7.setImage(image)
         }
-        if let primaryRunePath = participant.stats.primaryRunePath {
-            self.getRuneImage(runePathId: primaryRunePath) { image in
+        
+        
+//        getRuneImage(runePathId: participant.perks.styles[0].style) { image in
+//
+//            self.primaryRuneImageView.setImage(image) }
+//        getRuneImage(runePathId: participant.perks.styles[1].style) { image in
+//            self.secondaryRuneImageView.setImage(image) }
+//
+    
+        self.getRuneImage(runePathId: participant.perks.styles[0].style) { image in
                 newCell.rune1.setImage(image)
-            }
         }
-        if let secondaryRunePath = participant.stats.secondaryRunePath {
-            self.getRuneImage(runePathId: secondaryRunePath) { image in
+        self.getRuneImage(runePathId: participant.perks.styles[0].style) { image in
                 newCell.rune2.setImage(image)
-            }
         }
         return newCell
     }
+    func getSummonerBestRank(summonerId: SummonerId, completion: @escaping (RankedTier?) -> Void) {
+            league.lolAPI.getRankedEntries(for: summonerId, on: preferredRegion) { (rankedPositions, errorMsg) in
+                if let rankedPositions = rankedPositions {
+                    let rankedTiers: [RankedTier] = rankedPositions.map( { position in
+                        return position.tier!
+                    })
+                    let orderedTiers: [RankedTier.Tiers] = [.Challenger, .GrandMaster, .Master, .Diamond, .Platinum, .Gold, .Silver, .Bronze, .Iron]
+                    for tier in orderedTiers {
+                        if let bestTier = rankedTiers.filter( { rankedTier in return rankedTier.tier == tier }).first {
+                            completion(bestTier)
+                            return
+                        }
+                    }
+                    completion(RankedTier(.Unranked)!)
+                }
+                else {
+                    print("Request failed cause: \(errorMsg ?? "No error description")")
+                }
+            }
+        }
+    
 }
 
 extension ParticipantViewController: UITableViewDelegate {

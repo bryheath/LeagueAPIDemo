@@ -57,7 +57,7 @@ class SummonerViewController: UIViewController {
     // MARK: - Functions
     
     func getInfo(of summonerName: String) {
-        league.lolAPI.getSummoner(byName: summonerName, on: preferedRegion) { (summoner, errorMsg) in
+        league.lolAPI.getSummoner(byName: summonerName, on: preferredRegion) { (summoner, errorMsg) in
             if let summoner = summoner {
                 self.updateUI(for: summoner)
             }

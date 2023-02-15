@@ -29,7 +29,7 @@ class ChampionRotationViewController: UIViewController {
     // MARK: - Functions
     
     func getChampionRotation() {
-        league.lolAPI.getChampionRotation(on: preferedRegion) { (rotations, errorMsg) in
+        league.lolAPI.getChampionRotation(on: preferredRegion) { (rotations, errorMsg) in
             if let rotations = rotations {
                 self.championRotation = rotations.rotation
                 self.championRotationTableView.reload()

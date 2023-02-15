@@ -13,6 +13,9 @@
 		556257E3219B4B430089398D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 556257E2219B4B430089398D /* Assets.xcassets */; };
 		55B42C1021C4289000531940 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B42C0F21C4289000531940 /* UILabelExtension.swift */; };
 		55BD9B4621C5357900EC155D /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD9B4521C5357900EC155D /* UIImageViewExtension.swift */; };
+		9363628F299C432700138BF9 /* LeagueAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9363628D299C432700138BF9 /* LeagueAPI.framework */; };
+		93636290299C434300138BF9 /* LeagueAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9363628D299C432700138BF9 /* LeagueAPI.framework */; };
+		93636291299C434300138BF9 /* LeagueAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9363628D299C432700138BF9 /* LeagueAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		97043841228524F70073F296 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97043840228524F70073F296 /* main.swift */; };
 		9716A95921C798E0002A18D2 /* FeaturedGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9716A95821C798E0002A18D2 /* FeaturedGamesViewController.swift */; };
 		9716A95B21C79EC4002A18D2 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9716A95A21C79EC4002A18D2 /* GameTableViewCell.swift */; };
@@ -20,10 +23,6 @@
 		971A868E2447156B00B6D31C /* TFTMatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971A868D2447156B00B6D31C /* TFTMatchTableViewCell.swift */; };
 		971A86902447310700B6D31C /* RunneteraLeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971A868F2447310700B6D31C /* RunneteraLeaderboardViewController.swift */; };
 		971A86922447342400B6D31C /* RunneteraLeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971A86912447342400B6D31C /* RunneteraLeaderboardTableViewCell.swift */; };
-		974D8B59237406AF00149B3E /* LeagueAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 974D8B57237406AA00149B3E /* LeagueAPI.framework */; };
-		974D8B5A237406AF00149B3E /* LeagueAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 974D8B57237406AA00149B3E /* LeagueAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		977D21E822D4F11F0056CBE7 /* LeagueAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97043847228528A70073F296 /* LeagueAPI.framework */; };
-		977D21E922D4F11F0056CBE7 /* LeagueAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97043847228528A70073F296 /* LeagueAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9784184421C3EB6B005AE126 /* RequestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784184321C3EB6B005AE126 /* RequestListViewController.swift */; };
 		9784184821C3F3A0005AE126 /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784184721C3F3A0005AE126 /* RequestTableViewCell.swift */; };
 		9784184B21C3F715005AE126 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784184A21C3F715005AE126 /* Request.swift */; };
@@ -66,7 +65,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				974D8B5A237406AF00149B3E /* LeagueAPI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,7 +75,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				977D21E922D4F11F0056CBE7 /* LeagueAPI.framework in Embed Frameworks */,
+				93636291299C434300138BF9 /* LeagueAPI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,19 +89,17 @@
 		556257DA219B2AD20089398D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		556257DC219B2AD20089398D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		556257E2219B4B430089398D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		55B42C0A21C426C600531940 /* LeagueAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LeagueAPI.framework; path = Carthage/Build/iOS/LeagueAPI.framework; sourceTree = "<group>"; };
 		55B42C0F21C4289000531940 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		55BD9B4521C5357900EC155D /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		9363628D299C432700138BF9 /* LeagueAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LeagueAPI.framework; sourceTree = "<group>"; };
 		9704383E228524F70073F296 /* LeagueAPI-CLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "LeagueAPI-CLI"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97043840228524F70073F296 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		97043847228528A70073F296 /* LeagueAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LeagueAPI.framework; path = Carthage/Build/iOS/LeagueAPI.framework; sourceTree = "<group>"; };
 		9716A95821C798E0002A18D2 /* FeaturedGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedGamesViewController.swift; sourceTree = "<group>"; };
 		9716A95A21C79EC4002A18D2 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		971A868B24470BF300B6D31C /* TFTMatchHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFTMatchHistoryViewController.swift; sourceTree = "<group>"; };
 		971A868D2447156B00B6D31C /* TFTMatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFTMatchTableViewCell.swift; sourceTree = "<group>"; };
 		971A868F2447310700B6D31C /* RunneteraLeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunneteraLeaderboardViewController.swift; sourceTree = "<group>"; };
 		971A86912447342400B6D31C /* RunneteraLeaderboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunneteraLeaderboardTableViewCell.swift; sourceTree = "<group>"; };
-		974D8B57237406AA00149B3E /* LeagueAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LeagueAPI.framework; path = Carthage/Build/Mac/LeagueAPI.framework; sourceTree = "<group>"; };
 		9784184321C3EB6B005AE126 /* RequestListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestListViewController.swift; sourceTree = "<group>"; };
 		9784184721C3F3A0005AE126 /* RequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
 		9784184A21C3F715005AE126 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -135,7 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				977D21E822D4F11F0056CBE7 /* LeagueAPI.framework in Frameworks */,
+				93636290299C434300138BF9 /* LeagueAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				974D8B59237406AF00149B3E /* LeagueAPI.framework in Frameworks */,
+				9363628F299C432700138BF9 /* LeagueAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +149,7 @@
 		55474D7921AC220E00A52488 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				55B42C0A21C426C600531940 /* LeagueAPI.framework */,
+				9363628D299C432700138BF9 /* LeagueAPI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -161,8 +157,6 @@
 		556257C4219B2AD10089398D = {
 			isa = PBXGroup;
 			children = (
-				97043847228528A70073F296 /* LeagueAPI.framework */,
-				974D8B57237406AA00149B3E /* LeagueAPI.framework */,
 				556257CF219B2AD10089398D /* LeagueAPIDemo */,
 				9704383F228524F70073F296 /* LeagueAPI-CLI */,
 				556257CE219B2AD10089398D /* Products */,
@@ -317,7 +311,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1420;
 				ORGANIZATIONNAME = "Antoine Clop";
 				TargetAttributes = {
 					556257CC219B2AD10089398D = {
@@ -436,6 +430,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -458,6 +453,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -487,7 +483,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -520,6 +516,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -555,16 +552,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 26WDH86H37;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				DEVELOPMENT_TEAM = ZE994RWSUV;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR) ";
 				INFOPLIST_FILE = LeagueAPIDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kelmatou.LeagueAPIDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -577,16 +573,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 26WDH86H37;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				DEVELOPMENT_TEAM = ZE994RWSUV;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR) ";
 				INFOPLIST_FILE = LeagueAPIDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kelmatou.LeagueAPIDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -599,17 +594,19 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac/**",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)",
 				);
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
 					"@executable_path",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
@@ -621,17 +618,19 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac/**",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)",
 				);
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
 					"@executable_path",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
